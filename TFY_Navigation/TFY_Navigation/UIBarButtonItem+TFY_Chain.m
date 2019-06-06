@@ -22,9 +22,7 @@ UIBarButtonItem *tfy_barbtnItem(void){
  */
 -(UIBarButtonItem *(^)(NSString *image_str,id object, SEL action))tfy_imageItem{
     return ^(NSString *image_str,id object, SEL action){
-        UIButton *btn = [self button:object action:action];
-        [btn setImage:[[UIImage imageNamed:image_str] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-        UIBarButtonItem *item = [self Itemview:btn];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:image_str] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:object action:action];
         return item;
     };
 }
@@ -33,27 +31,10 @@ UIBarButtonItem *tfy_barbtnItem(void){
  */
 -(UIBarButtonItem *(^)(NSString *title_str,CGFloat fontOfSize,UIColor *color,id object, SEL action))tfy_titleItem{
     return ^(NSString *title_str,CGFloat fontOfSize,UIColor *color,id object, SEL action){
-        UIButton *button = [self button:object action:action];
-        [button setTitle:title_str forState:UIControlStateNormal];
-        [button setTitleColor:color forState:UIControlStateNormal];
-        [button.titleLabel setFont:[UIFont systemFontOfSize:fontOfSize]];
-        UIBarButtonItem *item = [self Itemview:button];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:title_str style:UIBarButtonItemStylePlain target:object action:action];
+        [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:fontOfSize],NSFontAttributeName, color,NSForegroundColorAttributeName, nil] forState:UIControlStateNormal];
         return item;
     };
 }
 
-
--(UIButton *)button:(id)object action:(SEL)action{
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setFrame:CGRectMake(0, 0, 60, 30)];
-    if (object!=nil) {
-        [button addTarget:object action:action forControlEvents:UIControlEventTouchUpInside];
-    }
-    return button;
-}
-
--(UIBarButtonItem *)Itemview:(UIView *)topView{
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:topView];
-    return item;
-}
 @end
