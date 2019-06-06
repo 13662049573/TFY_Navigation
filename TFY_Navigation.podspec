@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "TFY_Navigation"
-  spec.version      = "2.0.0"
+  spec.version      = "2.0.2"
   spec.summary      = "多变颜色导航栏"
 
   spec.description  = "字体，背景颜色，大小，横竖屏随意改。"
@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   spec.license      = "MIT"
  
-  spec.author             = { "tianfengyou" => "420144542@qq.com" }
+  spec.author       = { "tianfengyou" => "420144542@qq.com" }
 
   spec.platform     = :ios, "10.0"
 
