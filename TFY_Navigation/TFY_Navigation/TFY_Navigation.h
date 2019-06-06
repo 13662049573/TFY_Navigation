@@ -11,6 +11,6 @@
 
 #import "TFY_NavigationController.h"
 #import "UINavigationController+TFY_Extension.h"
-
+#import "UIBarButtonItem+TFY_Chain.h"
 
 #endif /* TFY_Navigation_h */

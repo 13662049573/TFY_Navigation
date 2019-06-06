@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "TFY_Navigation/TFY_Navigation.h"
+#import "RootController.h"
 @interface ViewController ()
 
 @end
@@ -16,8 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.title = @"导航栏测试";
+    
+    self.view.backgroundColor = [UIColor cyanColor];
+    
+    self.navigationItem.leftBarButtonItem = tfy_barbtnItem().tfy_imageItem(@"me_data_icom",self,@selector(imageClick));
+    
+    self.navigationItem.rightBarButtonItem = tfy_barbtnItem().tfy_titleItem(@"添加",20,[UIColor redColor],self,@selector(imageClick));
+    
+    
 }
 
-
+-(void)imageClick{
+    [self.navigationController pushViewController:[RootController new] animated:YES];
+}
 @end

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3624206B229649BF00AFE2B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3624206A229649BF00AFE2B2 /* AppDelegate.m */; };
 		3624206E229649BF00AFE2B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3624206D229649BF00AFE2B2 /* ViewController.m */; };
-		36242071229649BF00AFE2B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3624206F229649BF00AFE2B2 /* Main.storyboard */; };
 		36242073229649C000AFE2B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36242072229649C000AFE2B2 /* Assets.xcassets */; };
 		36242076229649C000AFE2B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36242074229649C000AFE2B2 /* LaunchScreen.storyboard */; };
 		36242079229649C000AFE2B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36242078229649C000AFE2B2 /* main.m */; };
@@ -17,6 +16,8 @@
 		3624208E229649C000AFE2B2 /* TFY_NavigationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3624208D229649C000AFE2B2 /* TFY_NavigationUITests.m */; };
 		362420A1229649EC00AFE2B2 /* TFY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3624209E229649EC00AFE2B2 /* TFY_NavigationController.m */; };
 		362420A2229649EC00AFE2B2 /* UINavigationController+TFY_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 362420A0229649EC00AFE2B2 /* UINavigationController+TFY_Extension.m */; };
+		369E580822A8F5DC00E361FE /* UIBarButtonItem+TFY_Chain.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E580722A8F5DC00E361FE /* UIBarButtonItem+TFY_Chain.m */; };
+		369E580B22A903EC00E361FE /* RootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 369E580A22A903EC00E361FE /* RootController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +43,6 @@
 		3624206A229649BF00AFE2B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3624206C229649BF00AFE2B2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3624206D229649BF00AFE2B2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		36242070229649BF00AFE2B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		36242072229649C000AFE2B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36242075229649C000AFE2B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36242077229649C000AFE2B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +58,10 @@
 		3624209E229649EC00AFE2B2 /* TFY_NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_NavigationController.m; sourceTree = "<group>"; };
 		3624209F229649EC00AFE2B2 /* TFY_NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_NavigationController.h; sourceTree = "<group>"; };
 		362420A0229649EC00AFE2B2 /* UINavigationController+TFY_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+TFY_Extension.m"; sourceTree = "<group>"; };
+		369E580622A8F5DC00E361FE /* UIBarButtonItem+TFY_Chain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+TFY_Chain.h"; sourceTree = "<group>"; };
+		369E580722A8F5DC00E361FE /* UIBarButtonItem+TFY_Chain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+TFY_Chain.m"; sourceTree = "<group>"; };
+		369E580922A903EC00E361FE /* RootController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootController.h; sourceTree = "<group>"; };
+		369E580A22A903EC00E361FE /* RootController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +117,12 @@
 				3624206A229649BF00AFE2B2 /* AppDelegate.m */,
 				3624206C229649BF00AFE2B2 /* ViewController.h */,
 				3624206D229649BF00AFE2B2 /* ViewController.m */,
-				3624206F229649BF00AFE2B2 /* Main.storyboard */,
 				36242072229649C000AFE2B2 /* Assets.xcassets */,
 				36242074229649C000AFE2B2 /* LaunchScreen.storyboard */,
 				36242077229649C000AFE2B2 /* Info.plist */,
 				36242078229649C000AFE2B2 /* main.m */,
+				369E580922A903EC00E361FE /* RootController.h */,
+				369E580A22A903EC00E361FE /* RootController.m */,
 			);
 			path = TFY_Navigation;
 			sourceTree = "<group>";
@@ -148,6 +153,8 @@
 				3624209E229649EC00AFE2B2 /* TFY_NavigationController.m */,
 				3624209D229649EC00AFE2B2 /* UINavigationController+TFY_Extension.h */,
 				362420A0229649EC00AFE2B2 /* UINavigationController+TFY_Extension.m */,
+				369E580622A8F5DC00E361FE /* UIBarButtonItem+TFY_Chain.h */,
+				369E580722A8F5DC00E361FE /* UIBarButtonItem+TFY_Chain.m */,
 			);
 			path = TFY_Navigation;
 			sourceTree = "<group>";
@@ -257,7 +264,6 @@
 			files = (
 				36242076229649C000AFE2B2 /* LaunchScreen.storyboard in Resources */,
 				36242073229649C000AFE2B2 /* Assets.xcassets in Resources */,
-				36242071229649BF00AFE2B2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,9 +289,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3624206E229649BF00AFE2B2 /* ViewController.m in Sources */,
+				369E580B22A903EC00E361FE /* RootController.m in Sources */,
 				36242079229649C000AFE2B2 /* main.m in Sources */,
 				362420A2229649EC00AFE2B2 /* UINavigationController+TFY_Extension.m in Sources */,
 				3624206B229649BF00AFE2B2 /* AppDelegate.m in Sources */,
+				369E580822A8F5DC00E361FE /* UIBarButtonItem+TFY_Chain.m in Sources */,
 				362420A1229649EC00AFE2B2 /* TFY_NavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,14 +330,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3624206F229649BF00AFE2B2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				36242070229649BF00AFE2B2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		36242074229649C000AFE2B2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -102,13 +102,13 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
 - (void)setupNavigationBarTheme
 {
     UINavigationBar *navBar = [UINavigationBar appearance];
-    UIColor *color = self.barBackgroundColor ?: [UIColor blackColor];
+    UIColor *color = self.barBackgroundColor ?: [UIColor whiteColor];
     [navBar setBackgroundImage:[self tfy_createImage:color] forBarMetrics:UIBarMetricsDefault];
     [navBar setShadowImage:[[UIImage alloc] init]];
     // 设置标题文字颜色
-    UIColor *titlecolor = self.titleColor ?: [UIColor whiteColor];
+    UIColor *titlecolor = self.titleColor ?: [UIColor blackColor];
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:16.0];
+    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:15.0];
     textAttrs[NSForegroundColorAttributeName] = titlecolor;
     [navBar setTitleTextAttributes:textAttrs];
 }
@@ -173,7 +173,7 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
     CGSize const size = CGSizeMake(15.0, 21.0);
     UIGraphicsBeginImageContextWithOptions(size, NO, UIScreen.mainScreen.scale);
     
-    UIColor *color = [UIColor whiteColor];
+    UIColor *color = [UIColor blackColor];
     [color setFill];
     [color setStroke];
     

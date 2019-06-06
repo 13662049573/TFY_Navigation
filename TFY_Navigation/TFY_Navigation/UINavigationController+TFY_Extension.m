@@ -34,6 +34,7 @@ static NSString *const barReturnButtonDelegate = @"barReturnButtonDelegate";
     });
 }
 
+
 - (void)tfy_viewDidLoad
 {
     [self tfy_viewDidLoad];
@@ -144,73 +145,6 @@ static NSString *const barReturnButtonDelegate = @"barReturnButtonDelegate";
     [self.navigationBar setTintColor:tfy_barReturnButtonColor];
 }
 
-- (void)tfy_barReturnButtonHideItemType:(NSInteger)itemType navigationItem:(UINavigationItem *)navigationItem{
-    if (itemType==0) {
-        navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] init];
-    }
-    else{
-        navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] init];
-    }
-}
-
-/** 自定义导航栏左侧返回按钮文本 */
-- (void)tfy_customLeftbarbuttonTitle:(NSString *)barButtonTitle barButtonColorWithHexString:(NSString *)color titlesize:(CGFloat)fontSize navigationItem:(UINavigationItem *)navigation target:(id)target selector:(SEL)selector complete:(void(^)(UIButton *itemButton))complete{
-    
-    navigation.leftBarButtonItem = [self barButtonItemWithItemType:0 Selectiontype:NO ColorWithHexString:color barbuttonTitle:barButtonTitle titlesize:fontSize barReturnButtonImage:nil target:target selector:selector complete:complete];
-}
-
-/** 自定义导航栏右侧返回按钮文本 */
-- (void)tfy_customRightbarbuttonTitle:(NSString *)barButtonTitle barButtonColorWithHexString:(NSString *)color titlesize:(CGFloat)fontSize navigationItem:(UINavigationItem *)navigation target:(id)target selector:(SEL)selector complete:(void(^)(UIButton *itemButton))complete{
-    
-    navigation.rightBarButtonItem = [self barButtonItemWithItemType:1 Selectiontype:NO ColorWithHexString:color barbuttonTitle:barButtonTitle titlesize:fontSize barReturnButtonImage:nil target:target selector:selector complete:complete];;
-}
-
-/** 自定义leftBarButtonItem */
-- (void)tfy_customLeftBarButtonItem:(UINavigationItem *)navigationItem barReturnButtonImage:(NSString *)buttonimage target:(id)target selector:(SEL)selector complete:(void(^)(UIButton *itemButton))complete{
-    
-    navigationItem.leftBarButtonItem = [self barButtonItemWithItemType:0 Selectiontype:YES ColorWithHexString:nil barbuttonTitle:nil titlesize:15 barReturnButtonImage:buttonimage target:target selector:selector complete:complete];
-}
-
-/** 自定义rightBarButtonItem */
-- (void)tfy_customRightBarButtonItem:(UINavigationItem *)navigationItem barReturnButtonImage:(NSString *)buttonimage target:(id)target selector:(SEL)selector complete:(void(^)(UIButton *itemButton))complete{
-    
-    navigationItem.rightBarButtonItem = [self barButtonItemWithItemType:1 Selectiontype:YES ColorWithHexString:nil barbuttonTitle:nil titlesize:15 barReturnButtonImage:buttonimage target:target selector:selector complete:complete];
-}
-
-
-- (void)tfy_pushControllerBarReturnButtonTitle:(NSString *)barReturnButtonTitle navigationItem:(UINavigationItem *)navigationItem {
-    
-    if(navigationItem.backBarButtonItem == nil) {
-        
-        navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:barReturnButtonTitle style:UIBarButtonItemStylePlain target:nil action:nil];
-    }else {
-        
-        navigationItem.backBarButtonItem.title = barReturnButtonTitle;
-    }
-}
-
-- (UIBarButtonItem *)barButtonItemWithItemType:(NSInteger)itemType Selectiontype:(BOOL)type ColorWithHexString:(NSString *)color barbuttonTitle:(NSString *)barButtonTitle titlesize:(CGFloat)fontSize barReturnButtonImage:(NSString *)buttonimage target:(id)target selector:(SEL)selector complete:(void (^)(UIButton *))complete {
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 0, 60, 30);
-    if (type) {
-        [button setImage:[[UIImage imageNamed:buttonimage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
-    }
-    else{
-        [button setTitle:barButtonTitle forState:UIControlStateNormal];
-        [button setTitleColor:[self tfy_ColorWithHexString:color] forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
-    }
-    [button addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
-     button.contentHorizontalAlignment = (itemType == 0) ? UIControlContentHorizontalAlignmentLeft : UIControlContentHorizontalAlignmentRight;
-    
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    
-    if(complete) {complete(button);}
-    
-    return barButtonItem;
-}
-
 #pragma mark - 按钮
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item {
     
@@ -262,7 +196,7 @@ static NSString *const barReturnButtonDelegate = @"barReturnButtonDelegate";
     return image;
 }
 
--(UIColor *)tfy_ColorWithHexString: (NSString *)color
+-(UIColor *)tfy_ColorWithHexString:(NSString *)color
 {
     NSString *cString = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     
