@@ -25,6 +25,7 @@
     
     self.navigationItem.rightBarButtonItem = tfy_barbtnItem().tfy_titleItem(@"添加",20,[UIColor redColor],self,@selector(imageClick));
     
+//    self.navigationController.tfy_barBackgroundColor = [UIColor purpleColor];
     
 }
 
