@@ -6,6 +6,9 @@
 //
 
 #import "TFY_NavigationController.h"
+#import "TFY_NavAnimatedTransitioning.h"
+#import "UIViewController+TFY_PopController.h"
+
 #import <objc/runtime.h>
 
 #pragma mark - 容器控制器
@@ -64,10 +67,54 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
 
 #pragma mark - 导航栏控制器
 
-@interface TFY_NavigationController ()<UIGestureRecognizerDelegate>
+@interface TFY_NavigationController ()<UIGestureRecognizerDelegate,UINavigationControllerDelegate>
+
+@property (nonatomic, strong) TFY_NavAnimatedTransitioning *animatedTransitioning;
+
+@property (nonatomic, assign) CGSize originContentSizeInPop;
+@property (nonatomic, assign) CGSize originContentSizeInPopWhenLandscape;
 @end
 
 @implementation TFY_NavigationController
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.originContentSizeInPop = self.contentSizeInPop;
+    self.originContentSizeInPopWhenLandscape = self.contentSizeInPopWhenLandscape;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.delegate = self;
+}
+
+- (void)adjustContentSizeBy:(UIViewController *)controller {
+
+    switch ([UIApplication sharedApplication].statusBarOrientation) {
+        case UIInterfaceOrientationLandscapeLeft:
+        case UIInterfaceOrientationLandscapeRight: {
+            CGSize contentSize = controller.contentSizeInPopWhenLandscape;
+            if (!CGSizeEqualToSize(contentSize, CGSizeZero)) {
+                self.contentSizeInPopWhenLandscape = contentSize;
+            } else {
+                self.contentSizeInPopWhenLandscape = self.originContentSizeInPopWhenLandscape;
+            }
+        }
+            break;
+        default: {
+            CGSize contentSize = controller.contentSizeInPop;
+            if (!CGSizeEqualToSize(contentSize, CGSizeZero)) {
+                self.contentSizeInPop = contentSize;
+            } else {
+                self.contentSizeInPop = self.originContentSizeInPop;
+            }
+        }
+            break;
+    }
+
+}
 
 #pragma mark Lifecycle
 
@@ -157,6 +204,16 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
     
     return image;
 }
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    // call this to perform viewDidLoad
+    [toVC view];
+    [self adjustContentSizeBy:toVC];
+    self.animatedTransitioning.state = operation == UINavigationControllerOperationPush ? PopStatePop : PopStateDismiss;
+    return self.animatedTransitioning;
+}
+
+
 #pragma mark <UIGestureRecognizerDelegate>
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
@@ -211,7 +268,12 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
     UIGraphicsEndImageContext();
     return image;
 }
-
+- (TFY_NavAnimatedTransitioning *)animatedTransitioning {
+    if (!_animatedTransitioning) {
+        _animatedTransitioning = [[TFY_NavAnimatedTransitioning alloc] initWithState:PopStatePop];
+    }
+    return _animatedTransitioning;
+}
 #pragma mark setter & getter
 
 - (void)setNavigationBarHidden:(BOOL)navigationBarHidden {

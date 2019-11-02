@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3616B46C236DA71E004674FB /* TFY_PopControllerAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3616B46B236DA71E004674FB /* TFY_PopControllerAnimatedTransitioning.m */; };
+		3616B46F236DA756004674FB /* TFY_PopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3616B46E236DA756004674FB /* TFY_PopController.m */; };
+		3616B472236DAA17004674FB /* TFY_DefaultPopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3616B471236DAA17004674FB /* TFY_DefaultPopAnimator.m */; };
+		3616B475236DAE24004674FB /* TFY_NavAnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3616B474236DAE24004674FB /* TFY_NavAnimatedTransitioning.m */; };
+		3616B478236DAF6D004674FB /* UIViewController+TFY_PopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3616B477236DAF6D004674FB /* UIViewController+TFY_PopController.m */; };
+		3616B47B236DB058004674FB /* NSObject+TFY_Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 3616B47A236DB058004674FB /* NSObject+TFY_Add.m */; };
+		3616B47E236DB288004674FB /* TFY_PopTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3616B47D236DB288004674FB /* TFY_PopTransitioningDelegate.m */; };
 		3624206B229649BF00AFE2B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3624206A229649BF00AFE2B2 /* AppDelegate.m */; };
 		3624206E229649BF00AFE2B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3624206D229649BF00AFE2B2 /* ViewController.m */; };
 		36242073229649C000AFE2B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36242072229649C000AFE2B2 /* Assets.xcassets */; };
@@ -38,6 +45,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3616B469236DA6E3004674FB /* TFY_PopControllerAnimationProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PopControllerAnimationProtocol.h; sourceTree = "<group>"; };
+		3616B46A236DA71E004674FB /* TFY_PopControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PopControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
+		3616B46B236DA71E004674FB /* TFY_PopControllerAnimatedTransitioning.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PopControllerAnimatedTransitioning.m; sourceTree = "<group>"; };
+		3616B46D236DA756004674FB /* TFY_PopController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PopController.h; sourceTree = "<group>"; };
+		3616B46E236DA756004674FB /* TFY_PopController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PopController.m; sourceTree = "<group>"; };
+		3616B470236DAA17004674FB /* TFY_DefaultPopAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_DefaultPopAnimator.h; sourceTree = "<group>"; };
+		3616B471236DAA17004674FB /* TFY_DefaultPopAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_DefaultPopAnimator.m; sourceTree = "<group>"; };
+		3616B473236DAE24004674FB /* TFY_NavAnimatedTransitioning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_NavAnimatedTransitioning.h; sourceTree = "<group>"; };
+		3616B474236DAE24004674FB /* TFY_NavAnimatedTransitioning.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_NavAnimatedTransitioning.m; sourceTree = "<group>"; };
+		3616B476236DAF6D004674FB /* UIViewController+TFY_PopController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TFY_PopController.h"; sourceTree = "<group>"; };
+		3616B477236DAF6D004674FB /* UIViewController+TFY_PopController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TFY_PopController.m"; sourceTree = "<group>"; };
+		3616B479236DB058004674FB /* NSObject+TFY_Add.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+TFY_Add.h"; sourceTree = "<group>"; };
+		3616B47A236DB058004674FB /* NSObject+TFY_Add.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TFY_Add.m"; sourceTree = "<group>"; };
+		3616B47C236DB287004674FB /* TFY_PopTransitioningDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PopTransitioningDelegate.h; sourceTree = "<group>"; };
+		3616B47D236DB288004674FB /* TFY_PopTransitioningDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PopTransitioningDelegate.m; sourceTree = "<group>"; };
 		36242066229649BF00AFE2B2 /* TFY_Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFY_Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36242069229649BF00AFE2B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3624206A229649BF00AFE2B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -155,6 +177,21 @@
 				362420A0229649EC00AFE2B2 /* UINavigationController+TFY_Extension.m */,
 				369E580622A8F5DC00E361FE /* UIBarButtonItem+TFY_Chain.h */,
 				369E580722A8F5DC00E361FE /* UIBarButtonItem+TFY_Chain.m */,
+				3616B469236DA6E3004674FB /* TFY_PopControllerAnimationProtocol.h */,
+				3616B46A236DA71E004674FB /* TFY_PopControllerAnimatedTransitioning.h */,
+				3616B46B236DA71E004674FB /* TFY_PopControllerAnimatedTransitioning.m */,
+				3616B46D236DA756004674FB /* TFY_PopController.h */,
+				3616B46E236DA756004674FB /* TFY_PopController.m */,
+				3616B470236DAA17004674FB /* TFY_DefaultPopAnimator.h */,
+				3616B471236DAA17004674FB /* TFY_DefaultPopAnimator.m */,
+				3616B473236DAE24004674FB /* TFY_NavAnimatedTransitioning.h */,
+				3616B474236DAE24004674FB /* TFY_NavAnimatedTransitioning.m */,
+				3616B476236DAF6D004674FB /* UIViewController+TFY_PopController.h */,
+				3616B477236DAF6D004674FB /* UIViewController+TFY_PopController.m */,
+				3616B479236DB058004674FB /* NSObject+TFY_Add.h */,
+				3616B47A236DB058004674FB /* NSObject+TFY_Add.m */,
+				3616B47C236DB287004674FB /* TFY_PopTransitioningDelegate.h */,
+				3616B47D236DB288004674FB /* TFY_PopTransitioningDelegate.m */,
 			);
 			path = TFY_Navigation;
 			sourceTree = "<group>";
@@ -288,13 +325,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3616B47E236DB288004674FB /* TFY_PopTransitioningDelegate.m in Sources */,
+				3616B478236DAF6D004674FB /* UIViewController+TFY_PopController.m in Sources */,
 				3624206E229649BF00AFE2B2 /* ViewController.m in Sources */,
 				369E580B22A903EC00E361FE /* RootController.m in Sources */,
+				3616B472236DAA17004674FB /* TFY_DefaultPopAnimator.m in Sources */,
 				36242079229649C000AFE2B2 /* main.m in Sources */,
 				362420A2229649EC00AFE2B2 /* UINavigationController+TFY_Extension.m in Sources */,
+				3616B46C236DA71E004674FB /* TFY_PopControllerAnimatedTransitioning.m in Sources */,
+				3616B46F236DA756004674FB /* TFY_PopController.m in Sources */,
 				3624206B229649BF00AFE2B2 /* AppDelegate.m in Sources */,
 				369E580822A8F5DC00E361FE /* UIBarButtonItem+TFY_Chain.m in Sources */,
 				362420A1229649EC00AFE2B2 /* TFY_NavigationController.m in Sources */,
+				3616B475236DAE24004674FB /* TFY_NavAnimatedTransitioning.m in Sources */,
+				3616B47B236DB058004674FB /* NSObject+TFY_Add.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
