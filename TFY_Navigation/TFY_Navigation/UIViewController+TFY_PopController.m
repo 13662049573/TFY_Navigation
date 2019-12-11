@@ -8,7 +8,6 @@
 
 #import "UIViewController+TFY_PopController.h"
 #import <objc/runtime.h>
-#import "NSObject+TFY_Add.h"
 
 @implementation UIViewController (TFY_PopController)
 @dynamic contentSizeInPop;
@@ -26,6 +25,25 @@ static inline BOOL HW_FLOAT_VALUE_IS_ZERO(CGFloat value) {
         [self tfy_swizzleInstanceMethod:@selector(presentViewController:animated:completion:) with:@selector(tfy_presentViewController:animated:completion:)];
         [self tfy_swizzleInstanceMethod:@selector(dismissViewControllerAnimated:completion:) with:@selector(tfy_dismissViewControllerAnimated:completion:)];
     });
+}
+
++ (BOOL)tfy_swizzleInstanceMethod:(SEL)originalSel with:(SEL)newSel {
+    Method originalMethod = class_getInstanceMethod(self, originalSel);
+    Method newMethod = class_getInstanceMethod(self, newSel);
+    if (!originalMethod || !newMethod) return NO;
+
+    class_addMethod(self,
+            originalSel,
+            class_getMethodImplementation(self, originalSel),
+            method_getTypeEncoding(originalMethod));
+    class_addMethod(self,
+            newSel,
+            class_getMethodImplementation(self, newSel),
+            method_getTypeEncoding(newMethod));
+
+    method_exchangeImplementations(class_getInstanceMethod(self, originalSel),
+            class_getInstanceMethod(self, newSel));
+    return YES;
 }
 
 - (void)tfy_DidLoad {

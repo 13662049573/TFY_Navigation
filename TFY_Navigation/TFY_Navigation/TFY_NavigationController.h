@@ -3,7 +3,7 @@
 //
 //  Created by 田风有 on 2019/03/27.
 //  Copyright © 2019 恋机科技. All rights reserved.
-//  https://github.com/13662049573/TFY_AutoLayoutModelTools
+
 
 /**
  * 功能：为每个控制器配置单独的导航栏

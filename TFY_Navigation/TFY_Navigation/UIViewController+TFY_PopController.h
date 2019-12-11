@@ -13,16 +13,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (TFY_PopController)
 /**
- * pop size for portrait orientation.
+ * 弹出尺寸，用于纵向显示。
  */
 @property (nonatomic, assign) IBInspectable CGSize contentSizeInPop;
 /**
- * pop size for landscape orientation
+ * 流行尺寸，适合横向
  */
 @property (nonatomic, assign) IBInspectable CGSize contentSizeInPopWhenLandscape;
 
 /**
- * The pop ViewController referred HWPopController
+ * 流行的ViewController引用了HWPopController
  */
 @property (nullable, nonatomic, weak, readonly) TFY_PopController *popController;
 
