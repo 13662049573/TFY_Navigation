@@ -1,7 +1,9 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "TFY_Navigation"
+
   spec.version      = "2.1.8"
+
   spec.summary      = "多变颜色导航栏"
 
   spec.description  = "字体，背景颜色，大小，横竖屏随意改。"
@@ -20,7 +22,7 @@ Pod::Spec.new do |spec|
   
   spec.subspec 'TFY_NavControoler' do |ss|
      ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/**/*.{h,m}"
-     ss.dependency "TFY_Navigation/TFY_Navigation"
+     ss.dependency "TFY_Navigation/TFY_PopController"
   end
 
   spec.subspec 'TFY_PopController' do |ss|
