@@ -19,15 +19,13 @@ Pod::Spec.new do |spec|
   spec.source_files  = "TFY_Navigation/TFY_Navigation/TFY_Navigation.h"
   
   spec.subspec 'TFY_NavControoler' do |ss|
-     ss.source_files  = "TFY_TabBarController/TFY_TabBarKit/TFY_CustomizeTabBar/TfyCU_TabBarControllerProtocol.h","TFY_TabBarController/TFY_TabBarKit/TFY_CustomizeTabBar/**/*.{h,m}"
+     ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/**/*.{h,m}"
   end
 
   spec.subspec 'TFY_PopController' do |ss|
-     ss.source_files  = "TFY_TabBarController/TFY_TabBarKit/TFY_SystemTabBar/TfySY_TabBarDefine.h","TFY_TabBarController/TFY_TabBarKit/TFY_SystemTabBar/**/*.{h,m}"
+     ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_PopController/**/*.{h,m}"
   end
 
-  spec.source_files  = "TFY_Navigation/TFY_Navigation/TFY_Navigation.h", "TFY_Navigation/TFY_Navigation/**/*.{h,m}"
-  
   spec.frameworks    = "Foundation","UIKit"
 
   spec.xcconfig      = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include" }
