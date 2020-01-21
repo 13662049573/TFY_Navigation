@@ -20,6 +20,7 @@ Pod::Spec.new do |spec|
   
   spec.subspec 'TFY_NavControoler' do |ss|
      ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/**/*.{h,m}"
+     ss.dependency "TFY_Navigation/TFY_Navigation"
   end
 
   spec.subspec 'TFY_PopController' do |ss|
