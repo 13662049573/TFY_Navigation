@@ -167,7 +167,7 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
     // 设置标题文字颜色
     UIColor *titlecolor = self.titleColor ?: [UIColor blackColor];
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:15.0];
+    textAttrs[NSFontAttributeName] = [UIFont boldSystemFontOfSize:16.0];
     textAttrs[NSForegroundColorAttributeName] = titlecolor;
     [navBar setTitleTextAttributes:textAttrs];
 }

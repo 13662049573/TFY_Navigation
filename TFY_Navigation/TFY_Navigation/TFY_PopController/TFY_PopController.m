@@ -389,7 +389,7 @@ static NSMutableSet * _Nonnull _retainedPopControllers;
         _containerView = [UIView new];
         _containerView.backgroundColor = [UIColor whiteColor];
         _containerView.clipsToBounds = YES;
-        _containerView.layer.cornerRadius = 8;
+        _containerView.layer.cornerRadius = 15;
     }
     return _containerView;
 }
