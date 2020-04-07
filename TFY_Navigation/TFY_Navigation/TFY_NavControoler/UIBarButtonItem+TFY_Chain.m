@@ -9,6 +9,43 @@
 #import "UIBarButtonItem+TFY_Chain.h"
 #import <objc/runtime.h>
 
+static inline NSUInteger hexStrToInt(NSString *str) {
+    uint32_t result = 0;
+    sscanf([str UTF8String], "%X", &result);
+    return result;
+}
+
+static BOOL hexStrToRGBA(NSString *str,
+                         CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a) {
+    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    str = [[str stringByTrimmingCharactersInSet:set] uppercaseString];
+    if ([str hasPrefix:@"#"]) {
+        str = [str substringFromIndex:1];
+    } else if ([str hasPrefix:@"0X"]) {
+        str = [str substringFromIndex:2];
+    }
+    
+    NSUInteger length = [str length];
+    if (length != 3 && length != 4 && length != 6 && length != 8) {
+        return NO;
+    }
+    
+    if (length < 5) {
+        *r = hexStrToInt([str substringWithRange:NSMakeRange(0, 1)]) / 255.0f;
+        *g = hexStrToInt([str substringWithRange:NSMakeRange(1, 1)]) / 255.0f;
+        *b = hexStrToInt([str substringWithRange:NSMakeRange(2, 1)]) / 255.0f;
+        if (length == 4)  *a = hexStrToInt([str substringWithRange:NSMakeRange(3, 1)]) / 255.0f;
+        else *a = 1;
+    } else {
+        *r = hexStrToInt([str substringWithRange:NSMakeRange(0, 2)]) / 255.0f;
+        *g = hexStrToInt([str substringWithRange:NSMakeRange(2, 2)]) / 255.0f;
+        *b = hexStrToInt([str substringWithRange:NSMakeRange(4, 2)]) / 255.0f;
+        if (length == 8) *a = hexStrToInt([str substringWithRange:NSMakeRange(6, 2)]) / 255.0f;
+        else *a = 1;
+    }
+    return YES;
+}
+
 NSString const *UIBarButtonItem_badgeKey = @"UIBarButtonItem_badgeKey";
 NSString const *UIBarButtonItem_badgeBGColorKey = @"UIBarButtonItem_badgeBGColorKey";
 NSString const *UIBarButtonItem_badgeTextColorKey = @"UIBarButtonItem_badgeTextColorKey";
@@ -284,5 +321,52 @@ UIBarButtonItem *tfy_barbtnItem(void){
         return item;
     };
 }
+// 文字--文字状态-文字颜色-文字大小  图片--图片UIImage--图片状态   点击方法
+-(UIBarButtonItem *(^)(CGSize size,NSString *title_str,id color,UIFont *font,NSString *image,ButtonImageDirection direction,CGFloat space,id object, SEL action,UIControlEvents evrnts))tfy_titleItembtn{
+    return ^(CGSize size,NSString *title_str,id color,UIFont *font,NSString *image,ButtonImageDirection direction,CGFloat space,id object, SEL action,UIControlEvents evrnts){
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        if (size.width>65 && size.height>44) {
+            btn.frame = CGRectMake(0, 0, size.width, size.height);
+        }
+        btn.frame = CGRectMake(0, 0, 65, 44);
+        
+        [btn setTitle:title_str forState:UIControlStateNormal];
+        
+        if ([color isKindOfClass:[UIColor class]]) {
+            [btn setTitleColor:color forState:UIControlStateNormal];
+            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+        }
+        if ([color isKindOfClass:[NSString class]]) {
+            [btn setTitleColor:[self colorWithHexString:color] forState:UIControlStateNormal];
+            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+        }
+        btn.titleLabel.font = font;
+        if (image!=nil) {
+            [btn setImage:[[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+        }
+        
+        [btn imageDirection:direction space:space];
+        
+        [btn addTarget:object action:action forControlEvents:evrnts];
+        
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+        return item;
+    };
+}
 
+- (UIColor *)colorWithHexString:(NSString *)hexStr{
+    return [self colorWithHexString:hexStr alpha:-1];
+}
+
+- (UIColor *)colorWithHexString:(NSString *)hexStr alpha:(CGFloat)alpha{
+    CGFloat r, g, b, a;
+    if (hexStrToRGBA(hexStr, &r, &g, &b, &a)) {
+        if (@available(iOS 10.0, *)) {
+            return [UIColor colorWithDisplayP3Red:r green:g blue:b alpha:alpha < 0?a : alpha];
+        }else{
+            return [UIColor colorWithRed:r green:g blue:b alpha:alpha < 0?a : alpha];
+        }
+    }
+    return [UIColor whiteColor];
+}
 @end

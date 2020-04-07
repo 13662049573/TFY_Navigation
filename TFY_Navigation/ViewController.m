@@ -28,7 +28,15 @@
     
     self.navigationItem.leftBarButtonItem = tfy_barbtnItem().tfy_imageItem(@"me_data_icom",self,@selector(imageClick));
     
-    self.navigationItem.rightBarButtonItem = tfy_barbtnItem().tfy_titleItem(@"开始计时",20,[UIColor redColor],self,@selector(timeimageClick));
+//    self.navigationItem.rightBarButtonItem = tfy_barbtnItem().tfy_titleItem(@"开始计时",20,[UIColor redColor],self,@selector(timeimageClick));
+    
+    UIBarButtonItem *item = tfy_barbtnItem().tfy_titleItembtn(CGSizeMake(100, 64), @"开始计时", [UIColor redColor], [UIFont boldSystemFontOfSize:14], @"me_data_icom", ButtonImageDirectionLeft, 2, self, @selector(imageClick), UIControlEventTouchUpInside);
+    
+    
+    UIBarButtonItem *item2 = tfy_barbtnItem().tfy_titleItembtn(CGSizeMake(100, 64), @"测试", [UIColor blueColor], [UIFont boldSystemFontOfSize:14], @"", ButtonImageDirectionTop, 2, self, @selector(imageClick), UIControlEventTouchUpInside);
+    
+    self.navigationItem.rightBarButtonItems = @[item,item2];
+    
     
     self.time_label = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, [UIScreen mainScreen].bounds.size.width, 40)];
     self.time_label.textColor = [UIColor redColor];
