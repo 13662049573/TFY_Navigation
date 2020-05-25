@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
   spec.name         = "TFY_Navigation"
 
-  spec.version      = "2.2.2"
+  spec.version      = "2.2.4"
 
   spec.summary      = "多变颜色导航栏"
 
@@ -27,6 +27,10 @@ Pod::Spec.new do |spec|
 
   spec.subspec 'TFY_PopController' do |ss|
      ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_PopController/**/*.{h,m}"
+  end
+
+  spec.subspec 'TFY_PageController' do |ss|
+     ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_PageController/**/*.{h,m}"
   end
 
   spec.frameworks    = "Foundation","UIKit"
