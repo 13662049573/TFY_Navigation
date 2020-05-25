@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  TFY_Navigation
+//
+//  Created by tiandengyou on 2020/5/25.
+//  Copyright © 2020 恋机科技. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "TFY_Navigation.h"
+
+#endif /* PrefixHeader_pch */
