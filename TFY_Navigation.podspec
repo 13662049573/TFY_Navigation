@@ -25,12 +25,12 @@ Pod::Spec.new do |spec|
      ss.dependency "TFY_Navigation/TFY_PopController"
   end
 
-  spec.subspec 'TFY_PopController' do |ss|
-     ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_PopController/**/*.{h,m}"
+  spec.subspec 'TFY_PageController' do |ss|
+   ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_PageController/**/*.{h,m}"
   end
 
-  spec.subspec 'TFY_PageController' do |ss|
-     ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_PageController/**/*.{h,m}"
+  spec.subspec 'TFY_PopController' do |ss|
+     ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_PopController/**/*.{h,m}"
   end
 
   spec.frameworks    = "Foundation","UIKit"
