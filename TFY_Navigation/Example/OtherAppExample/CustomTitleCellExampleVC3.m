@@ -21,11 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    TFY_NavigationController *nav = (TFY_NavigationController *)self.navigationController;
-    nav.tfy_titleColor = [UIColor whiteColor];
-    nav.tfy_barBackgroundColor = [UIColor colorWithRed:226/255.0f green:17/255.0f blue:0/255.0f alpha:1];
-    nav.tfy_titleColor = [UIColor colorWithRed:255/255.0f green:215/255.0f blue:156/255.0f alpha:1];
-    nav.navigationBar.shadowImage = [[UIImage alloc] init];
+    
+    self.navigationController.tfy_titleColor = [UIColor whiteColor];
+    self.navigationController.tfy_barBackgroundColor = [UIColor colorWithRed:226/255.0f green:17/255.0f blue:0/255.0f alpha:1];
+    self.navigationController.tfy_titleColor = [UIColor colorWithRed:255/255.0f green:215/255.0f blue:156/255.0f alpha:1];
     
     [self initPageViewController];
 }

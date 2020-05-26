@@ -24,9 +24,6 @@
 }
 
 
-
-
-
 - (void)buildTable {
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     self.tableView.delegate = self;
