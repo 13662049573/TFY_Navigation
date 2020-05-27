@@ -311,9 +311,9 @@
 			isa = PBXGroup;
 			children = (
 				565AFAD0247BA0E500FF5323 /* CommonTableViewController.h */,
-				565AFAD1247BA0E500FF5323 /* CommonPageViewController.m */,
-				565AFAD2247BA0E500FF5323 /* CommonPageViewController.h */,
 				565AFAD3247BA0E500FF5323 /* CommonTableViewController.m */,
+				565AFAD2247BA0E500FF5323 /* CommonPageViewController.h */,
+				565AFAD1247BA0E500FF5323 /* CommonPageViewController.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
