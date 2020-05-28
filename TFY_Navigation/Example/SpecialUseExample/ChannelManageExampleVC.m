@@ -31,12 +31,12 @@
 
 - (void)initPageViewController {
     TFY_PageControllerConfig *config = [TFY_PageControllerConfig defaultConfig];
-    
+    config.rightWidth = 100;
     self.pageViewController = [[TFY_PageViewController alloc] initWithConfig:config];
     self.pageViewController.view.frame = self.view.bounds;
     self.pageViewController.delegate = self;
     self.pageViewController.dataSource = self;
-    self.pageViewController.rightButton = [self channelManageButton];
+    self.pageViewController.rightView = [self channelManageButton];
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
 }
