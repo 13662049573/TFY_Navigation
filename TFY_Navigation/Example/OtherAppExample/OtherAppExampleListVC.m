@@ -123,6 +123,8 @@
             config.shadowLineHidden = true;
             //分割线颜色
             config.separatorLineColor = [self colorOfR:231 G:231 B:231];
+            //cell文字动画
+            config.celltextAnimationType = TFY_PageTitleCellAnimationTypeZoom;
             break;
         case 1://腾讯新闻
             //标题间距

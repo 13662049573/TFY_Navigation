@@ -64,6 +64,17 @@ typedef NS_ENUM(NSInteger, TFY_PageShadowLineAnimationType) {
     TFY_PageShadowLineAnimationTypeNone = 2,
 };
 
+/**
+ * Cell文字动画类行，缩放
+ */
+typedef NS_ENUM (NSInteger ,TFY_PageCelltextAnimationType) {
+    TFY_PageTitleCellAnimationTypeNone = 0,
+    TFY_PageTitleCellAnimationTypeZoom = 1,
+    
+};
+
+
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TFY_PageControllerConfig : NSObject
@@ -180,7 +191,10 @@ NS_ASSUME_NONNULL_BEGIN
  阴影对齐 默认XLPageShadowLineAlignmentBottom
  */
 @property (nonatomic, assign) TFY_PageShadowLineAlignment shadowLineAlignment;
-
+/**
+ * cell文字动画类型
+ */
+@property (nonatomic, assign) TFY_PageCelltextAnimationType celltextAnimationType;
 /**
  隐藏底部分割线 默认 NO
  */

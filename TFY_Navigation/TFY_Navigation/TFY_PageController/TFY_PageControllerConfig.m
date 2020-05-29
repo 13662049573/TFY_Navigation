@@ -51,7 +51,8 @@
     config.shadowLineColor = [UIColor blackColor];
     //默认阴影动画 平移
     config.shadowLineAnimationType = TFY_PageShadowLineAnimationTypePan;
-    
+    //cell文字动画，默认 无
+    config.celltextAnimationType = TFY_PageTitleCellAnimationTypeNone;
     //底部分割线-----------------------------------
     //默认显示分割线
     config.separatorLineHidden = false;
