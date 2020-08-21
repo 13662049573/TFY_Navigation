@@ -69,6 +69,7 @@
     }
     self.navigationController.tfy_titleColor = titleColor;
     self.navigationController.tfy_barBackgroundColor = backGroundColor;
+    
 }
 
 - (void)initPageViewController {

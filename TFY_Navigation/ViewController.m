@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor purpleColor];
+    
     //配置
     TFY_PageControllerConfig *config = [TFY_PageControllerConfig defaultConfig];
     config.showTitleInNavigationBar = true;

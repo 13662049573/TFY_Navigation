@@ -10,7 +10,7 @@
 
 @implementation UIButton (ButtonItem)
 
-- (void)imageDirection:(ButtonImageDirection)direction space:(CGFloat)space{
+- (void)imageDirection:(NAV_ButtonImageDirection)direction space:(CGFloat)space{
     
     CGFloat imageWidth, imageHeight, textWidth, textHeight, x, y;
     imageWidth = self.currentImage.size.width;
@@ -20,7 +20,7 @@
     textHeight = self.titleLabel.frame.size.height;
     space = space / 2;
     switch (direction) {
-        case ButtonImageDirectionTop:{
+        case NAV_ButtonImageDirectionTop:{
             x = textHeight / 2 + space;
             y = textWidth / 2;
             self.imageEdgeInsets = UIEdgeInsetsMake(-x, y, x, - y);
@@ -29,7 +29,7 @@
             self.titleEdgeInsets = UIEdgeInsetsMake(x, - y, - x, y);
         }
             break;
-        case ButtonImageDirectionBottom:{
+        case NAV_ButtonImageDirectionBottom:{
             x = textHeight / 2 + space;
             y = textWidth / 2;
             self.imageEdgeInsets = UIEdgeInsetsMake(x, y, -x, - y);
@@ -38,12 +38,12 @@
             self.titleEdgeInsets = UIEdgeInsetsMake(-x, - y, x, y);
         }
             break;
-        case ButtonImageDirectionLeft:{
+        case NAV_ButtonImageDirectionLeft:{
             self.imageEdgeInsets = UIEdgeInsetsMake(0, -space,0, space);
             self.titleEdgeInsets = UIEdgeInsetsMake(0, space , 0, - space);
         }
             break;
-        case ButtonImageDirectionRight:{
+        case NAV_ButtonImageDirectionRight:{
             self.imageEdgeInsets = UIEdgeInsetsMake(0, space + textWidth, 0, - (space + textWidth));
             self.titleEdgeInsets = UIEdgeInsetsMake(0, -(space + imageWidth), 0, (space + imageWidth));
         }
