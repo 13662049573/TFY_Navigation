@@ -322,8 +322,8 @@ UIBarButtonItem *tfy_barbtnItem(void){
     };
 }
 // 文字--文字状态-文字颜色-文字大小  图片--图片UIImage--图片状态   点击方法
--(UIBarButtonItem *(^)(CGSize size,NSString *title_str,id color,UIFont *font,NSString *image,ButtonImageDirection direction,CGFloat space,id object, SEL action,UIControlEvents evrnts))tfy_titleItembtn{
-    return ^(CGSize size,NSString *title_str,id color,UIFont *font,NSString *image,ButtonImageDirection direction,CGFloat space,id object, SEL action,UIControlEvents evrnts){
+-(UIBarButtonItem *(^)(CGSize size,NSString *title_str,id color,UIFont *font,NSString *image,NAV_ButtonImageDirection direction,CGFloat space,id object, SEL action,UIControlEvents evrnts))tfy_titleItembtn{
+    return ^(CGSize size,NSString *title_str,id color,UIFont *font,NSString *image,NAV_ButtonImageDirection direction,CGFloat space,id object, SEL action,UIControlEvents evrnts){
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         if (size.width>65 && size.height>44) {
             btn.frame = CGRectMake(0, 0, size.width, size.height);
