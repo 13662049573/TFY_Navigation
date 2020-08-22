@@ -22,9 +22,8 @@
     self.window.backgroundColor = [UIColor  whiteColor];
     
     TFY_NavigationController *nav = [[TFY_NavigationController alloc] initWithRootViewController:[ViewController new]];
-    
+    nav.backimage = [UIImage imageNamed:@"navbg"];
     self.window.rootViewController = nav;
-    
     [self.window makeKeyAndVisible];
     
     return YES;

@@ -10,6 +10,7 @@
 #import "UIViewController+TFY_PopController.h"
 #import <objc/runtime.h>
 
+
 #pragma mark - 容器控制器
 @interface TFYContainerViewController : UIViewController
 
@@ -25,7 +26,6 @@
         [viewController willMoveToParentViewController:nil];
         [viewController removeFromParentViewController];
     }
-    
     Class cls = [viewController tfy_navigationControllerClass];
     NSAssert(![cls isKindOfClass:UINavigationController.class], @"`-tfy_navigationControllerClass` must return UINavigationController or its subclasses.");
     UINavigationController *nav = [[cls alloc] initWithRootViewController:viewController];
@@ -36,7 +36,6 @@
     [containerViewController addChildViewController:nav];
     [containerViewController.view addSubview:nav.view];
     [nav didMoveToParentViewController:containerViewController];
-    
     return containerViewController;
 }
 
@@ -46,8 +45,7 @@
 #pragma mark - 全局函数
 
 /// 装包
-UIKIT_STATIC_INLINE UIViewController* TFYWrapViewController(UIViewController *vc)
-{
+UIKIT_STATIC_INLINE UIViewController* TFYWrapViewController(UIViewController *vc) {
     if ([vc isKindOfClass:TFYContainerViewController.class]) {
         return vc;
     }
@@ -55,8 +53,7 @@ UIKIT_STATIC_INLINE UIViewController* TFYWrapViewController(UIViewController *vc
 }
 
 /// 解包
-UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *vc)
-{
+UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *vc) {
     if ([vc isKindOfClass:TFYContainerViewController.class]) {
         return ((TFYContainerViewController*)vc).contentViewController;
     }
@@ -214,15 +211,15 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
 
 
 #pragma mark <UIGestureRecognizerDelegate>
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     return self.viewControllers.count > 1;
 }
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
 }
 
-/// 在pop手势生效后能够确保滚动视图静止
+// 在pop手势生效后能够确保滚动视图静止
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return (gestureRecognizer == self.interactivePopGestureRecognizer);
 }
@@ -300,7 +297,7 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
 }
 
 - (NSArray<UIViewController *> *)viewControllers {
-    // 返回真正的控制器给外界
+    //返回真正的控制器给外界
     NSMutableArray<UIViewController *> *vcs = [NSMutableArray array];
     NSArray<UIViewController *> *viewControllers = [super viewControllers];
     for (UIViewController *vc in viewControllers) {
@@ -335,11 +332,9 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
 }
 
 - (void)tfy_popViewController {
-    
-    if (self.presentingViewController){
+    if (self.presentingViewController) {
         [self dismissViewControllerAnimated:YES completion:nil];
-    }
-    else{
+    } else {
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
@@ -364,7 +359,6 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
                              NSStringFromSelector(@selector(popToRootViewControllerAnimated:)),
                              NSStringFromSelector(@selector(viewControllers))
                              ];
-        
         for (NSString *str in actions) {
             Method original = class_getInstanceMethod(self, NSSelectorFromString(str));
             Method swizzled = class_getInstanceMethod(self, NSSelectorFromString([@"tfy_" stringByAppendingString:str]));

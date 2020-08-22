@@ -10,8 +10,7 @@
 
 @implementation UIButton (ButtonItem)
 
-- (void)imageDirection:(NAV_ButtonImageDirection)direction space:(CGFloat)space{
-    
+- (void)imageDirection:(NAV_ButtonImageDirection)direction space:(CGFloat)space {
     CGFloat imageWidth, imageHeight, textWidth, textHeight, x, y;
     imageWidth = self.currentImage.size.width;
     imageHeight = self.currentImage.size.height;

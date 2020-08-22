@@ -15,8 +15,7 @@ static inline NSUInteger hexStrToInt(NSString *str) {
     return result;
 }
 
-static BOOL hexStrToRGBA(NSString *str,
-                         CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a) {
+static BOOL hexStrToRGBA(NSString *str,CGFloat *r, CGFloat *g, CGFloat *b, CGFloat *a) {
     NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     str = [[str stringByTrimmingCharactersInSet:set] uppercaseString];
     if ([str hasPrefix:@"#"]) {
@@ -24,12 +23,10 @@ static BOOL hexStrToRGBA(NSString *str,
     } else if ([str hasPrefix:@"0X"]) {
         str = [str substringFromIndex:2];
     }
-    
     NSUInteger length = [str length];
     if (length != 3 && length != 4 && length != 6 && length != 8) {
         return NO;
     }
-    
     if (length < 5) {
         *r = hexStrToInt([str substringWithRange:NSMakeRange(0, 1)]) / 255.0f;
         *g = hexStrToInt([str substringWithRange:NSMakeRange(1, 1)]) / 255.0f;
@@ -237,7 +234,6 @@ UIBarButtonItem *tfy_barbtnItem(void){
 }
 
 -(void)updateBadgeValueAnimated:(BOOL)animated{
-    
     if (animated && self.tfy_shouldAnimateBadge && ![self.tfy_bgdge.text isEqualToString:self.tfy_badgeValue]) {
         CABasicAnimation * animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
         [animation setFromValue:[NSNumber numberWithFloat:1.5]];
@@ -288,7 +284,6 @@ UIBarButtonItem *tfy_barbtnItem(void){
 }
 
 -(void)refreshBadge{
-    
     self.tfy_bgdge.textColor = self.tfy_badgeTextColor;
     self.tfy_bgdge.backgroundColor = self.tfy_badgeBGColor;
     self.tfy_bgdge.font = self.tfy_badgeFont;

@@ -39,7 +39,6 @@
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
     
-       
 }
 
 //分页数
