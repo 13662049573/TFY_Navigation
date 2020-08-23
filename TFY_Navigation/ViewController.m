@@ -22,12 +22,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor purpleColor];
+    self.view.backgroundColor = UIColor.whiteColor;
     
     //配置
     TFY_PageControllerConfig *config = [TFY_PageControllerConfig defaultConfig];
     config.showTitleInNavigationBar = true;
     config.titleViewStyle = TFY_PageTitleViewStyleSegmented;
+    config.segmentSelectedFont = [UIFont systemFontOfSize:18 weight:UIFontWeightBold];
+    config.segmentSelectedColor = UIColor.redColor;
+    config.segmentNormalFont = [UIFont systemFontOfSize:13 weight:UIFontWeightMedium];
+    config.segmentNormalColor = UIColor.blueColor;
+    config.segmentBackColor = UIColor.blackColor;
+    config.segmentBorderColor = UIColor.whiteColor;
+    config.segmentedTintColor = UIColor.whiteColor;
     config.separatorLineHidden = true;
     //设置缩进
     config.titleViewInset = UIEdgeInsetsMake(5, 50, 5, 50);
@@ -56,7 +63,6 @@
     if (index == 0) {
         OtherAppExampleListVC *vc = [[OtherAppExampleListVC alloc] init];
         return vc;
-        
     }else if (index == 1) {
         BasicFunctionListVC *vc = [[BasicFunctionListVC alloc] init];
         return vc;

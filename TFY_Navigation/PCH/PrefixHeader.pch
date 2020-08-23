@@ -10,5 +10,6 @@
 #define PrefixHeader_pch
 
 #import "TFY_Navigation.h"
+#import "TFY_AutoLayout.h"
 
 #endif /* PrefixHeader_pch */
