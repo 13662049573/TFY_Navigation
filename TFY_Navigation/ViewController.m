@@ -12,8 +12,6 @@
 #import "SpecialUseExampleVC.h"
 #import "TFY_PageViewController.h"
 
-
-
 @interface ViewController ()<TFY_PageViewControllerDelegate,TFY_PageViewControllerDataSrouce>
 @property (nonatomic, strong) TFY_PageViewController *pageViewController;
 @end
