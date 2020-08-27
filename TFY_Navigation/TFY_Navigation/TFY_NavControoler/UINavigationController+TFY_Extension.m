@@ -95,6 +95,10 @@ static NSString *const barReturnButtonDelegate = @"barReturnButtonDelegate";
     self.hidesBarsOnSwipe = YES;
 }
 
+- (void)tfy_hidesBarsOnTap {
+    self.hidesBarsOnTap = YES;
+}
+
 - (UIImage *)tfy_barReturnButtonImage {
     UIImage *obj = objc_getAssociatedObject(self, &@selector(tfy_barReturnButtonImage));
     return obj;

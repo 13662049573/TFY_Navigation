@@ -131,31 +131,41 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
     }
     return self;
 }
-
+//背景颜色
 -(void)setBarBackgroundColor:(UIColor *)barBackgroundColor{
     _barBackgroundColor  = barBackgroundColor;
-    
    [self setupNavigationBarTheme];
-    
 }
+//背景图片
+- (void)setBarBackgroundImage:(UIImage *)barBackgroundImage {
+    _barBackgroundImage = barBackgroundImage;
+    [self setupNavigationBarTheme];
+}
+//字体颜色
 -(void)setTitleColor:(UIColor *)titleColor{
     _titleColor = titleColor;
-    
     [self setupNavigationBarTheme];
 }
-
--(void)setBackimage:(UIImage *)backimage{
-    _backimage = backimage;
-    
+//字体大小
+- (void)setFont:(UIFont *)font {
+    _font = font;
     [self setupNavigationBarTheme];
 }
+//左边按钮图片
+-(void)setLeftimage:(UIImage *)leftimage {
+    _leftimage = leftimage;
+}
+//右边按钮图片
+- (void)setRightimage:(UIImage *)rightimage {
+    _rightimage = rightimage;
+}
 
-- (void)setupNavigationBarTheme
-{
+//赋值
+- (void)setupNavigationBarTheme {
     UINavigationBar *navBar = [UINavigationBar appearance];
     UIColor *color = self.barBackgroundColor ?: [UIColor whiteColor];
-    if ([self.backimage isKindOfClass:[UIImage class]]) {
-        [navBar setBackgroundImage:self.backimage forBarMetrics:UIBarMetricsDefault];
+    if ([self.barBackgroundImage isKindOfClass:[UIImage class]]) {
+        [navBar setBackgroundImage:self.barBackgroundImage forBarMetrics:UIBarMetricsDefault];
     }
     else{
        [navBar setBackgroundImage:[self tfy_createImage:color] forBarMetrics:UIBarMetricsDefault];
@@ -163,21 +173,25 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
     [navBar setShadowImage:[[UIImage alloc] init]];
     // 设置标题文字颜色
     UIColor *titlecolor = self.titleColor ?: [UIColor blackColor];
+    UIFont *font = self.font?:[UIFont boldSystemFontOfSize:15.0];
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSFontAttributeName] = [UIFont boldSystemFontOfSize:16.0];
+    textAttrs[NSFontAttributeName] = font;
     textAttrs[NSForegroundColorAttributeName] = titlecolor;
     [navBar setTitleTextAttributes:textAttrs];
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    // 返回按钮目前仅支持图片
+    UIImage *leftImage = [self.leftimage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ?: [[self navigationBarBackIconImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+   UIImage *rightImage = [self.rightimage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     if (self.viewControllers.count > 0) {
-        // 返回按钮目前仅支持图片
-        UIImage *backImage = [self.backIconImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ?: [[self navigationBarBackIconImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:backImage style:UIBarButtonItemStylePlain target:viewController action:@selector(tfy_popViewController)];
-#pragma clang diagnostic pop
-        viewController.navigationItem.leftBarButtonItem = backItem;
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Wundeclared-selector"
+        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:leftImage style:UIBarButtonItemStylePlain target:viewController action:@selector(tfy_popViewController)];
+         UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:rightImage style:UIBarButtonItemStylePlain target:viewController action:@selector(tfy_rightController)];
+        #pragma clang diagnostic pop
+         viewController.navigationItem.leftBarButtonItem = leftItem;
+         viewController.navigationItem.rightBarButtonItem = rightImage!=nil?rightItem:nil;
     }
     [super pushViewController:TFYWrapViewController(viewController) animated:animated];
     
@@ -336,6 +350,20 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
         [self dismissViewControllerAnimated:YES completion:nil];
     } else {
         [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+-(void)setRight_block:(void (^)(void))right_block {
+    objc_setAssociatedObject(self, &@selector(right_block), right_block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+-(void (^)(void))right_block {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)tfy_rightController {
+    if (self.right_block) {
+        self.right_block();
     }
 }
 
