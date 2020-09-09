@@ -109,7 +109,6 @@ static inline BOOL HW_FLOAT_VALUE_IS_ZERO(CGFloat value) {
                 contentSizeInPop.width = [UIScreen mainScreen].bounds.size.width;
             }
                 break;
-
         }
     }
 
