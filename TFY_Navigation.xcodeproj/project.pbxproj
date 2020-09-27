@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		361B6371251F78C500965AC1 /* TFY_NavigationConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 361B6370251F78C500965AC1 /* TFY_NavigationConfig.m */; };
 		3624206B229649BF00AFE2B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3624206A229649BF00AFE2B2 /* AppDelegate.m */; };
 		3624206E229649BF00AFE2B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3624206D229649BF00AFE2B2 /* ViewController.m */; };
 		36242073229649C000AFE2B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36242072229649C000AFE2B2 /* Assets.xcassets */; };
@@ -88,6 +89,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		361B636F251F78C500965AC1 /* TFY_NavigationConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_NavigationConfig.h; sourceTree = "<group>"; };
+		361B6370251F78C500965AC1 /* TFY_NavigationConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_NavigationConfig.m; sourceTree = "<group>"; };
 		36242066229649BF00AFE2B2 /* TFY_Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFY_Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36242069229649BF00AFE2B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3624206A229649BF00AFE2B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -573,6 +576,8 @@
 				5667B86223D6A047006CD91B /* UINavigationController+TFY_Extension.m */,
 				5656B4AA243C2103009C6B02 /* UIButton+ButtonItem.h */,
 				5656B4AB243C2103009C6B02 /* UIButton+ButtonItem.m */,
+				361B636F251F78C500965AC1 /* TFY_NavigationConfig.h */,
+				361B6370251F78C500965AC1 /* TFY_NavigationConfig.m */,
 			);
 			path = TFY_NavControoler;
 			sourceTree = "<group>";
@@ -743,6 +748,7 @@
 				3683FE0F24F1D69D005CF078 /* CustomTitleCellExampleVC2.m in Sources */,
 				3683FE2F24F1D720005CF078 /* POP_TwoController.m in Sources */,
 				3683FE5024F1DC80005CF078 /* POP_PickTypeViewController.m in Sources */,
+				361B6371251F78C500965AC1 /* TFY_NavigationConfig.m in Sources */,
 				3683FE3224F1D733005CF078 /* POP_ThreeController.m in Sources */,
 				3683FE1624F1D69D005CF078 /* SpecialUseExampleVC.m in Sources */,
 				565AFAB5247B9A0A00FF5323 /* TFY_PageControllerUtil.m in Sources */,

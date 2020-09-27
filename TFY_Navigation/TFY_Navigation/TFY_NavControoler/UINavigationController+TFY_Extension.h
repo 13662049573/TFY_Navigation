@@ -40,6 +40,14 @@
  */
 @property (nonatomic, strong) UIColor *tfy_barReturnButtonColor;
 /**
+ item距离两端的间距,默认为0
+ */
+@property (nonatomic, assign) CGFloat tfy_defaultFixSpace;
+/**
+ 是否禁止使用修正,默认为NO
+ */
+@property (nonatomic, assign) BOOL tfy_disableFixSpace;
+/**
  * 设置导航栏完全透明  会设置translucent = YES
  */
 - (void)tfy_navigationBarTransparent;

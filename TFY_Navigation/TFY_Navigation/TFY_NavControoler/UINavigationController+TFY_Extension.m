@@ -7,6 +7,7 @@
 //
 
 #import "UINavigationController+TFY_Extension.h"
+#import "TFY_NavigationConfig.h"
 #include <objc/runtime.h>
 
 static NSString *const barReturnButtonDelegate = @"barReturnButtonDelegate";
@@ -17,13 +18,10 @@ static NSString *const barReturnButtonDelegate = @"barReturnButtonDelegate";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         Class class = [self class];
-        
         SEL originSelector = @selector(viewDidLoad);
         SEL swizzledSelector = @selector(tfy_viewDidLoad);
-        
         Method originMethod = class_getInstanceMethod(class, originSelector);
         Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-        
         BOOL didAddMethod = class_addMethod(class, originSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
         if (didAddMethod) {
             class_replaceMethod(class, swizzledSelector, method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
@@ -118,6 +116,28 @@ static NSString *const barReturnButtonDelegate = @"barReturnButtonDelegate";
 - (void)setTfy_barReturnButtonColor:(UIColor *)tfy_barReturnButtonColor {
     objc_setAssociatedObject(self, &@selector(tfy_barReturnButtonColor), tfy_barReturnButtonColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self.navigationBar setTintColor:tfy_barReturnButtonColor];
+}
+
+- (void)setTfy_defaultFixSpace:(CGFloat)tfy_defaultFixSpace {
+    NSNumber *nuber = [NSNumber numberWithFloat:tfy_defaultFixSpace];
+    objc_setAssociatedObject(self, &@selector(tfy_defaultFixSpace), nuber, OBJC_ASSOCIATION_ASSIGN);
+    TFY_NavigationConfig.shared.tfy_defaultFixSpace = tfy_defaultFixSpace;
+}
+
+- (CGFloat)tfy_defaultFixSpace {
+    NSNumber *number = objc_getAssociatedObject(self, &@selector(tfy_defaultFixSpace));
+    return number.floatValue;
+}
+
+-(void)setTfy_disableFixSpace:(BOOL)tfy_disableFixSpace {
+    NSNumber *nuber = [NSNumber numberWithBool:tfy_disableFixSpace];
+    objc_setAssociatedObject(self, &@selector(tfy_disableFixSpace), nuber, OBJC_ASSOCIATION_ASSIGN);
+    TFY_NavigationConfig.shared.tfy_disableFixSpace = tfy_disableFixSpace;
+}
+
+-(BOOL)tfy_disableFixSpace {
+    NSNumber *number = objc_getAssociatedObject(self, &@selector(tfy_disableFixSpace));
+    return number.boolValue;
 }
 
 #pragma mark - 按钮
