@@ -55,7 +55,14 @@
  * 左边按钮图片
  */
 @property (nonatomic, strong)UIImage * _Nonnull rightimage;
-
+/**
+ item距离两端的间距,默认为15
+ */
+@property (nonatomic, assign) CGFloat defaultFixSpace;
+/**
+ 是否禁止使用修正,默认为NO
+ */
+@property (nonatomic, assign) BOOL disableFixSpace;
 @end
 
 

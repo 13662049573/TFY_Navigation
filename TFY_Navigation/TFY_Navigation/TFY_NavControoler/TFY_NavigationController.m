@@ -9,7 +9,7 @@
 #import "TFY_NavAnimatedTransitioning.h"
 #import "UIViewController+TFY_PopController.h"
 #import <objc/runtime.h>
-
+#import "TFY_NavigationConfig.h"
 
 #pragma mark - 容器控制器
 @interface TFYContainerViewController : UIViewController
@@ -158,6 +158,16 @@ UIKIT_STATIC_INLINE UIViewController* TFYUnwrapViewController(UIViewController *
 //右边按钮图片
 - (void)setRightimage:(UIImage *)rightimage {
     _rightimage = rightimage;
+}
+
+- (void)setDefaultFixSpace:(CGFloat)defaultFixSpace {
+    _defaultFixSpace = defaultFixSpace;
+    TFY_NavigationConfig.shared.tfy_defaultFixSpace = _defaultFixSpace;
+}
+
+- (void)setDisableFixSpace:(BOOL)disableFixSpace {
+    _disableFixSpace = disableFixSpace;
+    TFY_NavigationConfig.shared.tfy_disableFixSpace = _disableFixSpace;
 }
 
 //赋值

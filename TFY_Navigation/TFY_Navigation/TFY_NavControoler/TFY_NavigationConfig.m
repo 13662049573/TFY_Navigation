@@ -29,7 +29,7 @@ void tfy_swizzle(Class oldClass, NSString *oldSelector, Class newClass) {
 
 -(instancetype)init {
     if (self = [super init]) {
-        self.tfy_defaultFixSpace = 0;
+        self.tfy_defaultFixSpace = 15;
         self.tfy_disableFixSpace = NO;
     }
     return self;

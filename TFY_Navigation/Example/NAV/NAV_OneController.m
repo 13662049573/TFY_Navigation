@@ -23,7 +23,6 @@
     self.navigationController.tfy_barBackgroundColor = UIColor.blueColor;
     self.navigationController.tfy_titleColor = UIColor.whiteColor;
     self.navigationController.tfy_titleFont = [UIFont systemFontOfSize:17 weight:UIFontWeightBold];
-    self.navigationController.tfy_defaultFixSpace = 10;//更改导航栏离两边的距离，更改后全局都会发生改变。
     
     self.navigationItem.rightBarButtonItem = tfy_barbtnItem().tfy_titleItem(@"下一步",20,[UIColor redColor],self,@selector(timeimageClick));
     
