@@ -53,6 +53,7 @@
 		3683FE5C24F1E06B005CF078 /* POP_FiveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE5B24F1E06B005CF078 /* POP_FiveController.m */; };
 		3683FE5F24F1E1DE005CF078 /* POP_EightController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE5E24F1E1DE005CF078 /* POP_EightController.m */; };
 		3683FE6224F1E6C2005CF078 /* POP_NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE6124F1E6C2005CF078 /* POP_NavViewController.m */; };
+		36D56FAC254531E60095323D /* UIScrollView+NAVCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D56FAB254531E60095323D /* UIScrollView+NAVCategory.m */; };
 		5656B4AC243C2103009C6B02 /* UIButton+ButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5656B4AB243C2103009C6B02 /* UIButton+ButtonItem.m */; };
 		565AFAB2247B985900FF5323 /* TFY_PageControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 565AFAB1247B985900FF5323 /* TFY_PageControllerConfig.m */; };
 		565AFAB5247B9A0A00FF5323 /* TFY_PageControllerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 565AFAB4247B9A0A00FF5323 /* TFY_PageControllerUtil.m */; };
@@ -185,6 +186,8 @@
 		3683FE5E24F1E1DE005CF078 /* POP_EightController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = POP_EightController.m; sourceTree = "<group>"; };
 		3683FE6024F1E6C2005CF078 /* POP_NavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = POP_NavViewController.h; sourceTree = "<group>"; };
 		3683FE6124F1E6C2005CF078 /* POP_NavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = POP_NavViewController.m; sourceTree = "<group>"; };
+		36D56FAA254531E60095323D /* UIScrollView+NAVCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+NAVCategory.h"; sourceTree = "<group>"; };
+		36D56FAB254531E60095323D /* UIScrollView+NAVCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+NAVCategory.m"; sourceTree = "<group>"; };
 		5656B4AA243C2103009C6B02 /* UIButton+ButtonItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ButtonItem.h"; sourceTree = "<group>"; };
 		5656B4AB243C2103009C6B02 /* UIButton+ButtonItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ButtonItem.m"; sourceTree = "<group>"; };
 		565AFAB0247B985900FF5323 /* TFY_PageControllerConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageControllerConfig.h; sourceTree = "<group>"; };
@@ -578,6 +581,8 @@
 				5656B4AB243C2103009C6B02 /* UIButton+ButtonItem.m */,
 				361B636F251F78C500965AC1 /* TFY_NavigationConfig.h */,
 				361B6370251F78C500965AC1 /* TFY_NavigationConfig.m */,
+				36D56FAA254531E60095323D /* UIScrollView+NAVCategory.h */,
+				36D56FAB254531E60095323D /* UIScrollView+NAVCategory.m */,
 			);
 			path = TFY_NavControoler;
 			sourceTree = "<group>";
@@ -718,6 +723,7 @@
 				3683FE6224F1E6C2005CF078 /* POP_NavViewController.m in Sources */,
 				3683FE4924F1DAC6005CF078 /* UIView+TFY_AutoLayout.m in Sources */,
 				3683FE4D24F1DAC6005CF078 /* CALayer+TFY_Frame.m in Sources */,
+				36D56FAC254531E60095323D /* UIScrollView+NAVCategory.m in Sources */,
 				5667B85123D69EC3006CD91B /* TFY_PopTransitioningDelegate.m in Sources */,
 				5667B86423D6A047006CD91B /* UIBarButtonItem+TFY_Chain.m in Sources */,
 				5667B85523D69EC3006CD91B /* TFY_PopControllerAnimatedTransitioning.m in Sources */,

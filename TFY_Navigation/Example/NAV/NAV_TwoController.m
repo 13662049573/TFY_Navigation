@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [self RandomColor];
     self.title = @"导航栏透明色";
     self.navigationItem.rightBarButtonItem = tfy_barbtnItem().tfy_titleItem(@"下一步",20,[UIColor redColor],self,@selector(timeimageClick));
     

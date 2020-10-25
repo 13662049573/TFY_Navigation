@@ -21,7 +21,7 @@
  *
  *  4、如果你的项目有自定义的UINavigationController，
  *     则请在你的项目中定义`kTFYNavigationControllerClassName`这个宏(参考下面示例)，
- *     如果是个别页面有定制的导航栏，控制器也可以通过重写`-xp_navigationControllerClass`方法返回对应的导航栏
+ *     如果是个别页面有定制的导航栏，控制器也可以通过重写`-tfy_navigationControllerClass`方法返回对应的导航栏
  */
 
 #import <UIKit/UIKit.h>
@@ -63,6 +63,19 @@
  是否禁止使用修正,默认为NO
  */
 @property (nonatomic, assign) BOOL disableFixSpace;
+/**
+  滑动区域大小 默认 0
+ */
+@property (nonatomic, assign) CGFloat distanceliftStart;
+/**
+  距离最下部开始，可以滑动的区域 默认 0
+ */
+@property (nonatomic, assign) CGFloat distancebottomStart;
+/**
+ 是否开始系统手势
+ */
+@property (nonatomic, assign) BOOL IsCanleSystemPan;
+
 @end
 
 
@@ -80,4 +93,7 @@
 - (TFY_NavigationController *_Nonnull)tfy_rootNavigationController;
 /**right 按钮点击回调*/
 @property (nonatomic, copy, nullable)void(^right_block)(void);
+
+
 @end
+

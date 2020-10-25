@@ -150,6 +150,8 @@ static NSString *const barReturnButtonDelegate = @"barReturnButtonDelegate";
 }
 
 
+
+
 - (UIImage *)tfy_createImage:(UIColor *)imageColor {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);

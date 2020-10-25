@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [self RandomColor];
     self.navigationController.tfy_barBackgroundColor = UIColor.blueColor;
     self.navigationController.tfy_titleColor = UIColor.whiteColor;
     self.navigationController.tfy_titleFont = [UIFont systemFontOfSize:17 weight:UIFontWeightBold];
@@ -28,6 +28,7 @@
     
     [self.view addSubview:self.bianBtn];
     self.bianBtn.tfy_LeftSpace(30).tfy_CenterY(0).tfy_RightSpace(30).tfy_Height(50);
+    
 }
 
 - (void)timeimageClick {
@@ -47,6 +48,7 @@
 
 - (void)navbiack {
     self.navigationController.tfy_barBackgroundColor = [self RandomColor];
+    self.view.backgroundColor = [self RandomColor];
 }
 
 - (UIColor*)RandomColor {
@@ -57,8 +59,6 @@
     return randColor;
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.navigationController tfy_hidesBarsOnTap];
-}
+
 
 @end
