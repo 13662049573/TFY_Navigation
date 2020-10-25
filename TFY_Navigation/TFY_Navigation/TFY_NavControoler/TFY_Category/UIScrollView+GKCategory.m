@@ -1,24 +1,24 @@
 //
-//  UIScrollView+NAVCategory.m
+//  UIScrollView+GKCategory.m
 //  TFY_Navigation
 //
 //  Created by 田风有 on 2020/10/25.
-//  Copyright © 2020 恋机科技. All rights reserved.
+//  Copyright © 2020 浙江日报集团. All rights reserved.
 //
 
-#import "UIScrollView+NAVCategory.h"
+#import "UIScrollView+GKCategory.h"
 #import <objc/runtime.h>
 
-static const void* DisableGestureHandleKey = @"DisableGestureHandleKey";
+static const void* TFYDisableGestureHandleKey = @"TFYDisableGestureHandleKey";
 
-@implementation UIScrollView (NAVCategory)
+@implementation UIScrollView (GKCategory)
 
 - (void)setTfy_disableGestureHandle:(BOOL)tfy_disableGestureHandle {
-    objc_setAssociatedObject(self, DisableGestureHandleKey, @(tfy_disableGestureHandle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, TFYDisableGestureHandleKey, @(tfy_disableGestureHandle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
--(BOOL)tfy_disableGestureHandle {
-    return [objc_getAssociatedObject(self, DisableGestureHandleKey) boolValue];
+- (BOOL)tfy_disableGestureHandle {
+    return [objc_getAssociatedObject(self, TFYDisableGestureHandleKey) boolValue];
 }
 
 #pragma mark - 解决全屏滑动时的手势冲突
@@ -43,6 +43,7 @@ static const void* DisableGestureHandleKey = @"DisableGestureHandleKey";
     if (gestureRecognizer == self.panGestureRecognizer) {
         CGPoint point = [self.panGestureRecognizer translationInView:self];
         UIGestureRecognizerState state = gestureRecognizer.state;
+        
         // 设置手势滑动的位置距屏幕左边的区域
         CGFloat locationDistance = [UIScreen mainScreen].bounds.size.width;
         
@@ -55,5 +56,6 @@ static const void* DisableGestureHandleKey = @"DisableGestureHandleKey";
     }
     return NO;
 }
+
 
 @end

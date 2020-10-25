@@ -9,18 +9,7 @@
 #import "TFY_NavAnimatedTransitioning.h"
 #import "UIViewController+TFY_PopController.h"
 #import <objc/runtime.h>
-#import "TFY_NavigationConfig.h"
 
-#define NAV_QueueStartAfterTime(time) dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(time * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
-
-#define NAV_queueEnd  });
-
-/**是否是苹果iPhoneX以上机型*/
-CG_INLINE BOOL TFY_iPhoneX() {
-    return ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? ((NSInteger)(([[UIScreen mainScreen] currentMode].size.height/[[UIScreen mainScreen] currentMode].size.width)*100) == 216) : NO);
-}
-
-static char ListenTabbarViewMove[] = "ListenTabbarViewMove";
 static char const RootNavigationControllerKey = '\0';
 
 #pragma mark - 容器控制器
@@ -31,7 +20,6 @@ static char const RootNavigationControllerKey = '\0';
 
 + (instancetype)containerViewControllerWithViewController:(UIViewController *)viewController;
 - (instancetype)initWithViewController:(UIViewController *)viewController;
-
 
 @end
 
@@ -117,11 +105,9 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
 @interface TFY_NavigationController ()<UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 
 @property (nonatomic, strong) TFY_NavAnimatedTransitioning *animatedTransitioning;
-@property (nonatomic, strong) UIImageView *imageViews;
 @property (nonatomic, assign) CGSize originContentSizeInPop;
 @property (nonatomic, assign) CGSize originContentSizeInPopWhenLandscape;
-@property (nonatomic, strong) UIPanGestureRecognizer * _Nonnull panGesture;
-@property (strong ,nonatomic) NSMutableArray * _Nonnull arrayScreenshot;
+@property (nonatomic, strong) TFYNavigationBarConfigure *configure;
 @end
 
 @implementation TFY_NavigationController
@@ -133,23 +119,6 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
     self.originContentSizeInPopWhenLandscape = self.contentSizeInPopWhenLandscape;
 }
 
-- (NSMutableArray *)arrayScreenshot {
-    if (!_arrayScreenshot) {
-        _arrayScreenshot = NSMutableArray.array;
-    }
-    return _arrayScreenshot;
-}
-
-- (UIImageView *)imageViews {
-    if (!_imageViews) {
-        _imageViews = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        if (TFY_iPhoneX()) {
-            _imageViews.layer.masksToBounds = YES;
-            _imageViews.layer.cornerRadius = 40;
-        }
-    }
-    return _imageViews;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -158,12 +127,17 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
     self.distanceliftStart = 0;
     [[UITabBar appearance]setTranslucent:NO];
     self.delegate = self;
-    
-    NAV_QueueStartAfterTime(1.5)
-    [[self lastWindow] insertSubview:self.imageViews atIndex:0];
-    NAV_queueEnd
-    
+
 }
+
+- (BOOL)prefersStatusBarHidden {
+    return self.tfy_statusBarHidden;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return self.tfy_statusBarStyle;
+}
+
 
 - (void)adjustContentSizeBy:(UIViewController *)controller {
 
@@ -197,7 +171,6 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
     self = [super initWithRootViewController:rootViewController];
     if (self) {
         [self commonInit];
-        [self setupNavigationBarTheme];
     }
     return self;
 }
@@ -206,47 +179,8 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self commonInit];
-        [self setupNavigationBarTheme];
     }
     return self;
-}
-//背景颜色
--(void)setBarBackgroundColor:(UIColor *)barBackgroundColor{
-    _barBackgroundColor  = barBackgroundColor;
-   [self setupNavigationBarTheme];
-}
-//背景图片
-- (void)setBarBackgroundImage:(UIImage *)barBackgroundImage {
-    _barBackgroundImage = barBackgroundImage;
-    [self setupNavigationBarTheme];
-}
-//字体颜色
--(void)setTitleColor:(UIColor *)titleColor{
-    _titleColor = titleColor;
-    [self setupNavigationBarTheme];
-}
-//字体大小
-- (void)setFont:(UIFont *)font {
-    _font = font;
-    [self setupNavigationBarTheme];
-}
-//左边按钮图片
--(void)setLeftimage:(UIImage *)leftimage {
-    _leftimage = leftimage;
-}
-//右边按钮图片
-- (void)setRightimage:(UIImage *)rightimage {
-    _rightimage = rightimage;
-}
-
-- (void)setDefaultFixSpace:(CGFloat)defaultFixSpace {
-    _defaultFixSpace = defaultFixSpace;
-    TFY_NavigationConfig.shared.tfy_defaultFixSpace = _defaultFixSpace;
-}
-
-- (void)setDisableFixSpace:(BOOL)disableFixSpace {
-    _disableFixSpace = disableFixSpace;
-    TFY_NavigationConfig.shared.tfy_disableFixSpace = _disableFixSpace;
 }
 
 - (void)setDistanceliftStart:(CGFloat)distanceliftStart {
@@ -257,25 +191,6 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
     _distancebottomStart = distancebottomStart;
 }
 
-//赋值
-- (void)setupNavigationBarTheme {
-    UINavigationBar *navBar = [UINavigationBar appearance];
-    UIColor *color = self.barBackgroundColor ?: [UIColor whiteColor];
-    if ([self.barBackgroundImage isKindOfClass:[UIImage class]]) {
-        [navBar setBackgroundImage:self.barBackgroundImage forBarMetrics:UIBarMetricsDefault];
-    }
-    else{
-       [navBar setBackgroundImage:[self tfy_createImage:color] forBarMetrics:UIBarMetricsDefault];
-    }
-    [navBar setShadowImage:[[UIImage alloc] init]];
-    // 设置标题文字颜色
-    UIColor *titlecolor = self.titleColor ?: [UIColor blackColor];
-    UIFont *font = self.font?:[UIFont boldSystemFontOfSize:15.0];
-    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSFontAttributeName] = font;
-    textAttrs[NSForegroundColorAttributeName] = titlecolor;
-    [navBar setTitleTextAttributes:textAttrs];
-}
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     TFYContainerViewController *container = TFYWrapViewController(viewController);
@@ -283,66 +198,21 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
         viewController.hidesBottomBarWhenPushed = YES;
     }
     // 返回按钮目前仅支持图片
-    UIImage *leftImage = [self.leftimage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ?: [[self navigationBarBackIconImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-   UIImage *rightImage = [self.rightimage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *leftImage = [self.configure.backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ?: [[self navigationBarBackIconImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     if (self.viewControllers.count > 0) {
         #pragma clang diagnostic push
         #pragma clang diagnostic ignored "-Wundeclared-selector"
         UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:leftImage style:UIBarButtonItemStylePlain target:viewController action:@selector(tfy_popViewController)];
-         UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:rightImage style:UIBarButtonItemStylePlain target:viewController action:@selector(tfy_rightController)];
         #pragma clang diagnostic pop
          viewController.navigationItem.leftBarButtonItem = leftItem;
-         viewController.navigationItem.rightBarButtonItem = rightImage!=nil?rightItem:nil;
     }
-    
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height), YES, 0);
-    [[self lastWindow].layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    [self.arrayScreenshot addObject:viewImage];
-    
-    if (viewImage) self.imageViews.image = viewImage;
 
     [super pushViewController:container animated:animated];
-    
-    // pop手势
-    self.interactivePopGestureRecognizer.enabled = !_IsCanleSystemPan;
-    self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
-    self.panGesture.delegate = self;
-    self.panGesture.delaysTouchesBegan = YES;
-    [self.view addGestureRecognizer:self.panGesture];
     
     objc_setAssociatedObject(container.containerNavigationController, &RootNavigationControllerKey, self, OBJC_ASSOCIATION_ASSIGN);
 }
 
 
-- (UIViewController *)popViewControllerAnimated:(BOOL)animated {
-    [self.arrayScreenshot removeLastObject];
-    UIImage *image = [self.arrayScreenshot lastObject];
-    if (image)
-        self.imageViews.image = image;
-    UIViewController *viewController = [super popViewControllerAnimated:animated];
-    return viewController;
-}
-- (NSArray *)popToRootViewControllerAnimated:(BOOL)animated {
-    if (self.arrayScreenshot.count > 2) {
-        [self.arrayScreenshot removeObjectsInRange:NSMakeRange(1, self.arrayScreenshot.count - 1)];
-    }
-    UIImage *image = [self.arrayScreenshot lastObject];
-    if (image)
-        self.imageViews.image = image;
-    return [super popToRootViewControllerAnimated:animated];
-}
-
-- (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    NSArray *arr = [super popToViewController:viewController animated:animated];
-    if (self.arrayScreenshot.count > arr.count){
-        for (int i = 0; i < arr.count; i++) {
-            [self.arrayScreenshot removeLastObject];
-        }
-    }
-    return arr;
-}
 
 - (UIImage *)tfy_createImage:(UIColor *)imageColor {
     
@@ -408,44 +278,6 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
     return (gestureRecognizer == self.interactivePopGestureRecognizer);
 }
 
-- (void)handlePanGesture:(UIPanGestureRecognizer *)panGesture {
-    UIViewController *rootVC = [self lastWindow].rootViewController;
-    if (self.viewControllers.count == 1) {return;}
-    if (panGesture.state == UIGestureRecognizerStateBegan) {
-        if (TFY_iPhoneX()) {
-            rootVC.view.layer.masksToBounds = YES;
-            rootVC.view.layer.cornerRadius = 40;
-        }
-    }
-    else if (panGesture.state == UIGestureRecognizerStateChanged) {
-        CGPoint point_inView = [panGesture translationInView:self.view];
-        if (point_inView.x >= 10) {//(拖拽的范围,大于此值才有效果)
-            rootVC.view.transform = CGAffineTransformMakeTranslation(point_inView.x - 10, 0);
-        }
-    }
-    else if (panGesture.state == UIGestureRecognizerStateEnded) {
-        CGPoint point_inView = [panGesture translationInView:self.view];
-        if (point_inView.x >= 70) {//(距离左边多少距离，可以自动返回)
-            [UIView animateWithDuration:0.3 animations:^{
-                rootVC.view.transform = CGAffineTransformMakeTranslation(([UIScreen mainScreen].bounds.size.width), 0);
-            } completion:^(BOOL finished) {
-                [self popViewControllerAnimated:NO];
-                rootVC.view.transform = CGAffineTransformIdentity;
-            }];
-        }
-        else {
-            [UIView animateWithDuration:0.3 animations:^{
-                rootVC.view.transform = CGAffineTransformIdentity;
-            } completion:^(BOOL finished) {
-                if (TFY_iPhoneX()) {
-                    rootVC.view.layer.masksToBounds = NO;
-                    rootVC.view.layer.cornerRadius = 0;
-                }
-            }];
-        }
-    }
-    [rootVC.view addObserver:self forKeyPath:@"transform" options:NSKeyValueObservingOptionNew context:ListenTabbarViewMove];
-}
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     if (self.viewControllers.count <= 1)    return NO;
@@ -470,28 +302,11 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
     return [UIApplication sharedApplication].keyWindow;
 }
 
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-    if (context == ListenTabbarViewMove){
-        NSValue *value  = [change objectForKey:NSKeyValueChangeNewKey];
-        CGAffineTransform newTransform = [value CGAffineTransformValue];
-        [self showEffectChange:CGPointMake(newTransform.tx, 0) ];
-    }
-}
-
-- (void)showEffectChange:(CGPoint)pt{
-    
-    if (pt.x > 0){
-        self.imageViews.transform = CGAffineTransformMakeScale(0.95 + (pt.x / ([UIScreen mainScreen].bounds.size.width) * (1 - 0.95)), 0.95 + (pt.x / ([UIScreen mainScreen].bounds.size.width) * (1 - 0.95)));
-    }
-    if (pt.x < 0){
-        self.imageViews.transform = CGAffineTransformIdentity;
-    }
-}
-
 #pragma mark Private
 
 - (void)commonInit {
+    self.configure = [TFYNavigationBarConfigure sharedInstance];
+
     UIViewController *topViewController = self.topViewController;
     if (topViewController) {
         UIViewController *wrapViewController = TFYWrapViewController(topViewController);
@@ -601,20 +416,6 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
         [self dismissViewControllerAnimated:YES completion:nil];
     } else {
         [self.navigationController popViewControllerAnimated:YES];
-    }
-}
-
--(void)setRight_block:(void (^)(void))right_block {
-    objc_setAssociatedObject(self, &@selector(right_block), right_block, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
--(void (^)(void))right_block {
-    return objc_getAssociatedObject(self, _cmd);
-}
-
-- (void)tfy_rightController {
-    if (self.right_block) {
-        self.right_block();
     }
 }
 

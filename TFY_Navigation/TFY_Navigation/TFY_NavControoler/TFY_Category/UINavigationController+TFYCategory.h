@@ -1,20 +1,27 @@
 //
-//  UINavigationController+TFY_Extension.h
-//  WYBasisKit
+//  UINavigationController+TFYCategory.h
+//  TFY_Navigation
 //
-//  Created by 田风有 on 2019/03/27.
-//  Copyright © 2019 恋机科技. All rights reserved.
-//  https://github.com/13662049573/TFY_AutoLayoutModelTools
-
-/*
- 如果设置了导航栏的translucent = YES这时在添加子视图的坐标原点相对屏幕坐标是(0,0).如果设置了translucent = NO这时添加子视图的坐标原点相对屏幕坐标就是(0, navViewHeight)
- */
+//  Created by 田风有 on 2020/10/25.
+//  Copyright © 2020 浙江日报集团. All rights reserved.
+//
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+TFYCategory.h"
+#import "UIBarButtonItem+TFYCategory.h"
+#import "TFYDelegateHandler.h"
+NS_ASSUME_NONNULL_BEGIN
 
+@interface UINavigationController (TFYCategory)
 
-@interface UINavigationController (TFY_Extension)
+/** 导航栏转场时是否缩放,此属性只能在初始化导航栏的时候有效，在其他地方设置会导致错乱 */
+@property (nonatomic, assign) BOOL tfy_translationScale;
 
+/** 是否开启左滑push操作，默认是NO，此时不可禁用控制器的滑动返回手势 */
+@property (nonatomic, assign) BOOL tfy_openScrollLeftPush;
+
+/** 是否禁止导航控制器的手势处理，默认NO，如果设置为YES，则手势操作将失效(包括全屏手势和边缘手势) */
+@property (nonatomic, assign) BOOL tfy_disabledGestureHandle;
 /**
  * 导航栏标题字体颜色
  */
@@ -39,6 +46,10 @@
  * 导航栏左侧返回按钮背景颜色
  */
 @property (nonatomic, strong) UIColor *tfy_barReturnButtonColor;
+
+/** 设置导航栏分割线颜色或图片 */
+@property (nonatomic, strong) UIColor *tfy_navShadowColor;
+@property (nonatomic, strong) UIImage *tfy_navShadowImage;
 /**
  * 设置导航栏完全透明  会设置translucent = YES
  */
@@ -55,4 +66,7 @@
    当用户点击时，导航控制器的导航栏和工具栏将会隐藏或显示，这取决于导航栏的隐藏状态。工具栏只有在有要显示的项目时才会显示。
  */
 - (void)tfy_hidesBarsOnTap;
+
 @end
+
+NS_ASSUME_NONNULL_END

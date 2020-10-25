@@ -25,44 +25,14 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "TFYNavigationBarConfigure.h"
+#import "TFYCategory.h"
 
 /// 仅限于内部使用
 @interface TFYContainerNavigationController : UINavigationController
 @end
 
 @interface TFY_NavigationController : TFYContainerNavigationController
-/**
- *   导航栏背景图片
- */
-@property (nonatomic, strong)UIImage * _Nonnull barBackgroundImage;
-/**
- *  导航栏背景颜色 默认白色
- */
-@property (nonatomic, strong)UIColor * _Nonnull barBackgroundColor;
-/**
- *  导航栏背文字颜色 默认黑色
- */
-@property (nonatomic, strong)UIColor * _Nonnull titleColor;
-/**
- *  导航栏背文字大小 默认 加粗 15
- */
-@property (nonatomic, strong)UIFont * _Nonnull font;
-/**
- * 右边按钮图片
- */
-@property (nonatomic, strong)UIImage * _Nonnull leftimage;
-/**
- * 左边按钮图片
- */
-@property (nonatomic, strong)UIImage * _Nonnull rightimage;
-/**
- item距离两端的间距,默认为15
- */
-@property (nonatomic, assign) CGFloat defaultFixSpace;
-/**
- 是否禁止使用修正,默认为NO
- */
-@property (nonatomic, assign) BOOL disableFixSpace;
 /**
   滑动区域大小 默认 0
  */
@@ -91,9 +61,6 @@
 - (Class _Nonnull )tfy_navigationControllerClass;
 // Default is `nil`
 - (TFY_NavigationController *_Nonnull)tfy_rootNavigationController;
-/**right 按钮点击回调*/
-@property (nonatomic, copy, nullable)void(^right_block)(void);
-
 
 @end
 

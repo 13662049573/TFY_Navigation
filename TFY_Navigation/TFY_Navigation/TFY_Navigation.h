@@ -17,9 +17,8 @@ FOUNDATION_EXPORT const unsigned char TFY_NavigationVersionString[];
 #if TFY_NavigationRelease
 
 #import <TFY_NavControoler/TFY_NavigationController.h>
-#import <TFY_NavControoler/UINavigationController+TFY_Extension.h>
-#import <TFY_NavControoler/UIBarButtonItem+TFY_Chain.h>
-#import <TFY_NavControoler/TFY_NavigationConfig.h>
+#import <TFY_NavControoler/TFY_NavigationBarViewController.h>
+
 
 #import <TFY_PopController/TFY_PopController.h>
 #import <TFY_PopController/UIViewController+TFY_PopController.h>
@@ -33,10 +32,10 @@ FOUNDATION_EXPORT const unsigned char TFY_NavigationVersionString[];
 
 //导航栏容器头文件
 #import "TFY_NavigationController.h"
-#import "UINavigationController+TFY_Extension.h"
-#import "UIBarButtonItem+TFY_Chain.h"
-#import "TFY_NavigationConfig.h"
-#import "UIScrollView+NAVCategory.h"
+#import "TFY_NavigationBarViewController.h"
+
+
+
 //弹出框容器头文件
 #import "TFY_PopController.h"
 #import "UIViewController+TFY_PopController.h"
