@@ -36,7 +36,7 @@ FOUNDATION_EXPORT const unsigned char TFY_NavigationVersionString[];
 #import "UINavigationController+TFY_Extension.h"
 #import "UIBarButtonItem+TFY_Chain.h"
 #import "TFY_NavigationConfig.h"
-
+#import "UIScrollView+NAVCategory.h"
 //弹出框容器头文件
 #import "TFY_PopController.h"
 #import "UIViewController+TFY_PopController.h"
