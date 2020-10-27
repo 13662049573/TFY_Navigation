@@ -62,7 +62,7 @@
 
 @end
 
-static const void* TFYCaptureImageKey         = @"TFYCaptureImage";
+static const void* TFYCaptureImageKey = @"TFYCaptureImage";
 
 @implementation UIViewController (GKCapture)
 

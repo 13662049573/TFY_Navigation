@@ -305,9 +305,10 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
         if (self.tfy_backStyle != TFYNavigationBarBackStyleNone) {
             NSString *imageName = self.tfy_backStyle == TFYNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white";
             image = [UIImage tfy_imageNamed:imageName];
-            
+            TFY_Configure.backImage = image;
         }
     }
+    
     // 没有image
     if (!image) return;
 

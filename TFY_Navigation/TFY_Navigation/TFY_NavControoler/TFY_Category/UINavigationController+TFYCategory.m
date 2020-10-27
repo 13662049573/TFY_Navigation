@@ -249,7 +249,6 @@
 - (id)systemTarget {
     NSArray *internalTargets = [self.interactivePopGestureRecognizer valueForKey:@"targets"];
     id internalTarget = [internalTargets.firstObject valueForKey:@"target"];
-    
     return internalTarget;
 }
 

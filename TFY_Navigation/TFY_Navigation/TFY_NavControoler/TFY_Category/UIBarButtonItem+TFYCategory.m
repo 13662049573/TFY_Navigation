@@ -78,7 +78,7 @@ UIBarButtonItem *tfy_barbtnItem(void){
 }
 
 // 文字--文字状态-文字颜色-文字大小  图片--图片UIImage--图片状态   点击方法
-- (UIBarButtonItem * _Nonnull (^)(CGSize, NSString * _Nonnull, id _Nonnull, UIFont * _Nonnull, UIImage * _Nonnull, NAV_ButtonImageDirection, CGFloat, id _Nonnull, SEL _Nonnull, UIControlEvents))tfy_titleItembtn {
+- (UIBarButtonItem * _Nonnull (^)(CGSize, NSString * _Nonnull, id _Nonnull, UIFont * _Nonnull, id, NAV_ButtonImageDirection, CGFloat, id _Nonnull, SEL _Nonnull, UIControlEvents))tfy_titleItembtn {
     return ^(CGSize size,NSString *title_str,id color,UIFont *font,id image,NAV_ButtonImageDirection direction,CGFloat space,id object, SEL action,UIControlEvents evrnts){
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         if (size.width>65 && size.height>44) {

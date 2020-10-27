@@ -95,7 +95,6 @@ NS_ASSUME_NONNULL_BEGIN
 /**获取当前item修复间距*/
 - (CGFloat)tfy_fixedSpace;
 
-
 @end
 
 @interface UIViewController (Common)

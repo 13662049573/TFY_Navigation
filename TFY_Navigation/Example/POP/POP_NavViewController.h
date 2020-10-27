@@ -6,11 +6,11 @@
 //  Copyright © 2020 恋机科技. All rights reserved.
 //
 
-#import "TFY_NavigationController.h"
+#import "TFY_NavAnimatedController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface POP_NavViewController : TFY_NavigationController
+@interface POP_NavViewController : TFY_NavAnimatedController
 
 @end
 

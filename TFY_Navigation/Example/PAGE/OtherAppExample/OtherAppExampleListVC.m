@@ -25,15 +25,18 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self buildTable];
+    [self.view addSubview:self.tableView];
+    [self.tableView tfy_AutoSize:0 top:0 right:0 bottom:0];
 }
 
-- (void)buildTable {
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.tableFooterView = [[UIView alloc] init];
-    [self.view addSubview:self.tableView];
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.tableFooterView = [[UIView alloc] init];
+    }
+    return _tableView;
 }
 
 #pragma mark -

@@ -39,11 +39,11 @@ static TFYNavigationBarConfigure *instance = nil;
     
     self.backStyle       = TFYNavigationBarBackStyleBlack;
     
-    self.tfy_navItemLeftSpace    = 12;
-    self.tfy_navItemRightSpace   = 12;
+    self.tfy_navItemLeftSpace    = 15;
+    self.tfy_navItemRightSpace   = 15;
     
-    self.navItemLeftSpace       = 12;
-    self.navItemRightSpace      = 12;
+    self.navItemLeftSpace       = 15;
+    self.navItemRightSpace      = 15;
     
     self.tfy_pushTransitionCriticalValue = 0.3;
     self.tfy_popTransitionCriticalValue  = 0.5;
@@ -60,6 +60,14 @@ static TFYNavigationBarConfigure *instance = nil;
 
 - (void)setTfy_navItemRightSpace:(CGFloat)tfy_navItemRightSpace {
     _tfy_navItemRightSpace = tfy_navItemRightSpace;
+}
+
+- (void)setBackStyle:(TFYNavigationBarBackStyle)backStyle {
+    _backStyle = backStyle;
+    if (_backStyle != TFYNavigationBarBackStyleNone) {
+        NSString *imageName = _backStyle == TFYNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white";
+        self.backImage = [UIImage tfy_imageNamed:imageName];
+    }
 }
 
 
