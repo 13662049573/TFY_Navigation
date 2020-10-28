@@ -1,0 +1,6 @@
+framework module Pods_TFY_Navigation_TFY_NavigationUITests {
+  umbrella header "Pods-TFY_Navigation-TFY_NavigationUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

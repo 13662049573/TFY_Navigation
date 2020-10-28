@@ -10,7 +10,6 @@
 #import "CommonPageViewController.h"
 #import "CustomTitleCellExampleVC2.h"
 #import "CustomTitleCellExampleVC3.h"
-#import "POP_OneController.h"
 #import "NAV_OneController.h"
 @interface OtherAppExampleListVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -80,12 +79,6 @@
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
-    if ([[self cellTitles][indexPath.row] containsString:@"弹出框处理"]) {
-        POP_OneController *vc = [POP_OneController new];
-        vc.title = @"弹出框处理";
-        [self.navigationController pushViewController:vc animated:YES];
-        return;
-    }
     CommonPageViewController *exampleVC = [[CommonPageViewController alloc] init];
     exampleVC.title = [self cellTitles][indexPath.row];
     exampleVC.config = [self configOfIndexPath:indexPath];
@@ -105,8 +98,7 @@
              @"腾讯视频",
              @"网易新闻",
              @"人民日报",
-             @"导航栏处理",
-             @"弹出框处理"
+             @"导航栏处理"
              ];
 }
 
@@ -120,8 +112,7 @@
              @"icon_txsp",
              @"icon_wyxw",
              @"icon_rmrb",
-             @"me_data_icom",
-             @"me_opinion"
+             @"me_data_icom"
              ];
 }
 

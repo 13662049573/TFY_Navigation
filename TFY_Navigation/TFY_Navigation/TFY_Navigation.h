@@ -19,12 +19,6 @@ FOUNDATION_EXPORT const unsigned char TFY_NavigationVersionString[];
 #import <TFY_NavControoler/TFY_NavigationController.h>
 #import <TFY_NavControoler/TFY_NavigationBarViewController.h>
 
-
-#import <TFY_PopController/TFY_PopController.h>
-#import <TFY_PopController/UIViewController+TFY_PopController.h>
-#import <TFY_PopController/TFY_PopControllerAnimationProtocol.h>
-#import <TFY_PopController/TFY_PopControllerAnimatedTransitioning.h>
-
 #import <TFY_PageController/TFY_PageBasicTitleView.h>
 #import <TFY_PageController/TFY_PageViewController.h>
 
@@ -34,13 +28,6 @@ FOUNDATION_EXPORT const unsigned char TFY_NavigationVersionString[];
 #import "TFY_NavigationController.h"
 #import "TFY_NavigationBarViewController.h"
 
-
-
-//弹出框容器头文件
-#import "TFY_PopController.h"
-#import "UIViewController+TFY_PopController.h"
-#import "TFY_PopControllerAnimationProtocol.h"
-#import "TFY_PopControllerAnimatedTransitioning.h"
 //分页容器头文件
 #import "TFY_PageBasicTitleView.h"
 #import "TFY_PageViewController.h"

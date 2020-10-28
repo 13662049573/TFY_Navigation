@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TFYCommon.h"
+#import "UIImage+TFYCategory.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
