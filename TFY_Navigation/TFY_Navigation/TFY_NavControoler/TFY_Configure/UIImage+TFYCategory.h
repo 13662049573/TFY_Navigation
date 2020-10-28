@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**修改指定图片颜色生成新的图片*/
 + (UIImage *)tfy_changeImage:(UIImage *)image color:(UIColor *)color;
 
+/**图片转颜色*/
++ (UIColor*)tfy_mostColorCategory_Color:(UIImage*)image;
 @end
 
 

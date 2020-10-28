@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**导航栏背景色，默认白色*/
 @property (nonatomic, strong) UIColor *backgroundColor;
-
+/**导航栏背景图片*/
+@property (nonatomic, strong) UIImage *backgroundImage;
 /**导航栏标题颜色，默认黑色*/
 @property (nonatomic, strong) UIColor *titleColor;
 
@@ -25,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**返回按钮图片，默认nil，优先级高于backStyle*/
 @property (nonatomic, strong) UIImage *backImage;
+/** 设置导航栏分割线颜色 默认@"eeeeee" */
+@property (nonatomic, strong) UIColor *navShadowColor;
 
 /**返回按钮样式，默认TFYNavigationBarBackStyleBlack*/
 @property (nonatomic, assign) TFYNavigationBarBackStyle backStyle;

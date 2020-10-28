@@ -8,6 +8,7 @@
 #import "TFY_NavigationController.h"
 #import <objc/runtime.h>
 #import "TFYNavigationBar.h"
+
 static char const RootNavigationControllerKey = '\0';
 
 #pragma mark - 容器控制器
@@ -116,8 +117,12 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
 - (void)setupNavigationBarTheme
 {
     UINavigationBar *navBar = [UINavigationBar appearance];
-    [navBar setBackgroundImage:[self tfy_createImage:TFY_Configure.backgroundColor] forBarMetrics:UIBarMetricsDefault];
-    [navBar setShadowImage:[[UIImage alloc] init]];
+    if ([TFY_Configure.backgroundImage isKindOfClass:UIImage.class] && TFY_Configure.backgroundImage!=nil) {
+        [navBar setBackgroundImage:TFY_Configure.backgroundImage forBarMetrics:UIBarMetricsDefault];
+    } else {
+        [navBar setBackgroundImage:[self tfy_createImage:TFY_Configure.backgroundColor] forBarMetrics:UIBarMetricsDefault];
+    }
+    [navBar setShadowImage:[self tfy_createImage:TFY_Configure.navShadowColor]];
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
     textAttrs[NSFontAttributeName] = TFY_Configure.titleFont;
     textAttrs[NSForegroundColorAttributeName] = TFY_Configure.titleColor;
