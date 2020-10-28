@@ -29,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) UINavigationController *navigationController;
 
 // 手势Action
-- (void)panGestureAction:(UIPanGestureRecognizer *)gesture;
+- (void)panGestureRecognizerAction:(UIPanGestureRecognizer *)gesture;
 
 @end
 

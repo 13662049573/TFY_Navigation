@@ -116,7 +116,7 @@
         
         // 添加手势处理
         if (self.tfy_translationScale || self.tfy_openScrollLeftPush || self.visibleViewController.tfy_popDelegate) {
-            [self.panGesture addTarget:self.navDelegate action:@selector(panGestureAction:)];
+            [self.panGesture addTarget:self.navDelegate action:@selector(panGestureRecognizerAction:)];
         }else {
             SEL internalAction = NSSelectorFromString(@"handleNavigationTransition:");
             [self.panGesture addTarget:[self systemTarget] action:internalAction];
@@ -227,7 +227,7 @@
 - (UIScreenEdgePanGestureRecognizer *)screenPanGesture {
     UIScreenEdgePanGestureRecognizer *panGesture = objc_getAssociatedObject(self, _cmd);
     if (!panGesture) {
-        panGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self.navDelegate action:@selector(panGestureAction:)];
+        panGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self.navDelegate action:@selector(panGestureRecognizerAction:)];
         panGesture.edges = UIRectEdgeLeft;
         
         objc_setAssociatedObject(self, _cmd, panGesture, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

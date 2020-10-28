@@ -22,6 +22,8 @@
     self.window.backgroundColor = [UIColor  whiteColor];
 
     TFY_NavigationController *nav = [[TFY_NavigationController alloc] initWithRootViewController:ViewController.new];
+    nav.tfy_openScrollLeftPush = YES;
+//    nav.tfy_translationScale = YES;
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     

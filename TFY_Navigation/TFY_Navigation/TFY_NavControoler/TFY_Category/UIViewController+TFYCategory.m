@@ -102,6 +102,7 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
     [self tfy_viewWillAppear:animated];
 }
 
+
 - (void)tfy_viewDidAppear:(BOOL)animated {
     [self postPropertyChangeNotification];
     
@@ -308,7 +309,6 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
             TFY_Configure.backImage = image;
         }
     }
-    
     // 没有image
     if (!image) return;
 
@@ -333,6 +333,7 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
 }
 
 - (void)postPropertyChangeNotification {
+
     [[NSNotificationCenter defaultCenter] postNotificationName:TFYViewControllerPropertyChangedNotification object:@{@"viewController": self}];
 }
 

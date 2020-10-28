@@ -38,7 +38,7 @@
         // 开启了左滑push并设置了代理
         if (self.navigationController.tfy_openScrollLeftPush && visibleVC.tfy_pushDelegate) {
             [gestureRecognizer removeTarget:self.systemTarget action:action];
-            [gestureRecognizer addTarget:self.customTarget action:@selector(panGestureAction:)];
+            [gestureRecognizer addTarget:self.customTarget action:@selector(panGestureRecognizerAction:)];
         }else {
             return NO;
         }
@@ -64,13 +64,13 @@
             return NO;
         }else if (visibleVC.tfy_popDelegate) {
             [gestureRecognizer removeTarget:self.systemTarget action:action];
-            [gestureRecognizer addTarget:self.customTarget action:@selector(panGestureAction:)];
+            [gestureRecognizer addTarget:self.customTarget action:@selector(panGestureRecognizerAction:)];
         }else if(!self.navigationController.tfy_translationScale) { // 非缩放，系统处理
-            [gestureRecognizer removeTarget:self.customTarget action:@selector(panGestureAction:)];
+            [gestureRecognizer removeTarget:self.customTarget action:@selector(panGestureRecognizerAction:)];
             [gestureRecognizer addTarget:self.systemTarget action:action];
         }else {
             [gestureRecognizer removeTarget:self.systemTarget action:action];
-            [gestureRecognizer addTarget:self.customTarget action:@selector(panGestureAction:)];
+            [gestureRecognizer addTarget:self.customTarget action:@selector(panGestureRecognizerAction:)];
         }
     }
     
@@ -132,7 +132,7 @@
 }
 
 #pragma mark - 滑动手势处理
-- (void)panGestureAction:(UIPanGestureRecognizer *)gesture {
+- (void)panGestureRecognizerAction:(UIPanGestureRecognizer *)gesture {
     UIViewController *visibleVC = self.navigationController.visibleViewController;
     
     // 进度
