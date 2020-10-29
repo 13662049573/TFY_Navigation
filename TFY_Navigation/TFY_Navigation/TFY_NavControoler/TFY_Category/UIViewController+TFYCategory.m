@@ -270,9 +270,7 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
 
 - (void)setNavBarAlpha:(CGFloat)alpha {
     
-    UINavigationBar *navBar = nil;
-    
-    navBar = self.navigationController.navigationBar;
+    UINavigationBar *navBar = self.navigationController.navigationBar;
     
     UIView *barBackgroundView = [navBar.subviews objectAtIndex:0]; // _UIBarBackground
     UIImageView *backgroundImageView = [barBackgroundView.subviews objectAtIndex:0]; // UIImageView
