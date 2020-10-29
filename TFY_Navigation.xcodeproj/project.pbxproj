@@ -461,9 +461,9 @@
 		36D56FB4254560020095323D /* TFY_Configure */ = {
 			isa = PBXGroup;
 			children = (
+				36D56FBB2545612B0095323D /* TFYCommon.h */,
 				3692191225494D92004A99B8 /* UIImage+TFYCategory.h */,
 				3692191325494D93004A99B8 /* UIImage+TFYCategory.m */,
-				36D56FBB2545612B0095323D /* TFYCommon.h */,
 				36D56FBF254561E80095323D /* TFYNavigationBar.h */,
 				36D56FC0254561E80095323D /* TFYNavigationBar.m */,
 				36D56FC5254562850095323D /* TFYNavigationBarConfigure.h */,
