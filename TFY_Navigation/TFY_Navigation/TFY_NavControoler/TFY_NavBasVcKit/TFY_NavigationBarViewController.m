@@ -7,7 +7,7 @@
 //
 
 #import "TFY_NavigationBarViewController.h"
-
+#import <objc/runtime.h>
 @interface TFY_NavigationBarViewController ()
 
 @property (nonatomic, strong) TFYNavigationBar   *tfy_navigationBar;
@@ -270,6 +270,24 @@
     }
     
     [self.tfy_navigationBar layoutSubviews];
+}
+
+
+@end
+
+
+@implementation UIViewController (NavigationBar)
+
+- (void)setTfy_navBaseBarAlpha:(CGFloat)tfy_navBaseBarAlpha {
+    objc_setAssociatedObject(self, @selector(tfy_navBaseBarAlpha), @(tfy_navBaseBarAlpha), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    TFY_NavigationBarViewController *vc = (TFY_NavigationBarViewController *)self;
+    vc.tfy_navigationBar.tfy_navBarBackgroundAlpha = tfy_navBaseBarAlpha;
+}
+
+-(CGFloat)tfy_navBaseBarAlpha {
+    id obj = objc_getAssociatedObject(self, @selector(tfy_navBaseBarAlpha));
+    return obj ? [obj floatValue] : 1.0f;
 }
 
 

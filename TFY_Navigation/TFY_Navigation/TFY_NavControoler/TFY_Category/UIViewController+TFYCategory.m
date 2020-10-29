@@ -272,28 +272,24 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
     
     UINavigationBar *navBar = nil;
     
-    if ([self isKindOfClass:[TFY_NavigationBarViewController class]]) {
-        TFY_NavigationBarViewController *vc = (TFY_NavigationBarViewController *)self;
-        vc.tfy_navigationBar.tfy_navBarBackgroundAlpha = alpha;
-    }else {
-        navBar = self.navigationController.navigationBar;
-        
-        UIView *barBackgroundView = [navBar.subviews objectAtIndex:0]; // _UIBarBackground
-        UIImageView *backgroundImageView = [barBackgroundView.subviews objectAtIndex:0]; // UIImageView
-        
-        if (navBar.isTranslucent) {
-            if (backgroundImageView != nil && backgroundImageView.image != nil) {
-                barBackgroundView.alpha = alpha;
-            }else {
-                UIView *backgroundEffectView = [barBackgroundView.subviews objectAtIndex:1]; // UIVisualEffectView
-                if (backgroundEffectView != nil) {
-                    backgroundEffectView.alpha = alpha;
-                }
-            }
-        }else {
+    navBar = self.navigationController.navigationBar;
+    
+    UIView *barBackgroundView = [navBar.subviews objectAtIndex:0]; // _UIBarBackground
+    UIImageView *backgroundImageView = [barBackgroundView.subviews objectAtIndex:0]; // UIImageView
+    
+    if (navBar.isTranslucent) {
+        if (backgroundImageView != nil && backgroundImageView.image != nil) {
             barBackgroundView.alpha = alpha;
+        }else {
+            UIView *backgroundEffectView = [barBackgroundView.subviews objectAtIndex:1]; // UIVisualEffectView
+            if (backgroundEffectView != nil) {
+                backgroundEffectView.alpha = alpha;
+            }
         }
+    }else {
+        barBackgroundView.alpha = alpha;
     }
+    
     // 底部分割线
     navBar.clipsToBounds = alpha == 0.0;
 }

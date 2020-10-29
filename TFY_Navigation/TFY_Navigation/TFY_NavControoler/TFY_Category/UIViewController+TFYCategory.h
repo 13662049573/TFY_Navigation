@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "TFYNavigationBarConfigure.h"
-#import "TFY_NavigationBarViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

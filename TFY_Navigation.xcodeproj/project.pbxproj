@@ -418,6 +418,8 @@
 			isa = PBXGroup;
 			children = (
 				36D56FBA254560970095323D /* TFYCategory.h */,
+				36D57004254582710095323D /* TFYDelegateHandler.h */,
+				36D57005254582710095323D /* TFYDelegateHandler.m */,
 				36D56FCB254569B10095323D /* UIViewController+TFYCategory.h */,
 				36D56FCC254569B10095323D /* UIViewController+TFYCategory.m */,
 				36D56FDD254576940095323D /* UIBarButtonItem+TFYCategory.h */,
@@ -430,8 +432,6 @@
 				36D56FF9254580C80095323D /* TFYPushTransitionAnimation.m */,
 				36D56FFE254580E40095323D /* TFYPopTransitionAnimation.h */,
 				36D56FFF254580E40095323D /* TFYPopTransitionAnimation.m */,
-				36D57004254582710095323D /* TFYDelegateHandler.h */,
-				36D57005254582710095323D /* TFYDelegateHandler.m */,
 				36D5700D25458B0B0095323D /* UINavigationItem+TFYCategory.h */,
 				36D5700E25458B0B0095323D /* UINavigationItem+TFYCategory.m */,
 				36D5701325458CED0095323D /* UIScrollView+GKCategory.h */,

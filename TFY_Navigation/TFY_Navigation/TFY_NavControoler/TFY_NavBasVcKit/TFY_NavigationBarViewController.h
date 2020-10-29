@@ -56,4 +56,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+@interface UIViewController (NavigationBar)
+
+/** 设置导航栏的透明度 */
+@property (nonatomic, assign) CGFloat tfy_navBaseBarAlpha;
+
+@end
+
 NS_ASSUME_NONNULL_END
