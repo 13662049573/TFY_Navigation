@@ -7,7 +7,6 @@
 
 #import "TFY_NavigationController.h"
 #import <objc/runtime.h>
-#import "TFYNavigationBar.h"
 
 static char const RootNavigationControllerKey = '\0';
 

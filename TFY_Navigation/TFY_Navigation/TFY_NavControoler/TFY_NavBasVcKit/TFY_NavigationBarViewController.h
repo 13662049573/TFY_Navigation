@@ -7,18 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TFYNavigationBar.h"
-#import "TFYNavigationBarConfigure.h"
-#import "TFYCategory.h"
+#import "TFYCommon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface TFY_NavigationBarViewController : UIViewController
 
-/// 自定义导航条
+// 自定义导航条
 @property (nonatomic, strong, readonly) TFYNavigationBar     *tfy_navigationBar;
 
-/// 自定义导航条栏目
+// 自定义导航条栏目
 @property (nonatomic, strong, readonly) UINavigationItem    *tfy_navigationItem;
 
 #pragma mark - 额外的快速设置导航栏的属性

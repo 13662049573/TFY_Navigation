@@ -5,7 +5,7 @@
 //  Copyright © 2019 恋机科技. All rights reserved.
 
 #import <UIKit/UIKit.h>
-#import "TFYNavigationBarConfigure.h"
+#import "TFYCommon.h"
 #import "TFYCategory.h"
 
 //仅限于内部使用

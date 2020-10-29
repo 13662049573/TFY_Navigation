@@ -9,6 +9,7 @@
 #import "TFY_NavigationBarViewController.h"
 
 @interface TFY_NavigationBarViewController ()
+
 @property (nonatomic, strong) TFYNavigationBar   *tfy_navigationBar;
 
 @property (nonatomic, strong) UINavigationItem  *tfy_navigationItem;

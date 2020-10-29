@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
   spec.name         = "TFY_Navigation"
 
-  spec.version      = "2.4.8"
+  spec.version      = "2.5.0"
 
   spec.summary      = "多变颜色导航栏"
 
@@ -22,17 +22,36 @@ Pod::Spec.new do |spec|
   
   spec.subspec 'TFY_NavControoler' do |ss|
      ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/**/*.{h,m}"
-     ss.dependency "TFY_Navigation/TFY_PopController"
+     
+     ss.subspec 'TFY_Category' do |s|
+        s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_Category/**/*.{h,m}"
+        s.dependency "TFY_NavControoler/TFY_Configure"
+        s.dependency "TFY_NavControoler/TFY_NavBasVcKit"
+     end 
+
+     ss.subspec 'TFY_Configure' do |s|
+      s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_Configure/**/*.{h,m}"
+     end 
+
+     ss.subspec 'TFY_NavBasVcKit' do |s|
+      s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_NavBasVcKit/**/*.{h,m}"
+      s.dependency "TFY_NavControoler/TFY_Configure"
+     end 
+
+     ss.subspec 'TFY_NavigationKit' do |s|
+      s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_NavigationKit/**/*.{h,m}"
+      s.dependency "TFY_NavControoler/TFY_Configure"
+      s.dependency "TFY_NavControoler/TFY_Category"
+     end 
+
   end
 
   spec.subspec 'TFY_PageController' do |ss|
    ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_PageController/**/*.{h,m}"
   end
 
-  spec.subspec 'TFY_PopController' do |ss|
-     ss.source_files  = "TFY_Navigation/TFY_Navigation/TFY_PopController/**/*.{h,m}"
-  end
-
+  spec.resources     = "TFY_Navigation/TFY_Navigation/TFY_NavigationImage.bundle"
+  
   spec.frameworks    = "Foundation","UIKit"
 
   spec.xcconfig      = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include" }
