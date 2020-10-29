@@ -8,7 +8,6 @@
 
 #import "TFYNavigationBar.h"
 #import "TFYCommon.h"
-#import "TFYNavigationBarConfigure.h"
 
 @implementation TFYNavigationBar
 

@@ -6,7 +6,6 @@
 
 #import <UIKit/UIKit.h>
 #import "TFYCommon.h"
-#import "TFYCategory.h"
 
 //仅限于内部使用
 @interface TFYContainerNavigationController : UINavigationController

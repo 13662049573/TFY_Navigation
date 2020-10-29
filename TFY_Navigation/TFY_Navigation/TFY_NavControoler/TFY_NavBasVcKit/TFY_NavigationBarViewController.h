@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TFYCommon.h"
+#import "TFYCategory.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

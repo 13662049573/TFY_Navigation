@@ -12,14 +12,10 @@
 #import "UIViewController+TFYCategory.h"
 #import "UIBarButtonItem+TFYCategory.h"
 #import "UINavigationController+TFYCategory.h"
-#import "UIImage+TFYCategory.h"
 #import "UINavigationItem+TFYCategory.h"
 #import "UIScrollView+GKCategory.h"
-
-
 #import "TFYPushTransitionAnimation.h"
 #import "TFYPopTransitionAnimation.h"
-
 #import "TFYDelegateHandler.h"
 
 

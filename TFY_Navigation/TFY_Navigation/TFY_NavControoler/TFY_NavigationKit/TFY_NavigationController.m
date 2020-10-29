@@ -128,14 +128,6 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
     [navBar setTitleTextAttributes:textAttrs];
 }
 
-- (BOOL)prefersStatusBarHidden {
-    return self.tfy_statusBarHidden;
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return self.tfy_statusBarStyle;
-}
-
 #pragma mark Lifecycle
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
