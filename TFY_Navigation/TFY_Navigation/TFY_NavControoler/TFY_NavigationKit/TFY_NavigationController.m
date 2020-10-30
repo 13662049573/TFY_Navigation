@@ -106,8 +106,8 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[UITabBar appearance]setTranslucent:NO];
-    
+    self.view.backgroundColor = UIColor.whiteColor;
+        
     [TFY_Configure setupDefaultConfigure];
     
     [self setupNavigationBarTheme];
@@ -148,8 +148,8 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     TFYContainerViewController *container = TFYWrapViewController(viewController);
-   if (self.viewControllers.count >= 1) {
-        viewController.hidesBottomBarWhenPushed = YES;
+    if (self.viewControllers.count >= 1) {
+       container.hidesBottomBarWhenPushed = YES;
     }
     // 返回按钮目前仅支持图片
     UIImage *leftImage = [TFY_Configure.backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -165,8 +165,6 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
     
     objc_setAssociatedObject(container.containerNavigationController, &RootNavigationControllerKey, self, OBJC_ASSOCIATION_ASSIGN);
 }
-
-
 
 - (UIImage *)tfy_createImage:(UIColor *)imageColor {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);

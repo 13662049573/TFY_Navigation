@@ -38,20 +38,26 @@ PODS:
     - TFY_LayoutCategoryKit/TFY_Chain/TFY_ChainBase
     - TFY_LayoutCategoryKit/TFY_Chain/TFY_UIGesture
   - TFY_LayoutCategoryKit/TFY_Tools (1.6.4)
+  - TFY_TabBarKit (1.1.2):
+    - TFY_TabBarKit/TFY_SystemTabBar (= 1.1.2)
+  - TFY_TabBarKit/TFY_SystemTabBar (1.1.2)
 
 DEPENDENCIES:
   - TFY_AutoLayout
   - TFY_LayoutCategoryKit
+  - TFY_TabBarKit
 
 SPEC REPOS:
   trunk:
     - TFY_AutoLayout
     - TFY_LayoutCategoryKit
+    - TFY_TabBarKit
 
 SPEC CHECKSUMS:
   TFY_AutoLayout: 03085c3744020215142df50ee24e9629eb967779
   TFY_LayoutCategoryKit: 2ef34148ecd504dfcc4de72e6875bed495fe1541
+  TFY_TabBarKit: 03da94084ad16fa462aba0b4591d984b516085c1
 
-PODFILE CHECKSUM: 3f106e4739c7c74c4d21d0da66b67f59b5f4a2d4
+PODFILE CHECKSUM: a16b75f281bb0ce755f4b2abb80265d20cf73aef
 
 COCOAPODS: 1.10.0

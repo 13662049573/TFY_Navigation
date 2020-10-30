@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TFY_Navigation/TFY_Navigation.h"
-#import "ViewController.h"
+#import "TFY_TabBarController.h"
 @interface AppDelegate ()
 
 @end
@@ -21,10 +21,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor  whiteColor];
 
-    TFY_NavigationController *nav = [[TFY_NavigationController alloc] initWithRootViewController:ViewController.new];
-    nav.tfy_openScrollLeftPush = YES;
-//    nav.tfy_translationScale = YES;
-    self.window.rootViewController = nav;
+    self.window.rootViewController = TFY_TabBarController.new;
+    
     [self.window makeKeyAndVisible];
     
     return YES;

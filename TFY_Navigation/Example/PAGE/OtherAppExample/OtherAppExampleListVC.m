@@ -11,6 +11,7 @@
 #import "CustomTitleCellExampleVC2.h"
 #import "CustomTitleCellExampleVC3.h"
 #import "NAV_OneController.h"
+#import "NAV_FourViewController.h"
 @interface OtherAppExampleListVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -73,12 +74,6 @@
         [self.navigationController pushViewController:vc animated:true];
         return;
     }
-    if ([[self cellTitles][indexPath.row] containsString:@"导航栏处理"]) {
-        NAV_OneController *vc = [NAV_OneController new];
-        vc.title = @"导航栏处理";
-        [self.navigationController pushViewController:vc animated:YES];
-        return;
-    }
     CommonPageViewController *exampleVC = [[CommonPageViewController alloc] init];
     exampleVC.title = [self cellTitles][indexPath.row];
     exampleVC.config = [self configOfIndexPath:indexPath];
@@ -98,7 +93,6 @@
              @"腾讯视频",
              @"网易新闻",
              @"人民日报",
-             @"导航栏处理"
              ];
 }
 
@@ -112,7 +106,6 @@
              @"icon_txsp",
              @"icon_wyxw",
              @"icon_rmrb",
-             @"me_data_icom"
              ];
 }
 

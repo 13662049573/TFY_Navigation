@@ -6,6 +6,7 @@ target 'TFY_Navigation' do
   use_frameworks!
   pod 'TFY_AutoLayout'
   pod 'TFY_LayoutCategoryKit'
+  pod 'TFY_TabBarKit'
   # Pods for TFY_Navigation
 
   target 'TFY_NavigationTests' do
