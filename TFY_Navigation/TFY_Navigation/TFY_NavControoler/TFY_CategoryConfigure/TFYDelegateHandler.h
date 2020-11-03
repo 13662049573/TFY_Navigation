@@ -12,8 +12,6 @@
 #import "UIViewController+TFYCategory.h"
 #import "UINavigationController+TFYCategory.h"
 
-#import "TFYCommon.h"
-
 NS_ASSUME_NONNULL_BEGIN
 
 @class TFYNavigationControllerDelegate;

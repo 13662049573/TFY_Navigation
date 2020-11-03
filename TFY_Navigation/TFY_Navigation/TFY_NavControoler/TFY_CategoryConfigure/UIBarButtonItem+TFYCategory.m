@@ -8,7 +8,7 @@
 
 #import "UIBarButtonItem+TFYCategory.h"
 #import <objc/runtime.h>
-#define WSelf(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
 static inline NSUInteger hexStrToInt(NSString *str) {
     uint32_t result = 0;
     sscanf([str UTF8String], "%X", &result);

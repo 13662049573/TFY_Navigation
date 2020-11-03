@@ -7,6 +7,7 @@
 //
 
 #import "TFYDelegateHandler.h"
+#import "TFYCommon.h"
 
 @implementation TFYPopGestureRecognizerDelegate
 
