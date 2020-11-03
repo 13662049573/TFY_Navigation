@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
   spec.name         = "TFY_Navigation"
 
-  spec.version      = "2.6.3"
+  spec.version      = "2.6.4"
 
   spec.summary      = "多变颜色导航栏"
 
