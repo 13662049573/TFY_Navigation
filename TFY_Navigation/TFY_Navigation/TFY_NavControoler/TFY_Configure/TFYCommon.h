@@ -25,7 +25,7 @@ typedef NS_ENUM(NSUInteger, TFYNavigationBarBackStyle) {
 #import "UIImage+TFYCategory.h"
 #import "TFYDelegateHandler.h"
 
-#define TFY_Configure [TFYNavigationBarConfigure sharedInstance]
+#define TFY_Configure                    [TFYNavigationBarConfigure sharedInstance]
 
 // 判断是否是iPhoneX系列手机
 #define TFY_IS_iPhoneX                   [TFY_Configure tfy_isNotchedScreen]
@@ -42,6 +42,7 @@ typedef NS_ENUM(NSUInteger, TFYNavigationBarBackStyle) {
 #define TFY_NAVBAR_HEIGHT                44.0f   // 导航栏高度
 #define TFY_STATUSBAR_NAVBAR_HEIGHT      (TFY_STATUSBAR_HEIGHT + TFY_NAVBAR_HEIGHT) // 状态栏+导航栏高度
 #define TFY_TABBAR_HEIGHT                (TFY_SAFEAREA_BTM + 49.0f)  //tabbar高度
+
 
 // 使用static inline创建静态内联函数，方便调用
 CG_INLINE void tfy_swizzled_method(NSString *prefix, Class oldClass ,NSString *oldSelector, Class newClass) {

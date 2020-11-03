@@ -302,14 +302,14 @@
 		177BEB969DDF77E7044CD99DE0B0E229 /* TFY_WebViewChainModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFY_WebViewChainModel.h; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_UIView/TFY_WebViewChainModel.h; sourceTree = "<group>"; };
 		1787B1D1C422B0FA62E0420180DC6E92 /* TFY_TextFieldChainModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFY_TextFieldChainModel.h; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_UIView/TFY_TextFieldChainModel.h; sourceTree = "<group>"; };
 		187CABA7941CF3A97339C87FE5986B62 /* CALayer+TFY_Chain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CALayer+TFY_Chain.h"; path = "TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_CALayer/CALayer+TFY_Chain.h"; sourceTree = "<group>"; };
-		1901CDF70D23A68CA0B9E02D2F70C422 /* TFY_AutoLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TFY_AutoLayout.framework; path = TFY_AutoLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1901CDF70D23A68CA0B9E02D2F70C422 /* TFY_AutoLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TFY_AutoLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1906275B2F5981A45565E5454566165B /* UIAlertController+TFY_Chain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIAlertController+TFY_Chain.h"; path = "TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Categories/TFY_Foundation/UIAlertController+TFY_Chain.h"; sourceTree = "<group>"; };
 		195E95E43140B97C71B95700D9AF02B4 /* TFY_TextLayerChainModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFY_TextLayerChainModel.h; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_CALayer/TFY_TextLayerChainModel.h; sourceTree = "<group>"; };
 		1B33F3EA7CAE21340EF40263A8460AE5 /* TFY_LayoutCategoryKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TFY_LayoutCategoryKit-prefix.pch"; sourceTree = "<group>"; };
 		1C4BDD07D2F408514D4C2FC393302EE8 /* UIControl+TFY_Tools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIControl+TFY_Tools.m"; path = "TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Categories/TFY_Foundation/UIControl+TFY_Tools.m"; sourceTree = "<group>"; };
 		1D8EB074F9CA426848F7AE8A41487160 /* UIView+TFY_Tools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+TFY_Tools.m"; path = "TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Categories/TFY_UI/UIView+TFY_Tools.m"; sourceTree = "<group>"; };
 		1F2D0653C8624AB7F6388C97C79FC1FD /* CALayer+TFY_Frame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+TFY_Frame.m"; path = "TFY_AutoLayout/TFY_AutoLayout/MAC_Layout/CALayer+TFY_Frame.m"; sourceTree = "<group>"; };
-		1FF45DA6BD3263474314B951A5B7F5D3 /* TFY_LayoutCategoryKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TFY_LayoutCategoryKit.framework; path = TFY_LayoutCategoryKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FF45DA6BD3263474314B951A5B7F5D3 /* TFY_LayoutCategoryKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TFY_LayoutCategoryKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E867637CDDB0E2C70444F1FE44FF24 /* UIView+TFY_AutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+TFY_AutoLayout.h"; path = "TFY_AutoLayout/TFY_AutoLayout/IOS_Layout/UIView+TFY_AutoLayout.h"; sourceTree = "<group>"; };
 		214D6DF64234FF87900837678C0CACEC /* TFY_ControlChainModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TFY_ControlChainModel.m; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_UIView/TFY_ControlChainModel.m; sourceTree = "<group>"; };
 		227143ED33AC44F5D19AF828930FEB22 /* TFY_ImageViewChainModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TFY_ImageViewChainModel.m; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_UIView/TFY_ImageViewChainModel.m; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 		5648F5A3485A87DD700E751BE98B182F /* TfySY_TabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TfySY_TabBar.h; path = TFY_TabBarController/TFY_TabBarKit/TFY_SystemTabBar/TfySY_TabBar.h; sourceTree = "<group>"; };
 		58D4E38760626E4DAA4EC246F8D7DE84 /* TFY_SwipeGestureChainModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TFY_SwipeGestureChainModel.m; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_UIGesture/TFY_SwipeGestureChainModel.m; sourceTree = "<group>"; };
 		58F5A30906584CB631BE30653C519CFC /* UIScreen+TFY_Tools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+TFY_Tools.m"; path = "TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Categories/TFY_Foundation/UIScreen+TFY_Tools.m"; sourceTree = "<group>"; };
-		59848DCC394286F5610C1DB221E6C63D /* Pods_TFY_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TFY_Navigation.framework; path = "Pods-TFY_Navigation.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59848DCC394286F5610C1DB221E6C63D /* Pods_TFY_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFY_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A2DC9BF5E9E5EAD959B10A17B368DB0 /* TFY_ChainDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFY_ChainDefine.h; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_ChainBase/TFY_ChainDefine.h; sourceTree = "<group>"; };
 		5A96693FDE4E77D4594992837036127E /* TFY_Define.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFY_Define.h; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Categories/TFY_Define.h; sourceTree = "<group>"; };
 		5BE28D5D6A7C4EC13F2DA9B37C6E4DA4 /* NSDate+TFY_Date.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+TFY_Date.m"; path = "TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Categories/TFY_Foundation/NSDate+TFY_Date.m"; sourceTree = "<group>"; };
@@ -423,12 +423,12 @@
 		97ED049B57CA1B518F24C80886060C59 /* TFY_BaseGestureChainModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TFY_BaseGestureChainModel.m; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_UIGesture/TFY_BaseGestureChainModel.m; sourceTree = "<group>"; };
 		9829434118C84F94C71A4656B320A02E /* TFY_Video.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TFY_Video.m; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Tools/TFY_Video.m; sourceTree = "<group>"; };
 		983E9796DC2E45627B70194C39341A6E /* Pods-TFY_NavigationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TFY_NavigationTests.debug.xcconfig"; sourceTree = "<group>"; };
-		98D46B3BFDF0EC62A17C3DFA280FA71E /* Pods_TFY_Navigation_TFY_NavigationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TFY_Navigation_TFY_NavigationUITests.framework; path = "Pods-TFY_Navigation-TFY_NavigationUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		98D46B3BFDF0EC62A17C3DFA280FA71E /* Pods_TFY_Navigation_TFY_NavigationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFY_Navigation_TFY_NavigationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B26226B4E868577060CFBABDD53D06A /* TFY_TextViewChainModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TFY_TextViewChainModel.m; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_UIView/TFY_TextViewChainModel.m; sourceTree = "<group>"; };
 		9C05169E065706AFD4EABE3BF9320B87 /* TFY_AutoLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TFY_AutoLayout-dummy.m"; sourceTree = "<group>"; };
 		9D2E70BF31DB07B659F52138CFF244D1 /* TFY_ShaperLayerChainModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFY_ShaperLayerChainModel.h; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_CALayer/TFY_ShaperLayerChainModel.h; sourceTree = "<group>"; };
 		9D71920A088ED1924AE661623891BC60 /* TFY_ProgressViewChainModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFY_ProgressViewChainModel.h; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_UIView/TFY_ProgressViewChainModel.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DBCA2BE1702D4341C958F5E1C9A7F2D /* TFY_SegmentedControlChainModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFY_SegmentedControlChainModel.h; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_UIView/TFY_SegmentedControlChainModel.h; sourceTree = "<group>"; };
 		A1EA13698B225FD512596A09BD1A94A7 /* TFY_PinchGestureChainModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TFY_PinchGestureChainModel.m; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_UIGesture/TFY_PinchGestureChainModel.m; sourceTree = "<group>"; };
 		A47E8336C16F1B18DF63846157EE1122 /* NSData+TFY_Data.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+TFY_Data.h"; path = "TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Categories/TFY_Foundation/NSData+TFY_Data.h"; sourceTree = "<group>"; };
@@ -443,7 +443,7 @@
 		AD53F4EC3CA1EFC893DA4C7305920420 /* Pods-TFY_Navigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TFY_Navigation.release.xcconfig"; sourceTree = "<group>"; };
 		AE596C43C8A950E8C2C3ED1C7F6DFC11 /* Pods-TFY_Navigation-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TFY_Navigation-acknowledgements.markdown"; sourceTree = "<group>"; };
 		AF8B63F2B29BBE01E4CE6BA2778B2F0B /* Pods-TFY_Navigation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TFY_Navigation-Info.plist"; sourceTree = "<group>"; };
-		B097768C16AB7B3F033D17E5056FFBCB /* TFY_TabBarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TFY_TabBarKit.framework; path = TFY_TabBarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B097768C16AB7B3F033D17E5056FFBCB /* TFY_TabBarKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TFY_TabBarKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C104D2452C9D7CF5FFEF184B3E29C5 /* TFY_PanGestureChainModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFY_PanGestureChainModel.h; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_UIGesture/TFY_PanGestureChainModel.h; sourceTree = "<group>"; };
 		B17F9724CDB81EE8DDF3EC2E17B1BDA7 /* NSAttributedString+TFY_Tools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+TFY_Tools.m"; path = "TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Categories/TFY_Foundation/NSAttributedString+TFY_Tools.m"; sourceTree = "<group>"; };
 		B1FDA1D37709E647597C8C8A46FDD183 /* UIView+TFY_Chain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+TFY_Chain.h"; path = "TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_UIView/UIView+TFY_Chain.h"; sourceTree = "<group>"; };
@@ -457,7 +457,7 @@
 		B9A99D70F8CF60AC533524F1505E7AE9 /* Pods-TFY_Navigation-TFY_NavigationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TFY_Navigation-TFY_NavigationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B9ECA1BD70739D28CE3648B87CDF50F7 /* TFY_ChainBaseModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFY_ChainBaseModel.h; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Chain/TFY_ChainBase/TFY_ChainBaseModel.h; sourceTree = "<group>"; };
 		BA49F647207D9CC82FD8CC7CB3CE6440 /* UILayoutGuide+TFY_AutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILayoutGuide+TFY_AutoLayout.h"; path = "TFY_AutoLayout/TFY_AutoLayout/MAC_Layout/UILayoutGuide+TFY_AutoLayout.h"; sourceTree = "<group>"; };
-		BA517C92E29EB07C54DFB063E0BB0A17 /* Pods_TFY_NavigationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TFY_NavigationTests.framework; path = "Pods-TFY_NavigationTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA517C92E29EB07C54DFB063E0BB0A17 /* Pods_TFY_NavigationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFY_NavigationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEAB01851FD6905DF895935B1D25A88 /* TFY_LayoutCategoryKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFY_LayoutCategoryKit.h; path = TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_LayoutCategoryKit.h; sourceTree = "<group>"; };
 		BB94C6654FE11C42A979E1C13EB10041 /* TFY_AutoLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TFY_AutoLayout.h; path = TFY_AutoLayout/TFY_AutoLayout/TFY_AutoLayout.h; sourceTree = "<group>"; };
 		BC0677EF6ED0C28E2B901E5DFB9035DD /* NSNumber+TFY_Tools.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+TFY_Tools.m"; path = "TFY_LayoutCategoryUtil/TFY_LayoutCategoryKit/TFY_Categories/TFY_Foundation/NSNumber+TFY_Tools.m"; sourceTree = "<group>"; };
@@ -681,7 +681,6 @@
 				03FDED340DFEA764AB835D13DF44E58B /* Support Files */,
 				12DA234FCC0F904788FEEA0CD51D1E03 /* TFY_SystemTabBar */,
 			);
-			name = TFY_TabBarKit;
 			path = TFY_TabBarKit;
 			sourceTree = "<group>";
 		};
@@ -826,7 +825,6 @@
 				B59C9E36E313252E93F550C95524C072 /* TFY_Chain */,
 				21E912D7E1EE0A0AC9226FE448B34919 /* TFY_Tools */,
 			);
-			name = TFY_LayoutCategoryKit;
 			path = TFY_LayoutCategoryKit;
 			sourceTree = "<group>";
 		};
@@ -961,7 +959,6 @@
 				9AF6A98E8E48E8591085CE8307CA953A /* Support Files */,
 				5D674879C32EFADDCAE0650CCE1ED52C /* Util */,
 			);
-			name = TFY_AutoLayout;
 			path = TFY_AutoLayout;
 			sourceTree = "<group>";
 		};
@@ -1339,7 +1336,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1210;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -1610,7 +1607,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TFY_TabBarKit/TFY_TabBarKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TFY_TabBarKit/TFY_TabBarKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1644,7 +1641,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TFY_Navigation-TFY_NavigationUITests/Pods-TFY_Navigation-TFY_NavigationUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1681,7 +1678,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TFY_Navigation/Pods-TFY_Navigation-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1718,7 +1715,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TFY_AutoLayout/TFY_AutoLayout-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TFY_AutoLayout/TFY_AutoLayout-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1753,7 +1750,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TFY_NavigationTests/Pods-TFY_NavigationTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1791,7 +1788,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TFY_LayoutCategoryKit/TFY_LayoutCategoryKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TFY_LayoutCategoryKit/TFY_LayoutCategoryKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1825,7 +1822,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TFY_LayoutCategoryKit/TFY_LayoutCategoryKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TFY_LayoutCategoryKit/TFY_LayoutCategoryKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1860,7 +1857,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TFY_Navigation/Pods-TFY_Navigation-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1932,7 +1929,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1960,7 +1957,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TFY_NavigationTests/Pods-TFY_NavigationTests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1997,7 +1994,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TFY_Navigation-TFY_NavigationUITests/Pods-TFY_Navigation-TFY_NavigationUITests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2035,7 +2032,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TFY_AutoLayout/TFY_AutoLayout-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TFY_AutoLayout/TFY_AutoLayout-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2106,7 +2103,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2135,7 +2132,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TFY_TabBarKit/TFY_TabBarKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TFY_TabBarKit/TFY_TabBarKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

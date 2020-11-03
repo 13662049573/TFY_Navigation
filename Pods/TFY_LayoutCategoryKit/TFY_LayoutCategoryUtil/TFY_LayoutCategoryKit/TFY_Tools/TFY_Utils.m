@@ -268,17 +268,6 @@ const char* jailbreak_tool_pathes[] = {
                     netconnType = @"未知";
                 }
             }];
-        } else {
-            NSString *accessString = teleInfo.currentRadioAccessTechnology;
-            if ([typeStrings4G containsObject:accessString]) {
-                netconnType = @"4G";
-            } else if ([typeStrings3G containsObject:accessString]) {
-                netconnType = @"3G";
-            } else if ([typeStrings2G containsObject:accessString]) {
-                netconnType = @"2G";
-            } else {
-                netconnType = @"未知";
-            }
         }
     }
     else {
@@ -298,11 +287,6 @@ const char* jailbreak_tool_pathes[] = {
                 result = YES;
             }
         }];
-    } else {
-        CTCarrier *obj = netIInfo.subscriberCellularProvider;
-        if (obj.isoCountryCode.length) {
-            result = YES;
-        }
     }
     return result;
 }
