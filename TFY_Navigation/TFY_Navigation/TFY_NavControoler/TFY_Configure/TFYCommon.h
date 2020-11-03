@@ -23,7 +23,7 @@ typedef NS_ENUM(NSUInteger, TFYNavigationBarBackStyle) {
 #import "TFYNavigationBarConfigure.h"
 #import "TFYNavigationBar.h"
 #import "UIImage+TFYCategory.h"
-#import "TFYDelegateHandler.h"
+
 
 #define TFY_Configure                    [TFYNavigationBarConfigure sharedInstance]
 

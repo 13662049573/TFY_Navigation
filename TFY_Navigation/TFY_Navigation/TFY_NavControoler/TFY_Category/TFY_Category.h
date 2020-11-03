@@ -14,5 +14,6 @@
 #import "UIBarButtonItem+TFYCategory.h"
 #import "UIScrollView+TFYCategory.h"
 #import "UINavigationController+TFYCategory.h"
+#import "TFYDelegateHandler.h"
 
 #endif /* TFY_Category_h */
