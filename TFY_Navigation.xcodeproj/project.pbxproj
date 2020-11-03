@@ -42,20 +42,20 @@
 		368F25C7254BF035002A1D38 /* NAV_SixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368F25C6254BF035002A1D38 /* NAV_SixViewController.m */; };
 		368F25CD254BF050002A1D38 /* NAV_SevenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368F25CC254BF050002A1D38 /* NAV_SevenViewController.m */; };
 		368F25E6254BF408002A1D38 /* TFY_TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368F25E5254BF408002A1D38 /* TFY_TabBarController.m */; };
-		3692191425494D93004A99B8 /* UIImage+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3692191325494D93004A99B8 /* UIImage+TFYCategory.m */; };
+		369044152550EBAF00E413BE /* TFYDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 369043FD2550EBAF00E413BE /* TFYDelegateHandler.m */; };
+		369044162550EBAF00E413BE /* TFYNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 369043FE2550EBAF00E413BE /* TFYNavigationBarConfigure.m */; };
+		369044172550EBAF00E413BE /* TFYNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 369043FF2550EBAF00E413BE /* TFYNavigationBar.m */; };
+		369044182550EBAF00E413BE /* TFYBaseTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044002550EBAF00E413BE /* TFYBaseTransitionAnimation.m */; };
+		369044192550EBAF00E413BE /* UIImage+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044012550EBAF00E413BE /* UIImage+TFYCategory.m */; };
+		3690441A2550EBAF00E413BE /* TFYPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044032550EBAF00E413BE /* TFYPushTransitionAnimation.m */; };
+		3690441B2550EBAF00E413BE /* UINavigationController+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044042550EBAF00E413BE /* UINavigationController+TFYCategory.m */; };
+		3690441C2550EBAF00E413BE /* UIScrollView+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044072550EBAF00E413BE /* UIScrollView+GKCategory.m */; };
+		3690441D2550EBAF00E413BE /* UINavigationItem+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3690440A2550EBAF00E413BE /* UINavigationItem+TFYCategory.m */; };
+		3690441E2550EBAF00E413BE /* UIViewController+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3690440B2550EBAF00E413BE /* UIViewController+TFYCategory.m */; };
+		3690441F2550EBAF00E413BE /* TFYPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044102550EBAF00E413BE /* TFYPopTransitionAnimation.m */; };
+		369044202550EBAF00E413BE /* UIBarButtonItem+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044132550EBAF00E413BE /* UIBarButtonItem+TFYCategory.m */; };
 		36D56FB62545606B0095323D /* TFY_NavigationImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 36D56FB52545606B0095323D /* TFY_NavigationImage.bundle */; };
-		36D56FC1254561E80095323D /* TFYNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D56FC0254561E80095323D /* TFYNavigationBar.m */; };
-		36D56FC7254562850095323D /* TFYNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D56FC6254562850095323D /* TFYNavigationBarConfigure.m */; };
-		36D56FCD254569B10095323D /* UIViewController+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D56FCC254569B10095323D /* UIViewController+TFYCategory.m */; };
 		36D56FD325456FAC0095323D /* TFY_NavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D56FD225456FAC0095323D /* TFY_NavigationBarViewController.m */; };
-		36D56FDF254576940095323D /* UIBarButtonItem+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D56FDE254576940095323D /* UIBarButtonItem+TFYCategory.m */; };
-		36D56FEB25457E8A0095323D /* UINavigationController+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D56FEA25457E8A0095323D /* UINavigationController+TFYCategory.m */; };
-		36D56FF125457FFA0095323D /* TFYBaseTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D56FF025457FFA0095323D /* TFYBaseTransitionAnimation.m */; };
-		36D56FFA254580C80095323D /* TFYPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D56FF9254580C80095323D /* TFYPushTransitionAnimation.m */; };
-		36D57000254580E40095323D /* TFYPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D56FFF254580E40095323D /* TFYPopTransitionAnimation.m */; };
-		36D57006254582710095323D /* TFYDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D57005254582710095323D /* TFYDelegateHandler.m */; };
-		36D5700F25458B0B0095323D /* UINavigationItem+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D5700E25458B0B0095323D /* UINavigationItem+TFYCategory.m */; };
-		36D5701525458CED0095323D /* UIScrollView+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D5701425458CED0095323D /* UIScrollView+GKCategory.m */; };
 		36D5702225458E0B0095323D /* TFY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D5701F25458E0B0095323D /* TFY_NavigationController.m */; };
 		565AFAB2247B985900FF5323 /* TFY_PageControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 565AFAB1247B985900FF5323 /* TFY_PageControllerConfig.m */; };
 		565AFAB5247B9A0A00FF5323 /* TFY_PageControllerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 565AFAB4247B9A0A00FF5323 /* TFY_PageControllerUtil.m */; };
@@ -159,35 +159,35 @@
 		368F25CC254BF050002A1D38 /* NAV_SevenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NAV_SevenViewController.m; sourceTree = "<group>"; };
 		368F25E4254BF408002A1D38 /* TFY_TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_TabBarController.h; sourceTree = "<group>"; };
 		368F25E5254BF408002A1D38 /* TFY_TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_TabBarController.m; sourceTree = "<group>"; };
-		3692191225494D92004A99B8 /* UIImage+TFYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TFYCategory.h"; sourceTree = "<group>"; };
-		3692191325494D93004A99B8 /* UIImage+TFYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TFYCategory.m"; sourceTree = "<group>"; };
+		369043FB2550EBAF00E413BE /* UIViewController+TFYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TFYCategory.h"; sourceTree = "<group>"; };
+		369043FC2550EBAF00E413BE /* UINavigationItem+TFYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+TFYCategory.h"; sourceTree = "<group>"; };
+		369043FD2550EBAF00E413BE /* TFYDelegateHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFYDelegateHandler.m; sourceTree = "<group>"; };
+		369043FE2550EBAF00E413BE /* TFYNavigationBarConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFYNavigationBarConfigure.m; sourceTree = "<group>"; };
+		369043FF2550EBAF00E413BE /* TFYNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFYNavigationBar.m; sourceTree = "<group>"; };
+		369044002550EBAF00E413BE /* TFYBaseTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFYBaseTransitionAnimation.m; sourceTree = "<group>"; };
+		369044012550EBAF00E413BE /* UIImage+TFYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TFYCategory.m"; sourceTree = "<group>"; };
+		369044022550EBAF00E413BE /* UIBarButtonItem+TFYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+TFYCategory.h"; sourceTree = "<group>"; };
+		369044032550EBAF00E413BE /* TFYPushTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFYPushTransitionAnimation.m; sourceTree = "<group>"; };
+		369044042550EBAF00E413BE /* UINavigationController+TFYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+TFYCategory.m"; sourceTree = "<group>"; };
+		369044052550EBAF00E413BE /* TFYPopTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYPopTransitionAnimation.h; sourceTree = "<group>"; };
+		369044062550EBAF00E413BE /* TFYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYCategory.h; sourceTree = "<group>"; };
+		369044072550EBAF00E413BE /* UIScrollView+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+GKCategory.m"; sourceTree = "<group>"; };
+		369044082550EBAF00E413BE /* TFYDelegateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYDelegateHandler.h; sourceTree = "<group>"; };
+		369044092550EBAF00E413BE /* TFYNavigationBarConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYNavigationBarConfigure.h; sourceTree = "<group>"; };
+		3690440A2550EBAF00E413BE /* UINavigationItem+TFYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+TFYCategory.m"; sourceTree = "<group>"; };
+		3690440B2550EBAF00E413BE /* UIViewController+TFYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TFYCategory.m"; sourceTree = "<group>"; };
+		3690440C2550EBAF00E413BE /* UIImage+TFYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TFYCategory.h"; sourceTree = "<group>"; };
+		3690440D2550EBAF00E413BE /* TFYCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYCommon.h; sourceTree = "<group>"; };
+		3690440E2550EBAF00E413BE /* TFYBaseTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYBaseTransitionAnimation.h; sourceTree = "<group>"; };
+		3690440F2550EBAF00E413BE /* TFYNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYNavigationBar.h; sourceTree = "<group>"; };
+		369044102550EBAF00E413BE /* TFYPopTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFYPopTransitionAnimation.m; sourceTree = "<group>"; };
+		369044112550EBAF00E413BE /* UINavigationController+TFYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+TFYCategory.h"; sourceTree = "<group>"; };
+		369044122550EBAF00E413BE /* TFYPushTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYPushTransitionAnimation.h; sourceTree = "<group>"; };
+		369044132550EBAF00E413BE /* UIBarButtonItem+TFYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+TFYCategory.m"; sourceTree = "<group>"; };
+		369044142550EBAF00E413BE /* UIScrollView+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GKCategory.h"; sourceTree = "<group>"; };
 		36D56FB52545606B0095323D /* TFY_NavigationImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TFY_NavigationImage.bundle; sourceTree = "<group>"; };
-		36D56FBA254560970095323D /* TFYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYCategory.h; sourceTree = "<group>"; };
-		36D56FBB2545612B0095323D /* TFYCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYCommon.h; sourceTree = "<group>"; };
-		36D56FBF254561E80095323D /* TFYNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYNavigationBar.h; sourceTree = "<group>"; };
-		36D56FC0254561E80095323D /* TFYNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFYNavigationBar.m; sourceTree = "<group>"; };
-		36D56FC5254562850095323D /* TFYNavigationBarConfigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYNavigationBarConfigure.h; sourceTree = "<group>"; };
-		36D56FC6254562850095323D /* TFYNavigationBarConfigure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFYNavigationBarConfigure.m; sourceTree = "<group>"; };
-		36D56FCB254569B10095323D /* UIViewController+TFYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TFYCategory.h"; sourceTree = "<group>"; };
-		36D56FCC254569B10095323D /* UIViewController+TFYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TFYCategory.m"; sourceTree = "<group>"; };
 		36D56FD125456FAC0095323D /* TFY_NavigationBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_NavigationBarViewController.h; sourceTree = "<group>"; };
 		36D56FD225456FAC0095323D /* TFY_NavigationBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_NavigationBarViewController.m; sourceTree = "<group>"; };
-		36D56FDD254576940095323D /* UIBarButtonItem+TFYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+TFYCategory.h"; sourceTree = "<group>"; };
-		36D56FDE254576940095323D /* UIBarButtonItem+TFYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+TFYCategory.m"; sourceTree = "<group>"; };
-		36D56FE925457E8A0095323D /* UINavigationController+TFYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+TFYCategory.h"; sourceTree = "<group>"; };
-		36D56FEA25457E8A0095323D /* UINavigationController+TFYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+TFYCategory.m"; sourceTree = "<group>"; };
-		36D56FEF25457FFA0095323D /* TFYBaseTransitionAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYBaseTransitionAnimation.h; sourceTree = "<group>"; };
-		36D56FF025457FFA0095323D /* TFYBaseTransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFYBaseTransitionAnimation.m; sourceTree = "<group>"; };
-		36D56FF8254580C80095323D /* TFYPushTransitionAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYPushTransitionAnimation.h; sourceTree = "<group>"; };
-		36D56FF9254580C80095323D /* TFYPushTransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFYPushTransitionAnimation.m; sourceTree = "<group>"; };
-		36D56FFE254580E40095323D /* TFYPopTransitionAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYPopTransitionAnimation.h; sourceTree = "<group>"; };
-		36D56FFF254580E40095323D /* TFYPopTransitionAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFYPopTransitionAnimation.m; sourceTree = "<group>"; };
-		36D57004254582710095323D /* TFYDelegateHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYDelegateHandler.h; sourceTree = "<group>"; };
-		36D57005254582710095323D /* TFYDelegateHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFYDelegateHandler.m; sourceTree = "<group>"; };
-		36D5700D25458B0B0095323D /* UINavigationItem+TFYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+TFYCategory.h"; sourceTree = "<group>"; };
-		36D5700E25458B0B0095323D /* UINavigationItem+TFYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+TFYCategory.m"; sourceTree = "<group>"; };
-		36D5701325458CED0095323D /* UIScrollView+GKCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GKCategory.h"; sourceTree = "<group>"; };
-		36D5701425458CED0095323D /* UIScrollView+GKCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+GKCategory.m"; sourceTree = "<group>"; };
 		36D5701F25458E0B0095323D /* TFY_NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_NavigationController.m; sourceTree = "<group>"; };
 		36D5702125458E0B0095323D /* TFY_NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_NavigationController.h; sourceTree = "<group>"; };
 		4E005F02273F596C1314D52E /* Pods-TFY_Navigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_Navigation.release.xcconfig"; path = "Target Support Files/Pods-TFY_Navigation/Pods-TFY_Navigation.release.xcconfig"; sourceTree = "<group>"; };
@@ -446,30 +446,37 @@
 			path = TABBAR;
 			sourceTree = "<group>";
 		};
-		36D56FB0254560020095323D /* TFY_Category */ = {
+		369043FA2550EBAF00E413BE /* TFY_CategoryConfigure */ = {
 			isa = PBXGroup;
 			children = (
-				36D56FBA254560970095323D /* TFYCategory.h */,
-				36D57004254582710095323D /* TFYDelegateHandler.h */,
-				36D57005254582710095323D /* TFYDelegateHandler.m */,
-				36D56FCB254569B10095323D /* UIViewController+TFYCategory.h */,
-				36D56FCC254569B10095323D /* UIViewController+TFYCategory.m */,
-				36D56FDD254576940095323D /* UIBarButtonItem+TFYCategory.h */,
-				36D56FDE254576940095323D /* UIBarButtonItem+TFYCategory.m */,
-				36D56FE925457E8A0095323D /* UINavigationController+TFYCategory.h */,
-				36D56FEA25457E8A0095323D /* UINavigationController+TFYCategory.m */,
-				36D56FEF25457FFA0095323D /* TFYBaseTransitionAnimation.h */,
-				36D56FF025457FFA0095323D /* TFYBaseTransitionAnimation.m */,
-				36D56FF8254580C80095323D /* TFYPushTransitionAnimation.h */,
-				36D56FF9254580C80095323D /* TFYPushTransitionAnimation.m */,
-				36D56FFE254580E40095323D /* TFYPopTransitionAnimation.h */,
-				36D56FFF254580E40095323D /* TFYPopTransitionAnimation.m */,
-				36D5700D25458B0B0095323D /* UINavigationItem+TFYCategory.h */,
-				36D5700E25458B0B0095323D /* UINavigationItem+TFYCategory.m */,
-				36D5701325458CED0095323D /* UIScrollView+GKCategory.h */,
-				36D5701425458CED0095323D /* UIScrollView+GKCategory.m */,
+				369044062550EBAF00E413BE /* TFYCategory.h */,
+				3690440D2550EBAF00E413BE /* TFYCommon.h */,
+				369044082550EBAF00E413BE /* TFYDelegateHandler.h */,
+				369043FD2550EBAF00E413BE /* TFYDelegateHandler.m */,
+				3690440F2550EBAF00E413BE /* TFYNavigationBar.h */,
+				369043FF2550EBAF00E413BE /* TFYNavigationBar.m */,
+				369044092550EBAF00E413BE /* TFYNavigationBarConfigure.h */,
+				369043FE2550EBAF00E413BE /* TFYNavigationBarConfigure.m */,
+				3690440E2550EBAF00E413BE /* TFYBaseTransitionAnimation.h */,
+				369044002550EBAF00E413BE /* TFYBaseTransitionAnimation.m */,
+				369044052550EBAF00E413BE /* TFYPopTransitionAnimation.h */,
+				369044102550EBAF00E413BE /* TFYPopTransitionAnimation.m */,
+				369044122550EBAF00E413BE /* TFYPushTransitionAnimation.h */,
+				369044032550EBAF00E413BE /* TFYPushTransitionAnimation.m */,
+				3690440C2550EBAF00E413BE /* UIImage+TFYCategory.h */,
+				369044012550EBAF00E413BE /* UIImage+TFYCategory.m */,
+				369044142550EBAF00E413BE /* UIScrollView+GKCategory.h */,
+				369044072550EBAF00E413BE /* UIScrollView+GKCategory.m */,
+				369044022550EBAF00E413BE /* UIBarButtonItem+TFYCategory.h */,
+				369044132550EBAF00E413BE /* UIBarButtonItem+TFYCategory.m */,
+				369043FB2550EBAF00E413BE /* UIViewController+TFYCategory.h */,
+				3690440B2550EBAF00E413BE /* UIViewController+TFYCategory.m */,
+				369043FC2550EBAF00E413BE /* UINavigationItem+TFYCategory.h */,
+				3690440A2550EBAF00E413BE /* UINavigationItem+TFYCategory.m */,
+				369044112550EBAF00E413BE /* UINavigationController+TFYCategory.h */,
+				369044042550EBAF00E413BE /* UINavigationController+TFYCategory.m */,
 			);
-			path = TFY_Category;
+			path = TFY_CategoryConfigure;
 			sourceTree = "<group>";
 		};
 		36D56FB2254560020095323D /* TFY_NavigationKit */ = {
@@ -488,20 +495,6 @@
 				36D56FD225456FAC0095323D /* TFY_NavigationBarViewController.m */,
 			);
 			path = TFY_NavBasVcKit;
-			sourceTree = "<group>";
-		};
-		36D56FB4254560020095323D /* TFY_Configure */ = {
-			isa = PBXGroup;
-			children = (
-				36D56FBB2545612B0095323D /* TFYCommon.h */,
-				3692191225494D92004A99B8 /* UIImage+TFYCategory.h */,
-				3692191325494D93004A99B8 /* UIImage+TFYCategory.m */,
-				36D56FBF254561E80095323D /* TFYNavigationBar.h */,
-				36D56FC0254561E80095323D /* TFYNavigationBar.m */,
-				36D56FC5254562850095323D /* TFYNavigationBarConfigure.h */,
-				36D56FC6254562850095323D /* TFYNavigationBarConfigure.m */,
-			);
-			path = TFY_Configure;
 			sourceTree = "<group>";
 		};
 		565AFAAF247B979300FF5323 /* TFY_PageController */ = {
@@ -546,8 +539,7 @@
 			children = (
 				36D56FB3254560020095323D /* TFY_NavBasVcKit */,
 				36D56FB2254560020095323D /* TFY_NavigationKit */,
-				36D56FB0254560020095323D /* TFY_Category */,
-				36D56FB4254560020095323D /* TFY_Configure */,
+				369043FA2550EBAF00E413BE /* TFY_CategoryConfigure */,
 			);
 			path = TFY_NavControoler;
 			sourceTree = "<group>";
@@ -815,53 +807,53 @@
 			files = (
 				368F25BB254BF00A002A1D38 /* NAV_FourViewController.m in Sources */,
 				36D5702225458E0B0095323D /* TFY_NavigationController.m in Sources */,
-				36D56FFA254580C80095323D /* TFYPushTransitionAnimation.m in Sources */,
 				3683FE1024F1D69D005CF078 /* OtherAppExampleListVC.m in Sources */,
-				36D5701525458CED0095323D /* UIScrollView+GKCategory.m in Sources */,
 				3683FE1C24F1D69D005CF078 /* ChildViewConflictExampleVC.m in Sources */,
 				565AFABB247B9D2100FF5323 /* TFY_PageBasicTitleView.m in Sources */,
 				3624206E229649BF00AFE2B2 /* ViewController.m in Sources */,
 				3683FE1A24F1D69D005CF078 /* CustomTitleCellExampleVC1.m in Sources */,
 				368F25E6254BF408002A1D38 /* TFY_TabBarController.m in Sources */,
+				3690441F2550EBAF00E413BE /* TFYPopTransitionAnimation.m in Sources */,
 				368F25C7254BF035002A1D38 /* NAV_SixViewController.m in Sources */,
 				3683FE1724F1D69D005CF078 /* SwitchByHandExampleVC.m in Sources */,
+				369044172550EBAF00E413BE /* TFYNavigationBar.m in Sources */,
 				3683FE1324F1D69D005CF078 /* CommonPageViewController.m in Sources */,
 				36242079229649C000AFE2B2 /* main.m in Sources */,
-				36D56FCD254569B10095323D /* UIViewController+TFYCategory.m in Sources */,
-				36D56FF125457FFA0095323D /* TFYBaseTransitionAnimation.m in Sources */,
 				3683FE2024F1D69D005CF078 /* XLChannelItem.m in Sources */,
+				369044182550EBAF00E413BE /* TFYBaseTransitionAnimation.m in Sources */,
 				3683FE2324F1D6D2005CF078 /* NAV_OneController.m in Sources */,
-				36D57000254580E40095323D /* TFYPopTransitionAnimation.m in Sources */,
-				3692191425494D93004A99B8 /* UIImage+TFYCategory.m in Sources */,
 				3683FE2624F1D6E6005CF078 /* NAV_TwoController.m in Sources */,
 				3683FE1E24F1D69D005CF078 /* XLChannelHeader.m in Sources */,
+				3690441E2550EBAF00E413BE /* UIViewController+TFYCategory.m in Sources */,
+				369044152550EBAF00E413BE /* TFYDelegateHandler.m in Sources */,
 				3683FE2924F1D6FA005CF078 /* NAV_ThreeController.m in Sources */,
-				36D56FC7254562850095323D /* TFYNavigationBarConfigure.m in Sources */,
-				36D5700F25458B0B0095323D /* UINavigationItem+TFYCategory.m in Sources */,
-				36D57006254582710095323D /* TFYDelegateHandler.m in Sources */,
 				565AFAB8247B9C1800FF5323 /* TFY_PageTitleCell.m in Sources */,
 				3683FE1924F1D69D005CF078 /* CustomPageTitleCell1.m in Sources */,
-				36D56FDF254576940095323D /* UIBarButtonItem+TFYCategory.m in Sources */,
 				565AFABE247B9E8E00FF5323 /* TFY_PageSegmentedTitleView.m in Sources */,
 				3624206B229649BF00AFE2B2 /* AppDelegate.m in Sources */,
 				3683FE0F24F1D69D005CF078 /* CustomTitleCellExampleVC2.m in Sources */,
+				3690441A2550EBAF00E413BE /* TFYPushTransitionAnimation.m in Sources */,
+				3690441B2550EBAF00E413BE /* UINavigationController+TFYCategory.m in Sources */,
 				36D56FD325456FAC0095323D /* TFY_NavigationBarViewController.m in Sources */,
+				369044162550EBAF00E413BE /* TFYNavigationBarConfigure.m in Sources */,
 				3683FE1624F1D69D005CF078 /* SpecialUseExampleVC.m in Sources */,
 				565AFAB5247B9A0A00FF5323 /* TFY_PageControllerUtil.m in Sources */,
 				3683FE1524F1D69D005CF078 /* BasicFunctionListVC.m in Sources */,
+				3690441D2550EBAF00E413BE /* UINavigationItem+TFYCategory.m in Sources */,
 				3683FE1B24F1D69D005CF078 /* ChannelManageExampleVC.m in Sources */,
+				369044202550EBAF00E413BE /* UIBarButtonItem+TFYCategory.m in Sources */,
+				3690441C2550EBAF00E413BE /* UIScrollView+GKCategory.m in Sources */,
 				3683FE1124F1D69D005CF078 /* CustomPageTitleCell3.m in Sources */,
 				3683FE1424F1D69D005CF078 /* CommonTableViewController.m in Sources */,
 				3683FE1824F1D69D005CF078 /* MultiLevelExampleVC.m in Sources */,
 				368F25CD254BF050002A1D38 /* NAV_SevenViewController.m in Sources */,
 				3683FE1D24F1D69D005CF078 /* XLChannelControl.m in Sources */,
 				3683FE0E24F1D69D005CF078 /* CustomTitleCellExampleVC3.m in Sources */,
+				369044192550EBAF00E413BE /* UIImage+TFYCategory.m in Sources */,
 				3683FE1F24F1D69D005CF078 /* XLChannelView.m in Sources */,
 				565AFAB2247B985900FF5323 /* TFY_PageControllerConfig.m in Sources */,
 				368F25C1254BF021002A1D38 /* NAV_FiveViewController.m in Sources */,
 				3683FE1224F1D69D005CF078 /* CustomPageTitleCell2.m in Sources */,
-				36D56FC1254561E80095323D /* TFYNavigationBar.m in Sources */,
-				36D56FEB25457E8A0095323D /* UINavigationController+TFYCategory.m in Sources */,
 				565AFAC1247B9F0E00FF5323 /* TFY_PageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
