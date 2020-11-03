@@ -24,6 +24,7 @@ Pod::Spec.new do |spec|
 
      ss.subspec 'TFY_Configure' do |s|
       s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_Configure/**/*.{h,m}"
+      s.dependency "TFY_NavControoler/TFY_Category"
      end 
 
      ss.subspec 'TFY_Category' do |s|
