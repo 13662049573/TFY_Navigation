@@ -8,6 +8,7 @@
 
 #import "UIViewController+TFYCategory.h"
 #import <objc/runtime.h>
+#import "UIImage+TFYCategory.h"
 
 NSString *const TFYViewControllerPropertyChangedNotification = @"TFYViewControllerPropertyChangedNotification";
 

@@ -7,6 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TFYPopTransitionAnimation.h"
+#import "TFYPushTransitionAnimation.h"
+#import "UIViewController+TFYCategory.h"
+#import "UINavigationController+TFYCategory.h"
+
+#import "TFYCommon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

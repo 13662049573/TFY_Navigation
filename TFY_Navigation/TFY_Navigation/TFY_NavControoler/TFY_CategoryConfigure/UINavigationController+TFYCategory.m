@@ -8,6 +8,7 @@
 
 #import "UINavigationController+TFYCategory.h"
 #include <objc/runtime.h>
+#import "UIImage+TFYCategory.h"
 
 @implementation UINavigationController (TFYCategory)
 

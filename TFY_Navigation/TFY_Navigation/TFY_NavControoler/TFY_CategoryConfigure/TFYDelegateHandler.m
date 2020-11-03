@@ -7,11 +7,6 @@
 //
 
 #import "TFYDelegateHandler.h"
-#import "TFYPopTransitionAnimation.h"
-#import "TFYPushTransitionAnimation.h"
-#import "UIViewController+TFYCategory.h"
-#import "UINavigationController+TFYCategory.h"
-
 
 @implementation TFYPopGestureRecognizerDelegate
 

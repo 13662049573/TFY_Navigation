@@ -8,7 +8,6 @@
 
 #import "TFYNavigationBarConfigure.h"
 
-
 @interface TFYNavigationBarConfigure ()
 @property (nonatomic, assign) CGFloat navItemLeftSpace;
 @property (nonatomic, assign) CGFloat navItemRightSpace;

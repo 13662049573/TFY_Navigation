@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**图片转颜色*/
 + (UIColor*)tfy_mostColorCategory_Color:(UIImage*)image;
+
 @end
 
 

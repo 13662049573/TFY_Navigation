@@ -20,9 +20,8 @@ typedef NS_ENUM(NSUInteger, TFYNavigationBarBackStyle) {
     TFYNavigationBarBackStyleWhite    // 白色返回按钮
 };
 
-#import "TFYNavigationBar.h"
 #import "TFYNavigationBarConfigure.h"
-#import "UIImage+TFYCategory.h"
+#import "TFYNavigationBar.h"
 
 #define TFY_Configure [TFYNavigationBarConfigure sharedInstance]
 
@@ -59,5 +58,6 @@ static inline void tfy_swizzled_method(NSString *prefix, Class oldClass ,NSStrin
         method_exchangeImplementations(originalMethod, swizzledMethod);
     }
 }
+
 
 #endif /* TFYCommon_h */
