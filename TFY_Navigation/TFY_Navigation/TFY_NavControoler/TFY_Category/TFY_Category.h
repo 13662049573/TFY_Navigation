@@ -12,7 +12,7 @@
 #import "UIViewController+TFYCategory.h"
 #import "UINavigationItem+TFYCategory.h"
 #import "UIBarButtonItem+TFYCategory.h"
-#import "UIScrollView+GKCategory.h"
+#import "UIScrollView+TFYCategory.h"
 #import "UINavigationController+TFYCategory.h"
 
 #endif /* TFY_Category_h */

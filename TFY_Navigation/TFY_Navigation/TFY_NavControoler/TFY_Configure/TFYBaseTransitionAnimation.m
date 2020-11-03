@@ -7,6 +7,7 @@
 //
 
 #import "TFYBaseTransitionAnimation.h"
+#import <objc/runtime.h>
 
 @implementation TFYBaseTransitionAnimation
 

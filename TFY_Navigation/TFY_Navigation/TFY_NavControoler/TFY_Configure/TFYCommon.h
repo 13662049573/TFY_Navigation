@@ -27,7 +27,7 @@ typedef NS_ENUM(NSUInteger, TFYNavigationBarBackStyle) {
 
 #define TFY_Configure [TFYNavigationBarConfigure sharedInstance]
 
-// 判断是否是iPhoneX系列手机（带物理凹槽的刘海屏）
+// 判断是否是iPhoneX系列手机
 #define TFY_IS_iPhoneX                   [TFY_Configure tfy_isNotchedScreen]
 
 // 判断是否是iPad
@@ -44,7 +44,7 @@ typedef NS_ENUM(NSUInteger, TFYNavigationBarBackStyle) {
 #define TFY_TABBAR_HEIGHT                (TFY_SAFEAREA_BTM + 49.0f)  //tabbar高度
 
 // 使用static inline创建静态内联函数，方便调用
-static inline void tfy_swizzled_method(NSString *prefix, Class oldClass ,NSString *oldSelector, Class newClass) {
+CG_INLINE void tfy_swizzled_method(NSString *prefix, Class oldClass ,NSString *oldSelector, Class newClass) {
     NSString *newSelector = [NSString stringWithFormat:@"%@_%@", prefix, oldSelector];
     
     SEL originalSelector = NSSelectorFromString(oldSelector);

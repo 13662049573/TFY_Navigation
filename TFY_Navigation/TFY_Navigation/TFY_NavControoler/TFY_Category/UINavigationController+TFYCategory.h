@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIViewController+TFYCategory.h"
 #import "UIBarButtonItem+TFYCategory.h"
 #import "TFYDelegateHandler.h"
 

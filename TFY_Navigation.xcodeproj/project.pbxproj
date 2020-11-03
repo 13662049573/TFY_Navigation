@@ -43,7 +43,6 @@
 		368F25CD254BF050002A1D38 /* NAV_SevenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368F25CC254BF050002A1D38 /* NAV_SevenViewController.m */; };
 		368F25E6254BF408002A1D38 /* TFY_TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368F25E5254BF408002A1D38 /* TFY_TabBarController.m */; };
 		369044492550FE2800E413BE /* UINavigationController+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044312550FE2800E413BE /* UINavigationController+TFYCategory.m */; };
-		3690444A2550FE2800E413BE /* UIScrollView+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044322550FE2800E413BE /* UIScrollView+GKCategory.m */; };
 		3690444B2550FE2800E413BE /* UINavigationItem+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044332550FE2800E413BE /* UINavigationItem+TFYCategory.m */; };
 		3690444C2550FE2800E413BE /* UIViewController+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044342550FE2800E413BE /* UIViewController+TFYCategory.m */; };
 		3690444D2550FE2800E413BE /* UIBarButtonItem+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044382550FE2800E413BE /* UIBarButtonItem+TFYCategory.m */; };
@@ -54,6 +53,7 @@
 		369044522550FE2800E413BE /* TFYPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3690443F2550FE2800E413BE /* TFYPushTransitionAnimation.m */; };
 		369044532550FE2800E413BE /* TFYPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044462550FE2800E413BE /* TFYPopTransitionAnimation.m */; };
 		369044632551067100E413BE /* UIImage+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 369044622551067100E413BE /* UIImage+TFYCategory.m */; };
+		36904472255129AF00E413BE /* UIScrollView+TFYCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36904471255129AF00E413BE /* UIScrollView+TFYCategory.m */; };
 		36D56FB62545606B0095323D /* TFY_NavigationImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 36D56FB52545606B0095323D /* TFY_NavigationImage.bundle */; };
 		36D56FD325456FAC0095323D /* TFY_NavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D56FD225456FAC0095323D /* TFY_NavigationBarViewController.m */; };
 		36D5702225458E0B0095323D /* TFY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D5701F25458E0B0095323D /* TFY_NavigationController.m */; };
@@ -163,12 +163,10 @@
 		3690442E2550FE2800E413BE /* UINavigationItem+TFYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+TFYCategory.h"; sourceTree = "<group>"; };
 		369044302550FE2800E413BE /* UIBarButtonItem+TFYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+TFYCategory.h"; sourceTree = "<group>"; };
 		369044312550FE2800E413BE /* UINavigationController+TFYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+TFYCategory.m"; sourceTree = "<group>"; };
-		369044322550FE2800E413BE /* UIScrollView+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+GKCategory.m"; sourceTree = "<group>"; };
 		369044332550FE2800E413BE /* UINavigationItem+TFYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+TFYCategory.m"; sourceTree = "<group>"; };
 		369044342550FE2800E413BE /* UIViewController+TFYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TFYCategory.m"; sourceTree = "<group>"; };
 		369044372550FE2800E413BE /* UINavigationController+TFYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+TFYCategory.h"; sourceTree = "<group>"; };
 		369044382550FE2800E413BE /* UIBarButtonItem+TFYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+TFYCategory.m"; sourceTree = "<group>"; };
-		369044392550FE2800E413BE /* UIScrollView+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GKCategory.h"; sourceTree = "<group>"; };
 		3690443B2550FE2800E413BE /* TFYDelegateHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFYDelegateHandler.m; sourceTree = "<group>"; };
 		3690443C2550FE2800E413BE /* TFYNavigationBarConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFYNavigationBarConfigure.m; sourceTree = "<group>"; };
 		3690443D2550FE2800E413BE /* TFYNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFYNavigationBar.m; sourceTree = "<group>"; };
@@ -185,6 +183,8 @@
 		369044572550FE6400E413BE /* TFY_Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_Category.h; sourceTree = "<group>"; };
 		369044612551067100E413BE /* UIImage+TFYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TFYCategory.h"; sourceTree = "<group>"; };
 		369044622551067100E413BE /* UIImage+TFYCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TFYCategory.m"; sourceTree = "<group>"; };
+		36904470255129AF00E413BE /* UIScrollView+TFYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TFYCategory.h"; sourceTree = "<group>"; };
+		36904471255129AF00E413BE /* UIScrollView+TFYCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TFYCategory.m"; sourceTree = "<group>"; };
 		36D56FB52545606B0095323D /* TFY_NavigationImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TFY_NavigationImage.bundle; sourceTree = "<group>"; };
 		36D56FD125456FAC0095323D /* TFY_NavigationBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_NavigationBarViewController.h; sourceTree = "<group>"; };
 		36D56FD225456FAC0095323D /* TFY_NavigationBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_NavigationBarViewController.m; sourceTree = "<group>"; };
@@ -456,10 +456,10 @@
 				369044332550FE2800E413BE /* UINavigationItem+TFYCategory.m */,
 				369044302550FE2800E413BE /* UIBarButtonItem+TFYCategory.h */,
 				369044382550FE2800E413BE /* UIBarButtonItem+TFYCategory.m */,
-				369044392550FE2800E413BE /* UIScrollView+GKCategory.h */,
-				369044322550FE2800E413BE /* UIScrollView+GKCategory.m */,
 				369044372550FE2800E413BE /* UINavigationController+TFYCategory.h */,
 				369044312550FE2800E413BE /* UINavigationController+TFYCategory.m */,
+				36904470255129AF00E413BE /* UIScrollView+TFYCategory.h */,
+				36904471255129AF00E413BE /* UIScrollView+TFYCategory.m */,
 			);
 			path = TFY_Category;
 			sourceTree = "<group>";
@@ -819,7 +819,6 @@
 				3683FE1C24F1D69D005CF078 /* ChildViewConflictExampleVC.m in Sources */,
 				565AFABB247B9D2100FF5323 /* TFY_PageBasicTitleView.m in Sources */,
 				369044532550FE2800E413BE /* TFYPopTransitionAnimation.m in Sources */,
-				3690444A2550FE2800E413BE /* UIScrollView+GKCategory.m in Sources */,
 				3624206E229649BF00AFE2B2 /* ViewController.m in Sources */,
 				3683FE1A24F1D69D005CF078 /* CustomTitleCellExampleVC1.m in Sources */,
 				368F25E6254BF408002A1D38 /* TFY_TabBarController.m in Sources */,
@@ -863,6 +862,7 @@
 				368F25C1254BF021002A1D38 /* NAV_FiveViewController.m in Sources */,
 				3683FE1224F1D69D005CF078 /* CustomPageTitleCell2.m in Sources */,
 				565AFAC1247B9F0E00FF5323 /* TFY_PageViewController.m in Sources */,
+				36904472255129AF00E413BE /* UIScrollView+TFYCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

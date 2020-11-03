@@ -7,7 +7,6 @@
 //
 
 #import "UIBarButtonItem+TFYCategory.h"
-#import <objc/runtime.h>
 
 static inline NSUInteger hexStrToInt(NSString *str) {
     uint32_t result = 0;

@@ -7,6 +7,7 @@
 //
 
 #import "UINavigationItem+TFYCategory.h"
+#import <objc/runtime.h>
 #import "TFYCommon.h"
 
 @implementation UINavigationItem (TFYCategory)

@@ -1,17 +1,17 @@
 //
-//  UIScrollView+GKCategory.m
+//  UIScrollView+TFYCategory.m
 //  TFY_Navigation
 //
-//  Created by 田风有 on 2020/10/25.
+//  Created by 田风有 on 2020/11/3.
 //  Copyright © 2020 浙江日报集团. All rights reserved.
 //
 
-#import "UIScrollView+GKCategory.h"
+#import "UIScrollView+TFYCategory.h"
 #import <objc/runtime.h>
 
 static const void* TFYDisableGestureHandleKey = @"TFYDisableGestureHandleKey";
 
-@implementation UIScrollView (GKCategory)
+@implementation UIScrollView (TFYCategory)
 
 - (void)setTfy_disableGestureHandle:(BOOL)tfy_disableGestureHandle {
     objc_setAssociatedObject(self, TFYDisableGestureHandleKey, @(tfy_disableGestureHandle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -56,6 +56,5 @@ static const void* TFYDisableGestureHandleKey = @"TFYDisableGestureHandleKey";
     }
     return NO;
 }
-
 
 @end

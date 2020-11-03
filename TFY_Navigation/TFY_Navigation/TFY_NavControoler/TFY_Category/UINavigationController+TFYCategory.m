@@ -207,7 +207,6 @@
         delegate.navigationController = self;
         delegate.systemTarget         = [self systemTarget];
         delegate.customTarget         = self.navDelegate;
-        
         objc_setAssociatedObject(self, _cmd, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return delegate;
@@ -218,7 +217,6 @@
     if (!delegate) {
         delegate = [TFYNavigationControllerDelegate new];
         delegate.navigationController = self;
-        
         objc_setAssociatedObject(self, _cmd, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return delegate;
@@ -240,7 +238,6 @@
     if (!panGesture) {
         panGesture = [[UIPanGestureRecognizer alloc] init];
         panGesture.maximumNumberOfTouches = 1;
-        
         objc_setAssociatedObject(self, _cmd, panGesture, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return panGesture;
@@ -269,6 +266,7 @@
     objc_setAssociatedObject(self, &@selector(tfy_titleColor), tfy_titleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : (tfy_titleColor ? tfy_titleColor : [UIColor blackColor]),NSFontAttributeName : (self.tfy_titleFont ? self.tfy_titleFont : [UIFont fontWithName:@"Helvetica-Bold" size:16])}];
 }
+
 - (void)setTfy_titleFont:(UIFont *)tfy_titleFont {
     objc_setAssociatedObject(self, &@selector(tfy_titleFont), tfy_titleFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : (self.tfy_titleColor ? self.tfy_titleColor : [UIColor blackColor]),NSFontAttributeName : (tfy_titleFont ? tfy_titleFont : [UIFont systemFontOfSize:16 weight:UIFontWeightRegular])}];
