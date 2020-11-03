@@ -7,6 +7,7 @@
 //
 
 #import "TFYNavigationBarConfigure.h"
+#import "UIImage+TFYCategory.h"
 
 @interface TFYNavigationBarConfigure ()
 @property (nonatomic, assign) CGFloat navItemLeftSpace;
