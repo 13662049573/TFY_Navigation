@@ -24,23 +24,23 @@ Pod::Spec.new do |spec|
   
      ss.subspec 'TFY_Configure' do |s|
       s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_Configure/**/*.{h,m}"
-      # s.dependency "TFY_NavControoler/TFY_Category"
+      s.dependency "TFY_NavControoler/TFY_Category"
      end 
 
      ss.subspec 'TFY_Category' do |s|
       s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_Category/**/*.{h,m}"
-      # s.dependency "TFY_NavControoler/TFY_Configure"
+      s.dependency "TFY_NavControoler/TFY_Configure"
      end
 
      ss.subspec 'TFY_NavBasVcKit' do |s|
       s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_NavBasVcKit/**/*.{h,m}"
-      # s.dependency "TFY_NavControoler/TFY_Category"
-      # s.dependency "TFY_NavControoler/TFY_Configure"
+      s.dependency "TFY_NavControoler/TFY_Category"
+      s.dependency "TFY_NavControoler/TFY_Configure"
      end 
 
      ss.subspec 'TFY_NavigationKit' do |s|
       s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_NavigationKit/**/*.{h,m}"
-      # s.dependency "TFY_NavControoler/TFY_Configure"
+      s.dependency "TFY_NavControoler/TFY_Configure"
      end 
 
   end
