@@ -9,7 +9,6 @@
 #ifndef TFY_Category_h
 #define TFY_Category_h
 
-#import "UIImage+TFYCategory.h"
 #import "UIViewController+TFYCategory.h"
 #import "UINavigationItem+TFYCategory.h"
 #import "UIBarButtonItem+TFYCategory.h"
