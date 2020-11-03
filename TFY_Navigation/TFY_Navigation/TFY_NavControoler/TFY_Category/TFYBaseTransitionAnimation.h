@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TFYNavigationBarConfigure.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

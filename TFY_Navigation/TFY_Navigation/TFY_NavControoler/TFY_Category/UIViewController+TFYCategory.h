@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TFYNavigationBarConfigure.h"
+#import "TFYCommon.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
