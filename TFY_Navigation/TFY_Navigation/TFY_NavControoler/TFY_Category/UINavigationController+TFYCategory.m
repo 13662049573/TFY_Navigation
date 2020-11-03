@@ -8,7 +8,6 @@
 
 #import "UINavigationController+TFYCategory.h"
 #include <objc/runtime.h>
-#import "TFY_NavigationBarViewController.h"
 
 @implementation UINavigationController (TFYCategory)
 

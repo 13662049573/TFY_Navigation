@@ -7,7 +7,7 @@
 //
 
 #import "TFY_NavigationBarViewController.h"
-#import <objc/runtime.h>
+
 @interface TFY_NavigationBarViewController ()
 
 @property (nonatomic, strong) TFYNavigationBar   *tfy_navigationBar;

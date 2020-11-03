@@ -8,7 +8,6 @@
 
 #import "UINavigationItem+TFYCategory.h"
 #import "TFYCommon.h"
-#import "TFYNavigationBarConfigure.h"
 
 @implementation UINavigationItem (TFYCategory)
 + (void)load {
