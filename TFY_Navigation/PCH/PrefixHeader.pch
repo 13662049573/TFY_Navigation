@@ -11,6 +11,7 @@
 
 #import <TFY_AutoLayout.h>
 #import <TFY_LayoutCategoryKit/TFY_LayoutCategoryKit.h>
+#import <TFY_TabBarKit.h>
 
 #import "TFY_Navigation.h"
 
