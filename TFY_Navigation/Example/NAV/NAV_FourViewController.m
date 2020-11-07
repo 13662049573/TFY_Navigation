@@ -43,20 +43,25 @@
     stackview.tfy_Column = 2;
     stackview.tfy_Orientation = All;//自动横向垂直混合布局
     stackview.tfy_VSpace = 1;
+    stackview.tfy_HSpace = 1;
     [self.view addSubview:stackview];
     stackview
-    .tfy_LeftSpace(20)
+    .tfy_LeftSpace(0)
     .tfy_TopSpace(TFY_kNavBarHeight())
-    .tfy_RightSpace(20)
+    .tfy_RightSpace(0)
     .tfy_Height(TFY_Height_H()/2);
     
     NSArray *titleLabelArr = @[@"侧滑返回手势",@"全屏返回手势",@"状态栏样式",@"状态栏显隐",@"导航栏背景颜色",@"导航栏分割线",@"返回按钮样式",@"左滑PUSH功能",@"多个导航栏按钮"];
     [titleLabelArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIView *backview = UIViewSet();
+        backview.makeChain.backgroundColor(UIColor.whiteColor).addToSuperView(stackview);
+        
         UILabel *label = UILabelSet();
         label.makeChain.textColor(UIColor.blackColor)
         .text(obj).makeTag(idx)
         .font([UIFont systemFontOfSize:15 weight:UIFontWeightBold])
-        .addToSuperView(stackview);
+        .addToSuperView(backview);
+        label.tfy_LeftSpace(20).tfy_CenterY(0).tfy_size(TFY_Width_W()/3, 40);
         
         UISwitch *swiths = UISwitchSet();
         swiths.makeChain
@@ -64,7 +69,8 @@
         .thumbTintColor(UIColor.greenColor)
         .makeTag(idx)
         .addTarget(self, @selector(onswichs:), UIControlEventValueChanged)
-        .addToSuperView(stackview);
+        .addToSuperView(backview);
+        swiths.tfy_RightSpace(0).tfy_CenterY(0).tfy_size(60, 40);
     }];
     
     [stackview tfy_StartLayout];
