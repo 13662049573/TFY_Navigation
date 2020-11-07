@@ -70,6 +70,11 @@
         .makeTag(idx)
         .addTarget(self, @selector(onswichs:), UIControlEventValueChanged)
         .addToSuperView(backview);
+        if (idx==7 || idx == 8) {
+            swiths.makeChain.on(NO);
+        } else {
+            swiths.makeChain.on(YES);
+        }
         swiths.tfy_RightSpace(0).tfy_CenterY(0).tfy_size(60, 40);
     }];
     
@@ -79,31 +84,52 @@
 - (void)onswichs:(UISwitch *)ons {
     switch (ons.tag) {
         case 0:
-            
+            self.tfy_interactivePopDisabled = !ons.on;
             break;
         case 1:
-            
+            self.tfy_fullScreenPopDisabled = !ons.on;
             break;
         case 2:
-            
+            if (ons.on) {
+                self.tfy_statusBarStyle = UIStatusBarStyleLightContent;
+            }else {
+                self.tfy_statusBarStyle = UIStatusBarStyleDefault;
+            }
             break;
         case 3:
-            
+            self.tfy_statusBarHidden = !ons.on;
             break;
         case 4:
-            
+            if (ons.on) {
+                self.tfy_navBackgroundColor = [UIColor redColor];
+            }else {
+                self.tfy_navBackgroundColor = [UIColor blueColor];
+            }
             break;
         case 5:
-            
+            self.tfy_navLineHidden = !ons.on;
             break;
         case 6:
-            
+            if (ons.on) {
+                self.tfy_backStyle = TFYNavigationBarBackStyleWhite;
+            }else {
+                self.tfy_backStyle = TFYNavigationBarBackStyleBlack;
+            }
             break;
         case 7:
-            
+            if (ons.on) {
+                self.tfy_pushDelegate = self;
+            }else {
+                self.tfy_pushDelegate = nil;
+            }
             break;
         case 8:
-            
+            if (ons.on) {
+                self.tfy_navRightBarButtonItems = @[self.shareItem, self.moreItem];
+            }else {
+                self.tfy_navRightBarButtonItems = @[];
+                self.tfy_navRightBarButtonItem = self.moreItem;
+            }
             break;
         default:
             break;
