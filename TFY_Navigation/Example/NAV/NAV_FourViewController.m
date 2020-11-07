@@ -40,14 +40,14 @@
     
     TFY_StackView *stackview = TFY_StackView.new;
     stackview.backgroundColor = [UIColor whiteColor];
-    stackview.tfy_Column = 9;
-    stackview.tfy_Orientation = Vertical;// 自动横向垂直混合布局
+    stackview.tfy_Column = 2;
+    stackview.tfy_Orientation = All;//自动横向垂直混合布局
     stackview.tfy_VSpace = 1;
     [self.view addSubview:stackview];
     stackview
     .tfy_LeftSpace(20)
     .tfy_TopSpace(TFY_kNavBarHeight())
-    .tfy_Width(TFY_Width_W()/2-20)
+    .tfy_RightSpace(20)
     .tfy_Height(TFY_Height_H()/2);
     
     NSArray *titleLabelArr = @[@"侧滑返回手势",@"全屏返回手势",@"状态栏样式",@"状态栏显隐",@"导航栏背景颜色",@"导航栏分割线",@"返回按钮样式",@"左滑PUSH功能",@"多个导航栏按钮"];
@@ -57,31 +57,17 @@
         .text(obj).makeTag(idx)
         .font([UIFont systemFontOfSize:15 weight:UIFontWeightBold])
         .addToSuperView(stackview);
-    }];
-    [stackview tfy_StartLayout];
-    
-    TFY_StackView *stackview2 = TFY_StackView.new;
-    stackview2.backgroundColor = [UIColor whiteColor];
-    stackview2.tfy_Column = 9;
-    stackview2.tfy_Orientation = Vertical;// 自动横向垂直混合布局
-    stackview2.tfy_VSpace = 1;
-    [self.view addSubview:stackview2];
-    stackview2
-    .tfy_RightSpace(20)
-    .tfy_TopSpace(TFY_kNavBarHeight()+10)
-    .tfy_Width(60)
-    .tfy_Height(TFY_Height_H()/2);
-    
-    [titleLabelArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
         UISwitch *swiths = UISwitchSet();
         swiths.makeChain
         .onTintColor(UIColor.redColor)
         .thumbTintColor(UIColor.greenColor)
         .makeTag(idx)
         .addTarget(self, @selector(onswichs:), UIControlEventValueChanged)
-        .addToSuperView(stackview2);
+        .addToSuperView(stackview);
     }];
-    [stackview2 tfy_StartLayout];
+    
+    [stackview tfy_StartLayout];
 }
 
 - (void)onswichs:(UISwitch *)ons {
