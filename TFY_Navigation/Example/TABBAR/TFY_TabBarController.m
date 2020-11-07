@@ -11,7 +11,7 @@
 #import "NAV_OneController.h"
 #import "NAV_FourViewController.h"
 #import "TFY_NavigationController.h"
-
+#import "NAV_MainViewController.h"
 @interface TFY_TabBarController ()<TfySY_TabBarDelegate>
 
 @end
@@ -29,7 +29,7 @@
     @[@{@"vc":[ViewController new],@"normalImg":@"home_normal",@"selectImg":@"home_highlight",@"itemTitle":@"首页"},
       @{@"vc":[NAV_OneController new],@"normalImg":@"mycity_normal",@"selectImg":@"mycity_highlight",@"itemTitle":@"同城"},
       @{@"vc":[UIViewController new],@"normalImg":@"",@"selectImg":@"",@"itemTitle":@"发布"},
-      @{@"vc":[NAV_FourViewController new],@"normalImg":@"message_normal",@"selectImg":@"message_highlight",@"itemTitle":@"消息"},
+      @{@"vc":[NAV_MainViewController new],@"normalImg":@"message_normal",@"selectImg":@"message_highlight",@"itemTitle":@"消息"},
       @{@"vc":[UIViewController new],@"normalImg":@"account_normal",@"selectImg":@"account_highlight",@"itemTitle":@"我的"}];
     // 1.遍历这个集合
     // 1.1 设置一个保存构造器的数组

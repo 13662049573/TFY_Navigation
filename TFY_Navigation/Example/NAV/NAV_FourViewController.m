@@ -34,48 +34,65 @@
     self.tfy_backStyle = TFYNavigationBarBackStyleWhite;
     self.tfy_navRightBarButtonItem = self.moreItem;
     
-    if (self.tfy_popMaxAllowedDistanceToLeftEdge == 0) {
-       
-    }
-    
     TFY_StackView *stackview = TFY_StackView.new;
     stackview.backgroundColor = [UIColor whiteColor];
-    stackview.tfy_Column = 2;
-    stackview.tfy_Orientation = All;//自动横向垂直混合布局
+    stackview.tfy_Column = 1;
+    stackview.tfy_Orientation = Vertical;//自动横向垂直混合布局
     stackview.tfy_VSpace = 1;
-    stackview.tfy_HSpace = 1;
     [self.view addSubview:stackview];
     stackview
     .tfy_LeftSpace(0)
     .tfy_TopSpace(TFY_kNavBarHeight())
     .tfy_RightSpace(0)
-    .tfy_Height(TFY_Height_H()/2);
+    .tfy_BottomSpace(TFY_kBottomBarHeight()+TFY_kNavTimebarHeight());
     
-    NSArray *titleLabelArr = @[@"侧滑返回手势",@"全屏返回手势",@"状态栏样式",@"状态栏显隐",@"导航栏背景颜色",@"导航栏分割线",@"返回按钮样式",@"左滑PUSH功能",@"多个导航栏按钮"];
+    NSArray *titleLabelArr = @[@"侧滑返回手势",@"全屏返回手势",@"状态栏样式",@"状态栏显隐",@"导航栏背景颜色",@"导航栏分割线",@"返回按钮样式",@"左滑PUSH功能",@"多个导航栏按钮",@"全屏返回手势距离",@"导航栏透明度"];
     [titleLabelArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIView *backview = UIViewSet();
-        backview.makeChain.backgroundColor(UIColor.whiteColor).addToSuperView(stackview);
+        backview.makeChain.makeTag(idx).backgroundColor(UIColor.whiteColor).addToSuperView(stackview);
         
         UILabel *label = UILabelSet();
         label.makeChain.textColor(UIColor.blackColor)
         .text(obj).makeTag(idx)
         .font([UIFont systemFontOfSize:15 weight:UIFontWeightBold])
         .addToSuperView(backview);
-        label.tfy_LeftSpace(20).tfy_CenterY(0).tfy_size(TFY_Width_W()/3, 40);
+        label.tfy_LeftSpace(20).tfy_CenterY(0).tfy_RightSpace(100).tfy_Height(40);
         
-        UISwitch *swiths = UISwitchSet();
-        swiths.makeChain
-        .onTintColor(UIColor.redColor)
-        .thumbTintColor(UIColor.greenColor)
-        .makeTag(idx)
-        .addTarget(self, @selector(onswichs:), UIControlEventValueChanged)
-        .addToSuperView(backview);
-        if (idx==7 || idx == 8) {
-            swiths.makeChain.on(NO);
-        } else {
-            swiths.makeChain.on(YES);
+        if (idx != 9 && idx != 10) {
+            UISwitch *swiths = UISwitchSet();
+            swiths.makeChain
+            .onTintColor(UIColor.redColor)
+            .thumbTintColor(UIColor.greenColor)
+            .makeTag(idx)
+            .addTarget(self, @selector(onswichs:), UIControlEventValueChanged)
+            .addToSuperView(backview);
+            if (idx==7 || idx == 8) {
+                swiths.makeChain.on(NO);
+            } else {
+                swiths.makeChain.on(YES);
+            }
+            swiths.tfy_RightSpace(0).tfy_CenterY(0).tfy_size(60, 40);
         }
-        swiths.tfy_RightSpace(0).tfy_CenterY(0).tfy_size(60, 40);
+        
+        if (idx==9 || idx == 10) {
+            UISlider *slider = UISliderSet();
+            slider.makeChain
+            .makeTag(idx)
+            .minimumValue(0).minimumTrackTintColor(UIColor.yellowColor).maximumTrackTintColor(UIColor.blueColor)
+            .addToSuperView(backview)
+            .addTarget(self, @selector(DistanceAction:), UIControlEventValueChanged);
+            slider.tfy_LeftSpace(20).tfy_BottomSpace(0).tfy_RightSpace(20).tfy_Height(20);
+            if (self.tfy_popMaxAllowedDistanceToLeftEdge == 0) {
+                if (idx == 9) {
+                    slider.makeChain.maximumValue(self.view.frame.size.width);
+                    slider.value = self.view.frame.size.width;
+                }
+            }
+            if (idx == 10) {
+                slider.makeChain.maximumValue(1);
+                slider.value = self.tfy_navBaseBarAlpha;
+            }
+        }
     }];
     
     [stackview tfy_StartLayout];
@@ -134,8 +151,31 @@
         default:
             break;
     }
-    NSLog(@"------------%ld",(long)ons.tag);
 }
+
+- (void)DistanceAction:(UISlider *)sender {
+    UILabel *label;
+    NSArray *subViews = self.view.subviews;
+    for (UIView *views in subViews) {
+        if ([views isKindOfClass:TFY_StackView.class]) {
+            UIView *backview = [views viewWithTag:sender.tag];
+            for (UILabel *labels in backview.subviews) {
+                if ([labels isKindOfClass:UILabel.class]) {
+                    label = [labels viewWithTag:sender.tag];
+                }
+            }
+        }
+    }
+    if (sender.tag == 9) {
+        self.tfy_popMaxAllowedDistanceToLeftEdge = sender.value;
+        label.text = [NSString stringWithFormat:@"全屏返回手势距离：%f", self.tfy_popMaxAllowedDistanceToLeftEdge];
+    }
+    if (sender.tag == 10) {
+        self.tfy_navBaseBarAlpha = sender.value;
+        label.text = [NSString stringWithFormat:@"导航栏透明度：%f", self.tfy_navBaseBarAlpha];
+    }
+}
+
 
 #pragma mark - 懒加载
 - (UIBarButtonItem *)moreItem {
