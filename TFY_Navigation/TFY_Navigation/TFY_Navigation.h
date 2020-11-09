@@ -4,7 +4,7 @@
 //
 //  Created by 田风有 on 2019/4/29.
 //  Copyright © 2019 恋机科技. All rights reserved.
-//  最新版本号: 2.6.4
+//  最新版本号: 2.6.6
 
 #import <Foundation/Foundation.h>
 
