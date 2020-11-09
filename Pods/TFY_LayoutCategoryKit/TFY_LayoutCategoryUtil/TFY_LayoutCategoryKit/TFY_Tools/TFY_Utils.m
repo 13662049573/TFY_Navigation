@@ -315,38 +315,6 @@ const char* jailbreak_tool_pathes[] = {
             }
         }
     }
-    CTCarrier *carrier = [telephonyInfo subscriberCellularProvider];
-    NSString *currentCountryCode = [carrier mobileCountryCode];
-    NSString *mobileNetWorkCode = [carrier mobileNetworkCode];
-    
-    if (![currentCountryCode isEqualToString:@"460"]) {
-        return SSOperatorsTypeUnknown;
-    }
-    if ([mobileNetWorkCode isEqualToString:@"00"] ||
-        [mobileNetWorkCode isEqualToString:@"02"] ||
-        [mobileNetWorkCode isEqualToString:@"07"]) {
-        // 中国移动
-        return SSOperatorsTypeChinaMobile;
-    }
-    
-    if ([mobileNetWorkCode isEqualToString:@"01"] ||
-        [mobileNetWorkCode isEqualToString:@"06"] ||
-        [mobileNetWorkCode isEqualToString:@"09"]) {
-        // 中国联通
-        return SSOperatorsTypeChinaUnicom;
-    }
-    
-    if ([mobileNetWorkCode isEqualToString:@"03"] ||
-        [mobileNetWorkCode isEqualToString:@"05"] ||
-        [mobileNetWorkCode isEqualToString:@"11"]) {
-        // 中国电信
-        return SSOperatorsTypeTelecom;
-    }
-    
-    if ([mobileNetWorkCode isEqualToString:@"20"]) {
-        // 中国铁通
-        return SSOperatorsTypeChinaTietong;
-    }
     return SSOperatorsTypeUnknown;
 }
 
