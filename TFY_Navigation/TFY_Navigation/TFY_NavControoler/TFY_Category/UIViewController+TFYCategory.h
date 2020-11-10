@@ -51,12 +51,6 @@ extern NSString *const TFYViewControllerPropertyChangedNotification;
 /** 设置状态栏是否隐藏(default is NO 即不隐藏) */
 @property (nonatomic, assign) BOOL tfy_statusBarHidden;
 
-/** 自定义返回按钮图片 */
-@property (nonatomic, strong) UIImage *tfy_backImage;
-
-/** 设置返回按钮的类型 */
-@property (nonatomic, assign) TFYNavigationBarBackStyle tfy_backStyle;
-
 /** push代理 */
 @property (nonatomic, weak) id<TFYViewControllerPushDelegate> tfy_pushDelegate;
 

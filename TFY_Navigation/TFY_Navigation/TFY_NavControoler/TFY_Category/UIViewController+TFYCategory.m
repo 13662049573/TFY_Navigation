@@ -17,8 +17,6 @@ static const void* TFYPopMaxDistanceKey      = @"TFYPopMaxDistanceKey";
 static const void* TFYNavBarAlphaKey         = @"TFYNavBarAlphaKey";
 static const void* TFYStatusBarStyleKey      = @"TFYStatusBarStyleKey";
 static const void* TFYStatusBarHiddenKey     = @"TFYStatusBarHiddenKey";
-static const void* TFYBackImageKey           = @"TFYBackImageKey";
-static const void* TFYBackStyleKey           = @"TFYBackStyleKey";
 static const void* TFYPushDelegateKey        = @"TFYPushDelegateKey";
 static const void* TFYPopDelegateKey         = @"TFYPopDelegateKey";
 static const void* TFYPushTransitionKey      = @"TFYPushTransitionKey";
@@ -181,28 +179,6 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
-- (TFYNavigationBarBackStyle)tfy_backStyle {
-    id style = objc_getAssociatedObject(self, TFYBackStyleKey);
-    
-    return (style != nil) ? [style integerValue] : TFY_Configure.backStyle;
-}
-
-- (void)setTfy_backStyle:(TFYNavigationBarBackStyle)tfy_backStyle {
-    objc_setAssociatedObject(self, TFYBackStyleKey, @(tfy_backStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
-    [self setBackItemImage:self.tfy_backImage];
-}
-
-- (UIImage *)tfy_backImage {
-    return objc_getAssociatedObject(self, TFYBackImageKey);
-}
-
-- (void)setTfy_backImage:(UIImage *)tfy_backImage {
-    objc_setAssociatedObject(self, TFYBackImageKey, tfy_backImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
-    [self setBackItemImage:tfy_backImage];
-}
-
 - (id<TFYViewControllerPushDelegate>)tfy_pushDelegate {
     return objc_getAssociatedObject(self, TFYPushDelegateKey);
 }
@@ -289,22 +265,6 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
     
     // 底部分割线
     navBar.clipsToBounds = alpha == 0.0;
-}
-
-- (void)setBackItemImage:(UIImage *)image {
-    // 根控制器不作处理
-    if (self.navigationController.childViewControllers.count <= 1) return;
-    
-    if (!image) {
-        if (self.tfy_backStyle != TFYNavigationBarBackStyleNone) {
-            NSString *imageName = self.tfy_backStyle == TFYNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white";
-            image = [UIImage tfy_imageNamed:imageName];
-            TFY_Configure.backImage = image;
-        }
-    }
-    // 没有image
-    if (!image) return;
-
 }
 
 - (UIViewController *)tfy_visibleViewControllerIfExist {

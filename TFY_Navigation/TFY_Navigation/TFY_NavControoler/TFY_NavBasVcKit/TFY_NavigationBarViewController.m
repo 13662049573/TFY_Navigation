@@ -71,6 +71,7 @@
     [self setupNavBarFrame];
     
     self.tfy_navigationBar.items = @[self.tfy_navigationItem];
+    
 }
 
 /**
@@ -95,13 +96,8 @@
     }
     
     // 设置默认返回图片
-    if (self.tfy_backImage == nil) {
-        self.tfy_backImage = configure.backImage;
-    }
-    
-    // 设置默认返回样式
-    if (self.tfy_backStyle == TFYNavigationBarBackStyleNone) {
-        self.tfy_backStyle = configure.backStyle;
+    if (self.tfy_navbackImage == nil) {
+        self.tfy_navbackImage = configure.backImage;
     }
 }
 
@@ -268,7 +264,6 @@
         }
         self.tfy_navigationBar.shadowImage = shadowImage;
     }
-    
     [self.tfy_navigationBar layoutSubviews];
 }
 
@@ -290,5 +285,52 @@
     return obj ? [obj floatValue] : 1.0f;
 }
 
+- (void)setTfy_navbackImage:(UIImage *)tfy_navbackImage {
+    objc_setAssociatedObject(self, @selector(tfy_navbackImage), tfy_navbackImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    [self setBackItemImage:tfy_navbackImage];
+}
 
+- (UIImage *)tfy_navbackImage {
+    return objc_getAssociatedObject(self, @selector(tfy_navbackImage));;
+}
+
+- (TFYNavigationBarBackStyle)tfy_backStyle {
+    id style = objc_getAssociatedObject(self, &@selector(tfy_backStyle));
+    return (style != nil) ? [style integerValue] : TFY_Configure.backStyle;
+}
+
+- (void)setTfy_backStyle:(TFYNavigationBarBackStyle)tfy_backStyle {
+    objc_setAssociatedObject(self, &@selector(tfy_backStyle), @(tfy_backStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    NSString *imageName = tfy_backStyle == TFYNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white";
+    UIImage *image = [UIImage tfy_imageNamed:imageName];
+    [self setBackItemImage:image];
+}
+
+- (void)setBackItemImage:(UIImage *)image {
+    // 根控制器不作处理
+    if (self.navigationController.viewControllers.count <= 1) return;
+    
+    if (!image) {
+        if (self.tfy_backStyle != TFYNavigationBarBackStyleNone) {
+            NSString *imageName = self.tfy_backStyle == TFYNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white";
+            image = [UIImage tfy_imageNamed:imageName];
+        }
+    }
+    TFY_NavigationBarViewController *vc = TFY_NavigationBarViewController.new;
+    UIImage *imageback = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    vc.tfy_navLeftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:imageback style:UIBarButtonItemStylePlain target:self action:@selector(tfy_popView)];
+    // 没有image
+    if (!image) return;
+
+}
+
+- (void)tfy_popView {
+    if (self.presentingViewController) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 @end

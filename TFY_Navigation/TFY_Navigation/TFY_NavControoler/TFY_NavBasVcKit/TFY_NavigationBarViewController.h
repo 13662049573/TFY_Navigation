@@ -61,6 +61,10 @@ NS_ASSUME_NONNULL_BEGIN
 /** 设置导航栏的透明度 */
 @property (nonatomic, assign) CGFloat tfy_navBaseBarAlpha;
 
+@property (nonatomic, strong) UIImage *tfy_navbackImage;
+
+/** 设置返回按钮的类型 */
+@property (nonatomic, assign) TFYNavigationBarBackStyle tfy_backStyle;
 @end
 
 NS_ASSUME_NONNULL_END
