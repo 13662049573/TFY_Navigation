@@ -30,13 +30,7 @@ Pod::Spec.new do |spec|
       s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_Category/**/*.{h,m}"
       s.dependency "TFY_Navigation/TFY_NavControoler/TFY_Configure"
      end
-
-     ss.subspec 'TFY_NavBasVcKit' do |s|
-      s.dependency "TFY_Navigation/TFY_NavControoler/TFY_Category"
-      s.dependency "TFY_Navigation/TFY_NavControoler/TFY_Configure"
-      s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_NavBasVcKit/**/*.{h,m}"
-     end 
-
+     
      ss.subspec 'TFY_NavigationKit' do |s|
       s.dependency "TFY_Navigation/TFY_NavControoler/TFY_Configure"
       s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_NavigationKit/**/*.{h,m}"
