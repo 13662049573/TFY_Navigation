@@ -14,15 +14,13 @@ NSString *const TFYViewControllerPropertyChangedNotification = @"TFYViewControll
 static const void* TFYInteractivePopKey      = @"TFYInteractivePopKey";
 static const void* TFYFullScreenPopKey       = @"TFYFullScreenPopKey";
 static const void* TFYPopMaxDistanceKey      = @"TFYPopMaxDistanceKey";
-static const void* TFYNavBarAlphaKey         = @"TFYNavBarAlphaKey";
-static const void* TFYStatusBarStyleKey      = @"TFYStatusBarStyleKey";
-static const void* TFYStatusBarHiddenKey     = @"TFYStatusBarHiddenKey";
 static const void* TFYPushDelegateKey        = @"TFYPushDelegateKey";
 static const void* TFYPopDelegateKey         = @"TFYPopDelegateKey";
 static const void* TFYPushTransitionKey      = @"TFYPushTransitionKey";
 static const void* TFYPopTransitionKey       = @"TFYPopTransitionKey";
 static const void* TFYNavItemLeftSpaceKey    = @"TFYNavItemLeftSpaceKey";
 static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
+
 
 @implementation UIViewController (TFYCategory)
 
@@ -75,7 +73,6 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
     if ([self isKindOfClass:[UIAlertController class]]) return;
     if ([self isKindOfClass:[UIImagePickerController class]]) return;
     if ([self isKindOfClass:[UIVideoEditorController class]]) return;
-    if ([NSStringFromClass(self.class) isEqualToString:@"PUPhotoPickerHostViewController"]) return;
     if (!self.navigationController) return;
     
     // bug fix：#41
@@ -104,15 +101,6 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
     [self postPropertyChangeNotification];
     
     [self tfy_viewDidAppear:animated];
-}
-
-#pragma mark - StatusBar
-- (BOOL)prefersStatusBarHidden {
-    return self.tfy_statusBarHidden;
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return self.tfy_statusBarStyle;
 }
 
 #pragma mark - Added Property
@@ -144,39 +132,6 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
     objc_setAssociatedObject(self, TFYPopMaxDistanceKey, @(tfy_popMaxAllowedDistanceToLeftEdge), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     [self postPropertyChangeNotification];
-}
-
-- (CGFloat)tfy_navBarAlpha {
-    id obj = objc_getAssociatedObject(self, TFYNavBarAlphaKey);
-    return obj ? [obj floatValue] : 1.0f;
-}
-
-- (void)setTfy_navBarAlpha:(CGFloat)tfy_navBarAlpha {
-    objc_setAssociatedObject(self, TFYNavBarAlphaKey, @(tfy_navBarAlpha), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
-    [self setNavBarAlpha:tfy_navBarAlpha];
-}
-
-- (UIStatusBarStyle)tfy_statusBarStyle {
-    id style = objc_getAssociatedObject(self, TFYStatusBarStyleKey);
-    return (style != nil) ? [style integerValue] : TFY_Configure.statusBarStyle;
-}
-
-- (void)setTfy_statusBarStyle:(UIStatusBarStyle)tfy_statusBarStyle {
-    objc_setAssociatedObject(self, TFYStatusBarStyleKey, @(tfy_statusBarStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
-    [self setNeedsStatusBarAppearanceUpdate];
-}
-
-- (BOOL)tfy_statusBarHidden {
-    id objc = objc_getAssociatedObject(self, TFYStatusBarHiddenKey);
-    return (objc != nil) ? [objc boolValue] : TFY_Configure.statusBarHidden;
-}
-
-- (void)setTfy_statusBarHidden:(BOOL)tfy_statusBarHidden {
-    objc_setAssociatedObject(self, TFYStatusBarHiddenKey, @(tfy_statusBarHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    
-    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 - (id<TFYViewControllerPushDelegate>)tfy_pushDelegate {
@@ -243,30 +198,6 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
     }];
 }
 
-- (void)setNavBarAlpha:(CGFloat)alpha {
-    
-    UINavigationBar *navBar = self.navigationController.navigationBar;
-    
-    UIView *barBackgroundView = [navBar.subviews objectAtIndex:0]; // _UIBarBackground
-    UIImageView *backgroundImageView = [barBackgroundView.subviews objectAtIndex:0]; // UIImageView
-    
-    if (navBar.isTranslucent) {
-        if (backgroundImageView != nil && backgroundImageView.image != nil) {
-            barBackgroundView.alpha = alpha;
-        }else {
-            UIView *backgroundEffectView = [barBackgroundView.subviews objectAtIndex:1]; // UIVisualEffectView
-            if (backgroundEffectView != nil) {
-                backgroundEffectView.alpha = alpha;
-            }
-        }
-    }else {
-        barBackgroundView.alpha = alpha;
-    }
-    
-    // 底部分割线
-    navBar.clipsToBounds = alpha == 0.0;
-}
-
 - (UIViewController *)tfy_visibleViewControllerIfExist {
     if (self.presentedViewController) {
         return [self.presentedViewController tfy_visibleViewControllerIfExist];
@@ -286,7 +217,6 @@ static const void* TFYNavItemRightSpaceKey   = @"TFYNavItemRightSpaceKey";
 }
 
 - (void)postPropertyChangeNotification {
-
     [[NSNotificationCenter defaultCenter] postNotificationName:TFYViewControllerPropertyChangedNotification object:@{@"viewController": self}];
 }
 

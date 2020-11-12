@@ -16,23 +16,16 @@
 
 @implementation NAV_FourViewController
 
-- (instancetype)init {
-    if (self = [super init]) {
-        self.tfy_statusBarStyle = UIStatusBarStyleLightContent;
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    self.tfy_navTitle = @"自定义导航";
+    self.title = @"自定义导航";
 
-    self.tfy_navTitleColor = [UIColor whiteColor];
-    self.tfy_navBackgroundColor = [UIColor redColor];
-    self.tfy_navShadowColor = [UIColor blackColor];
-    self.tfy_backStyle = TFYNavigationBarBackStyleWhite;
-    self.tfy_navRightBarButtonItem = self.moreItem;
+    self.navigationController.tfy_titleColor = [UIColor whiteColor];
+    self.navigationController.tfy_barBackgroundColor = [UIColor redColor];
+    self.navigationController.tfy_navShadowColor = [UIColor blackColor];
+    self.navigationItem.rightBarButtonItem = self.moreItem;
     
     TFY_StackView *stackview = TFY_StackView.new;
     stackview.backgroundColor = [UIColor whiteColor];
@@ -42,11 +35,11 @@
     [self.view addSubview:stackview];
     stackview
     .tfy_LeftSpace(0)
-    .tfy_TopSpace(TFY_kNavBarHeight())
+    .tfy_TopSpace(0)
     .tfy_RightSpace(0)
     .tfy_BottomSpace(TFY_kBottomBarHeight()+TFY_kNavTimebarHeight());
     
-    NSArray *titleLabelArr = @[@"侧滑返回手势",@"全屏返回手势",@"状态栏样式",@"状态栏显隐",@"导航栏背景颜色",@"导航栏分割线",@"返回按钮样式",@"左滑PUSH功能",@"多个导航栏按钮",@"全屏返回手势距离",@"导航栏透明度"];
+    NSArray *titleLabelArr = @[@"侧滑返回手势",@"全屏返回手势",@"导航栏背景颜色",@"导航栏分割线",@"左滑PUSH功能",@"多个导航栏按钮",@"全屏返回手势距离",@"导航栏透明度"];
     [titleLabelArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         UIView *backview = UIViewSet();
         backview.makeChain.makeTag(idx).backgroundColor(UIColor.whiteColor).addToSuperView(stackview);
@@ -58,7 +51,7 @@
         .addToSuperView(backview);
         label.tfy_LeftSpace(20).tfy_CenterY(0).tfy_RightSpace(100).tfy_Height(40);
         
-        if (idx != 9 && idx != 10) {
+        if (idx != 6 && idx != 7) {
             UISwitch *swiths = UISwitchSet();
             swiths.makeChain
             .onTintColor(UIColor.redColor)
@@ -66,7 +59,7 @@
             .makeTag(idx)
             .addTarget(self, @selector(onswichs:), UIControlEventValueChanged)
             .addToSuperView(backview);
-            if (idx==7 || idx == 8) {
+            if (idx==4 || idx == 5) {
                 swiths.makeChain.on(NO);
             } else {
                 swiths.makeChain.on(YES);
@@ -74,7 +67,7 @@
             swiths.tfy_RightSpace(0).tfy_CenterY(0).tfy_size(60, 40);
         }
         
-        if (idx==9 || idx == 10) {
+        if (idx==6 || idx == 7) {
             UISlider *slider = UISliderSet();
             slider.makeChain
             .makeTag(idx)
@@ -83,14 +76,14 @@
             .addTarget(self, @selector(DistanceAction:), UIControlEventValueChanged);
             slider.tfy_LeftSpace(20).tfy_BottomSpace(0).tfy_RightSpace(20).tfy_Height(20);
             if (self.tfy_popMaxAllowedDistanceToLeftEdge == 0) {
-                if (idx == 9) {
+                if (idx == 6) {
                     slider.makeChain.maximumValue(self.view.frame.size.width);
                     slider.value = self.view.frame.size.width;
                 }
             }
-            if (idx == 10) {
+            if (idx == 7) {
                 slider.makeChain.maximumValue(1);
-                slider.value = self.tfy_navBaseBarAlpha;
+                slider.value = self.navigationController.tfy_navBarAlpha;
             }
         }
     }];
@@ -108,44 +101,27 @@
             break;
         case 2:
             if (ons.on) {
-                self.tfy_statusBarStyle = UIStatusBarStyleLightContent;
+                self.navigationController.tfy_barBackgroundColor = [UIColor redColor];
             }else {
-                self.tfy_statusBarStyle = UIStatusBarStyleDefault;
+                self.navigationController.tfy_barBackgroundColor = [UIColor blueColor];
             }
             break;
         case 3:
-            self.tfy_statusBarHidden = !ons.on;
+            self.navigationController.tfy_navLineHidden = !ons.on;
             break;
         case 4:
-            if (ons.on) {
-                self.tfy_navBackgroundColor = [UIColor redColor];
-            }else {
-                self.tfy_navBackgroundColor = [UIColor blueColor];
-            }
-            break;
-        case 5:
-            self.tfy_navLineHidden = !ons.on;
-            break;
-        case 6:
-            if (ons.on) {
-                self.tfy_backStyle = TFYNavigationBarBackStyleWhite;
-            }else {
-                self.tfy_backStyle = TFYNavigationBarBackStyleBlack;
-            }
-            break;
-        case 7:
             if (ons.on) {
                 self.tfy_pushDelegate = self;
             }else {
                 self.tfy_pushDelegate = nil;
             }
             break;
-        case 8:
+        case 5:
             if (ons.on) {
-                self.tfy_navRightBarButtonItems = @[self.shareItem, self.moreItem];
+                self.navigationItem.rightBarButtonItems = @[self.shareItem, self.moreItem];
             }else {
-                self.tfy_navRightBarButtonItems = @[];
-                self.tfy_navRightBarButtonItem = self.moreItem;
+                self.navigationItem.rightBarButtonItems = @[];
+                self.navigationItem.rightBarButtonItem = self.moreItem;
             }
             break;
         default:
@@ -166,13 +142,13 @@
             }
         }
     }
-    if (sender.tag == 9) {
+    if (sender.tag == 6) {
         self.tfy_popMaxAllowedDistanceToLeftEdge = sender.value;
         label.text = [NSString stringWithFormat:@"全屏返回手势距离：%f", self.tfy_popMaxAllowedDistanceToLeftEdge];
     }
-    if (sender.tag == 10) {
-        self.tfy_navBaseBarAlpha = sender.value;
-        label.text = [NSString stringWithFormat:@"导航栏透明度：%f", self.tfy_navBaseBarAlpha];
+    if (sender.tag == 7) {
+        self.navigationController.tfy_navBarAlpha = sender.value;
+        label.text = [NSString stringWithFormat:@"导航栏透明度：%f", self.navigationController.tfy_navBarAlpha];
     }
 }
 

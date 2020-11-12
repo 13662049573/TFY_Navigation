@@ -6,11 +6,11 @@
 //  Copyright © 2020 浙江日报集团. All rights reserved.
 //
 
-#import "TFY_NavigationBarViewController.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NAV_SevenViewController : TFY_NavigationBarViewController
+@interface NAV_SevenViewController : UIViewController
 
 @end
 

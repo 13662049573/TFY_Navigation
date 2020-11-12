@@ -152,7 +152,7 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
        container.hidesBottomBarWhenPushed = YES;
     }
     // 返回按钮目前仅支持图片
-    UIImage *leftImage = [TFY_Configure.backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *leftImage = [TFY_Configure.backImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ?: [[self navigationBarBackIconImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];;
     if (self.viewControllers.count > 0) {
         #pragma clang diagnostic push
         #pragma clang diagnostic ignored "-Wundeclared-selector"
@@ -177,6 +177,32 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
     return image;
 }
 
+- (UIImage *)navigationBarBackIconImage {
+    CGSize const size = CGSizeMake(15.0, 21.0);
+    UIGraphicsBeginImageContextWithOptions(size, NO, UIScreen.mainScreen.scale);
+    UIColor *color = TFY_Configure.backStyle == TFYNavigationBarBackStyleBlack?[UIColor blackColor]:[UIColor whiteColor];
+    [color setFill];
+    [color setStroke];
+    UIBezierPath* bezierPath = [UIBezierPath bezierPath];
+    [bezierPath moveToPoint: CGPointMake(10.9, 0)];
+    [bezierPath addLineToPoint: CGPointMake(12, 1.1)];
+    [bezierPath addLineToPoint: CGPointMake(1.1, 11.75)];
+    [bezierPath addLineToPoint: CGPointMake(0, 10.7)];
+    [bezierPath addLineToPoint: CGPointMake(10.9, 0)];
+    [bezierPath closePath];
+    [bezierPath moveToPoint: CGPointMake(11.98, 19.9)];
+    [bezierPath addLineToPoint: CGPointMake(10.88, 21)];
+    [bezierPath addLineToPoint: CGPointMake(0.54, 11.21)];
+    [bezierPath addLineToPoint: CGPointMake(1.64, 10.11)];
+    [bezierPath addLineToPoint: CGPointMake(11.98, 19.9)];
+    [bezierPath closePath];
+    [bezierPath setLineWidth:1.0];
+    [bezierPath fill];
+    [bezierPath stroke];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 #pragma mark Private
 
 - (void)commonInit {

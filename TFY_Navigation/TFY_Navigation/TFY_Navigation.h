@@ -17,10 +17,8 @@ FOUNDATION_EXPORT const unsigned char TFY_NavigationVersionString[];
 #if TFY_NavigationRelease
 
 #import <TFY_NavControoler/TFY_NavigationController.h>
-#import <TFY_NavControoler/TFY_NavigationBarViewController.h>
 #import <TFY_NavControoler/TFYCategory.h>
 #import <TFY_NavControoler/TFYCommon.h>
-
 
 #import <TFY_PageController/TFY_PageBasicTitleView.h>
 #import <TFY_PageController/TFY_PageViewController.h>
@@ -29,7 +27,6 @@ FOUNDATION_EXPORT const unsigned char TFY_NavigationVersionString[];
 
 //导航栏容器头文件
 #import "TFY_NavigationController.h"
-#import "TFY_NavigationBarViewController.h"
 #import "TFYCategory.h"
 #import "TFYCommon.h"
 

@@ -55,7 +55,6 @@
 		3690449E25513F8C00E413BE /* TFYPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3690449925513F8B00E413BE /* TFYPopTransitionAnimation.m */; };
 		3690449F25513F8C00E413BE /* TFYBaseTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3690449B25513F8B00E413BE /* TFYBaseTransitionAnimation.m */; };
 		36D56FB62545606B0095323D /* TFY_NavigationImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 36D56FB52545606B0095323D /* TFY_NavigationImage.bundle */; };
-		36D56FD325456FAC0095323D /* TFY_NavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D56FD225456FAC0095323D /* TFY_NavigationBarViewController.m */; };
 		36D5702225458E0B0095323D /* TFY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D5701F25458E0B0095323D /* TFY_NavigationController.m */; };
 		36F1F5C62556BB21003C1C05 /* NAV_MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F1F5C52556BB21003C1C05 /* NAV_MainViewController.m */; };
 		565AFAB2247B985900FF5323 /* TFY_PageControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 565AFAB1247B985900FF5323 /* TFY_PageControllerConfig.m */; };
@@ -187,8 +186,6 @@
 		3690449B25513F8B00E413BE /* TFYBaseTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFYBaseTransitionAnimation.m; sourceTree = "<group>"; };
 		3693EC1A2559174B00BB08A3 /* TFYCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYCategory.h; sourceTree = "<group>"; };
 		36D56FB52545606B0095323D /* TFY_NavigationImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TFY_NavigationImage.bundle; sourceTree = "<group>"; };
-		36D56FD125456FAC0095323D /* TFY_NavigationBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_NavigationBarViewController.h; sourceTree = "<group>"; };
-		36D56FD225456FAC0095323D /* TFY_NavigationBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_NavigationBarViewController.m; sourceTree = "<group>"; };
 		36D5701F25458E0B0095323D /* TFY_NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_NavigationController.m; sourceTree = "<group>"; };
 		36D5702125458E0B0095323D /* TFY_NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_NavigationController.h; sourceTree = "<group>"; };
 		36F1F5C42556BB21003C1C05 /* NAV_MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAV_MainViewController.h; sourceTree = "<group>"; };
@@ -500,15 +497,6 @@
 			path = TFY_NavigationKit;
 			sourceTree = "<group>";
 		};
-		36D56FB3254560020095323D /* TFY_NavBasVcKit */ = {
-			isa = PBXGroup;
-			children = (
-				36D56FD125456FAC0095323D /* TFY_NavigationBarViewController.h */,
-				36D56FD225456FAC0095323D /* TFY_NavigationBarViewController.m */,
-			);
-			path = TFY_NavBasVcKit;
-			sourceTree = "<group>";
-		};
 		565AFAAF247B979300FF5323 /* TFY_PageController */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,7 +539,6 @@
 			children = (
 				3690442C2550FE2800E413BE /* TFY_Category */,
 				3690443A2550FE2800E413BE /* TFY_Configure */,
-				36D56FB3254560020095323D /* TFY_NavBasVcKit */,
 				36D56FB2254560020095323D /* TFY_NavigationKit */,
 			);
 			path = TFY_NavControoler;
@@ -845,7 +832,6 @@
 				3624206B229649BF00AFE2B2 /* AppDelegate.m in Sources */,
 				369044492550FE2800E413BE /* UINavigationController+TFYCategory.m in Sources */,
 				3683FE0F24F1D69D005CF078 /* CustomTitleCellExampleVC2.m in Sources */,
-				36D56FD325456FAC0095323D /* TFY_NavigationBarViewController.m in Sources */,
 				3683FE1624F1D69D005CF078 /* SpecialUseExampleVC.m in Sources */,
 				565AFAB5247B9A0A00FF5323 /* TFY_PageControllerUtil.m in Sources */,
 				3683FE1524F1D69D005CF078 /* BasicFunctionListVC.m in Sources */,

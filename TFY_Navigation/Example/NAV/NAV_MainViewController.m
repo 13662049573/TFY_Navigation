@@ -34,22 +34,10 @@
     return _dataSource;
 }
 
-- (instancetype)init {
-    if (self = [super init]) {
-        self.tfy_statusBarStyle = UIStatusBarStyleLightContent;
-    }
-    return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.tfy_navigationItem.title = @"MainVC";
-    self.tfy_navBackgroundColor = [UIColor redColor];
-    self.tfy_statusBarStyle = UIStatusBarStyleLightContent;
-    self.tfy_navTitleFont = [UIFont systemFontOfSize:18.0f];
-    self.tfy_navTitleColor = [UIColor whiteColor];
-    
+    self.view.backgroundColor = [UIColor purpleColor];
+
     [self setupTableView];
 }
 
@@ -62,7 +50,7 @@
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     [self.view addSubview:self.tableView];
-    [self.tableView tfy_AutoSize:0 top:TFY_kNavBarHeight() right:0 bottom:TFY_kBottomBarHeight()];
+    [self.tableView tfy_AutoSize:0 top:0 right:0 bottom:TFY_kBottomBarHeight()];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 }

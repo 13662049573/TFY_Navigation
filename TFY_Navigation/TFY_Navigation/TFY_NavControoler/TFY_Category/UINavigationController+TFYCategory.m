@@ -9,6 +9,8 @@
 #import "UINavigationController+TFYCategory.h"
 #include <objc/runtime.h>
 
+static const void* TFYNavBarAlphaKey         = @"TFYNavBarAlphaKey";
+
 @implementation UINavigationController (TFYCategory)
 
 // 方法交换
@@ -16,7 +18,12 @@
     // 保证其只执行一次
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        tfy_swizzled_method(@"tfyNav", self, @"viewDidLoad", self);
+        NSArray <NSString *>*oriSels = @[@"viewDidLoad",
+                                        
+        ];
+        [oriSels enumerateObjectsUsingBlock:^(NSString * _Nonnull oriSel, NSUInteger idx, BOOL * _Nonnull stop) {
+            tfy_swizzled_method(@"tfyNav", self, oriSel, self);
+        }];
     });
 }
 
@@ -145,7 +152,6 @@
     self.hidesBarsOnTap = YES;
 }
 
-
 #pragma mark - getter
 - (BOOL)tfy_translationScale {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
@@ -197,6 +203,10 @@
 - (UIImage *)tfy_navShadowImage {
     UIImage *obj = objc_getAssociatedObject(self, &@selector(tfy_navShadowImage));
     return obj;
+}
+
+- (BOOL)tfy_navLineHidden {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
 - (TFYPopGestureRecognizerDelegate *)popGestureDelegate {
@@ -300,6 +310,55 @@
 - (void)setTfy_navShadowImage:(UIImage *)tfy_navShadowImage {
     objc_setAssociatedObject(self, &@selector(tfy_navShadowImage), tfy_navShadowImage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.navigationBar.shadowImage = tfy_navShadowImage;
+}
+
+- (CGFloat)tfy_navBarAlpha {
+    id obj = objc_getAssociatedObject(self, TFYNavBarAlphaKey);
+    return obj ? [obj floatValue] : 1.0f;
+}
+
+- (void)setTfy_navBarAlpha:(CGFloat)tfy_navBarAlpha {
+    objc_setAssociatedObject(self, TFYNavBarAlphaKey, @(tfy_navBarAlpha), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [self setNavBarAlpha:tfy_navBarAlpha];
+}
+
+- (void)setNavBarAlpha:(CGFloat)alpha {
+    UINavigationBar *navBar = self.navigationBar;
+    NSArray *navBarArrs = navBar.subviews;
+    if (navBarArrs.count > 0) {
+        UIView *barBackgroundView = [navBarArrs objectAtIndex:0]; // _UIBarBackground
+        UIImageView *backgroundImageView = [barBackgroundView.subviews objectAtIndex:0]; // UIImageView
+        if (navBar.isTranslucent) {
+            if (backgroundImageView != nil && backgroundImageView.image != nil) {
+                barBackgroundView.alpha = alpha;
+            }else {
+                UIView *backgroundEffectView = [barBackgroundView.subviews objectAtIndex:1]; // UIVisualEffectView
+                if (backgroundEffectView != nil) {
+                    backgroundEffectView.alpha = alpha;
+                }
+            }
+        }else {
+            barBackgroundView.alpha = alpha;
+        }
+        // 底部分割线
+        navBar.clipsToBounds = alpha == 0.0;
+    }
+}
+
+- (void)setTfy_navLineHidden:(BOOL)tfy_navLineHidden {
+    objc_setAssociatedObject(self, @selector(tfy_navLineHidden), @(tfy_navLineHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (@available(iOS 11.0, *)) {
+        UIImage *shadowImage = nil;
+        if (tfy_navLineHidden) {
+            shadowImage = [UIImage new];
+        }else if (self.tfy_navShadowImage) {
+            shadowImage = self.tfy_navShadowImage;
+        }else if (self.tfy_navShadowColor) {
+            shadowImage = [UIImage tfy_changeImage:[UIImage tfy_imageNamed:@"nav_line"] color:self.tfy_navShadowColor];
+        }
+        self.navigationBar.shadowImage = shadowImage;
+    }
+    [self.navigationBar layoutSubviews];
 }
 
 - (UIImage *)tfy_createImage:(UIColor *)imageColor {
