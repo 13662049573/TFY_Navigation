@@ -291,7 +291,7 @@
         // 默认选中标题颜色
         self.selectColor = TfySY_TabBarItemSlectBlue;
         // 默认凸出 20
-        self.bulgeHeight = 20.0;
+        self.bulgeHeight = 30.0;
         self.pictureWordsMargin = 5.0;
         self.componentMargin = UIEdgeInsetsMake(5, 5, 5, 5);
         self.isRepeatClick = NO;
