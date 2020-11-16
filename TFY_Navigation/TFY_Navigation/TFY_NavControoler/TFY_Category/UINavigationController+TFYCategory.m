@@ -18,9 +18,7 @@ static const void* TFYNavBarAlphaKey         = @"TFYNavBarAlphaKey";
     // 保证其只执行一次
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSArray <NSString *>*oriSels = @[@"viewDidLoad",
-                                        
-        ];
+        NSArray <NSString *>*oriSels = @[@"viewDidLoad"];
         [oriSels enumerateObjectsUsingBlock:^(NSString * _Nonnull oriSel, NSUInteger idx, BOOL * _Nonnull stop) {
             tfy_swizzled_method(@"tfyNav", self, oriSel, self);
         }];
@@ -78,27 +76,24 @@ static const void* TFYNavBarAlphaKey         = @"TFYNavBarAlphaKey";
     
     // 禁止手势处理
     if (self.tfy_disabledGestureHandle) {
-        self.interactivePopGestureRecognizer.delegate = nil;
-        self.interactivePopGestureRecognizer.enabled = NO;
-        [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.screenPanGesture];
-        [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.panGesture];
+        [self interactivePopGesturedelegate];
+        [self removeGestureRecognizerGesture];
         return;
     }
     
     BOOL isRootVC = vc == self.viewControllers.firstObject;
     
     // 重新根据属性添加手势方法
+    NSLog(@"%u------%u",vc.tfy_interactivePopDisabled,vc.tfy_fullScreenPopDisabled);
     if (vc.tfy_interactivePopDisabled) { // 禁止滑动
-        self.interactivePopGestureRecognizer.delegate = nil;
-        self.interactivePopGestureRecognizer.enabled = NO;
-        [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.screenPanGesture];
-        [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.panGesture];
-    }else if (vc.tfy_fullScreenPopDisabled) { // 禁止全屏滑动
+        [self interactivePopGesturedelegate];
+        [self removeGestureRecognizerGesture];
+        
+    } else if (vc.tfy_fullScreenPopDisabled) { // 禁止全屏滑动
         [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.panGesture];
         
         if (self.tfy_translationScale) {
-            self.interactivePopGestureRecognizer.delegate = nil;
-            self.interactivePopGestureRecognizer.enabled = NO;
+            [self interactivePopGesturedelegate];
             
             if (![self.interactivePopGestureRecognizer.view.gestureRecognizers containsObject:self.screenPanGesture]) {
                 [self.interactivePopGestureRecognizer.view addGestureRecognizer:self.screenPanGesture];
@@ -110,8 +105,7 @@ static const void* TFYNavBarAlphaKey         = @"TFYNavBarAlphaKey";
             self.interactivePopGestureRecognizer.enabled = !isRootVC;
         }
     }else {
-        self.interactivePopGestureRecognizer.delegate = nil;
-        self.interactivePopGestureRecognizer.enabled = NO;
+        [self interactivePopGesturedelegate];
         [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.screenPanGesture];
         
         // 给self.interactivePopGestureRecognizer.view 添加全屏滑动手势
@@ -128,6 +122,16 @@ static const void* TFYNavBarAlphaKey         = @"TFYNavBarAlphaKey";
             [self.panGesture addTarget:[self systemTarget] action:internalAction];
         }
     }
+}
+
+- (void)interactivePopGesturedelegate {
+    self.interactivePopGestureRecognizer.delegate = nil;
+    self.interactivePopGestureRecognizer.enabled = NO;
+}
+
+- (void)removeGestureRecognizerGesture {
+    [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.screenPanGesture];
+    [self.interactivePopGestureRecognizer.view removeGestureRecognizer:self.panGesture];
 }
 
 - (void)tfy_navigationBarTransparent {
