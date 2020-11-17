@@ -82,11 +82,10 @@
         UIViewController *vc = [obj objectForKey:@"vc"];
         vc.view.backgroundColor = [UIColor whiteColor];
         
+
         TFY_NavigationController *nav = [[TFY_NavigationController alloc] initWithRootViewController:vc];
         nav.tfy_openScrollLeftPush = YES;
-        if (idx==3) {
-            nav.tfy_barBackgroundColor = UIColor.redColor;
-        }
+        
         [tabBarVCs addObject:nav];
         [tabBarConfs addObject:model];
     }];

@@ -531,24 +531,6 @@ const char* jailbreak_tool_pathes[] = {
     [self setLanguage:languageCode];
 }
 
-+(UIWindow*)lastWindow {
-    NSEnumerator  *frontToBackWindows = [UIApplication.sharedApplication.windows reverseObjectEnumerator];
-    for (UIWindow *window in frontToBackWindows) {
-        BOOL windowOnMainScreen = window.screen == UIScreen.mainScreen;
-
-        BOOL windowIsVisible = !window.hidden&& window.alpha>0;
-
-        BOOL windowLevelSupported = (window.windowLevel >= UIWindowLevelNormal && window.windowLevel <= UIWindowLevelNormal);
-
-        BOOL windowKeyWindow = window.isKeyWindow;
-        
-        if (windowOnMainScreen && windowIsVisible && windowLevelSupported && windowKeyWindow) {
-            return window;
-        }
-    }
-    return [UIApplication sharedApplication].keyWindow;
-}
-
 #pragma mark------------------------------------------国际化设置---------------------------------------
 
 //formart时间戳格式("yyyy-MM-dd HH-mm-ss")
@@ -2677,12 +2659,10 @@ const char* jailbreak_tool_pathes[] = {
 /**
  *   归档
  */
-+ (void)keyedArchiverObject:(id)object ForKey:(NSString *)key ToFile:(NSString *)path{
-    NSMutableData *md=[NSMutableData data];
-    NSKeyedArchiver *arch=[[NSKeyedArchiver alloc]initForWritingWithMutableData:md];
-    [arch encodeObject:object forKey:key];
-    [arch finishEncoding];
-    [md writeToFile:path atomically:YES];
++ (void)keyedArchiverObject:(id)object ToFile:(NSString *)path{
+    NSError * error;
+    NSData * data = [NSKeyedArchiver archivedDataWithRootObject:object requiringSecureCoding:YES error:&error];
+    [data writeToFile:path atomically:YES];
 }
 static CGRect oldframe;
 /**
@@ -2724,18 +2704,16 @@ static CGRect oldframe;
 /**
  *  反归档
  */
-+(NSArray *)keyedUnArchiverForKey:(NSString *)key FromFile:(NSString *)path{
++(id)keyedUnArchiverForKey:(id)object FromFile:(NSString *)path{
     NSError *error=nil;
-    NSData *data=[NSData dataWithContentsOfFile:path];
-    NSArray *arr;
-    if (@available(iOS 11.0, *)) {
-        NSKeyedUnarchiver *unArch=[[NSKeyedUnarchiver alloc] initForReadingFromData:data error:&error];
-        arr = [unArch decodeObjectForKey:key];
+    NSData * unData = [NSData dataWithContentsOfFile:path];
+    id unarch;
+    if (@available(iOS 14.0, *)) {
+        unarch = [NSKeyedUnarchiver unarchivedArrayOfObjectsOfClass:object fromData:unData error:&error];
     } else {
-        NSKeyedUnarchiver *unArch=[[NSKeyedUnarchiver alloc] initForReadingWithData:data];
-        arr = [unArch decodeObjectForKey:key];
+        unarch = [NSKeyedUnarchiver unarchivedObjectOfClass:object fromData:unData error:&error];
     }
-    return arr;
+    return unarch;
 }
 
 /**

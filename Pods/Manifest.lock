@@ -1,46 +1,47 @@
 PODS:
-  - TFY_AutoLayout (2.6.2):
-    - TFY_AutoLayout/IOS_Layout (= 2.6.2)
-    - TFY_AutoLayout/MAC_Layout (= 2.6.2)
-    - TFY_AutoLayout/Util (= 2.6.2)
-  - TFY_AutoLayout/IOS_Layout (2.6.2):
+  - TFY_AutoLayout (2.6.4):
+    - TFY_AutoLayout/IOS_Layout (= 2.6.4)
+    - TFY_AutoLayout/MAC_Layout (= 2.6.4)
+    - TFY_AutoLayout/Util (= 2.6.4)
+  - TFY_AutoLayout/IOS_Layout (2.6.4):
     - TFY_AutoLayout/Util
-  - TFY_AutoLayout/MAC_Layout (2.6.2):
+  - TFY_AutoLayout/MAC_Layout (2.6.4):
     - TFY_AutoLayout/Util
-  - TFY_AutoLayout/Util (2.6.2)
-  - TFY_LayoutCategoryKit (1.6.4):
-    - TFY_LayoutCategoryKit/TFY_Categories (= 1.6.4)
-    - TFY_LayoutCategoryKit/TFY_Chain (= 1.6.4)
-    - TFY_LayoutCategoryKit/TFY_Tools (= 1.6.4)
-  - TFY_LayoutCategoryKit/TFY_Categories (1.6.4):
-    - TFY_LayoutCategoryKit/TFY_Categories/TFY_Foundation (= 1.6.4)
-    - TFY_LayoutCategoryKit/TFY_Categories/TFY_UI (= 1.6.4)
+  - TFY_AutoLayout/Util (2.6.4)
+  - TFY_LayoutCategoryKit (1.7.2):
+    - TFY_LayoutCategoryKit/TFY_Categories (= 1.7.2)
+    - TFY_LayoutCategoryKit/TFY_Chain (= 1.7.2)
+    - TFY_LayoutCategoryKit/TFY_Tools (= 1.7.2)
+  - TFY_LayoutCategoryKit/TFY_Categories (1.7.2):
+    - TFY_LayoutCategoryKit/TFY_Categories/TFY_Foundation (= 1.7.2)
+    - TFY_LayoutCategoryKit/TFY_Categories/TFY_UI (= 1.7.2)
     - TFY_LayoutCategoryKit/TFY_Tools
-  - TFY_LayoutCategoryKit/TFY_Categories/TFY_Foundation (1.6.4):
+  - TFY_LayoutCategoryKit/TFY_Categories/TFY_Foundation (1.7.2):
     - TFY_LayoutCategoryKit/TFY_Tools
-  - TFY_LayoutCategoryKit/TFY_Categories/TFY_UI (1.6.4):
+  - TFY_LayoutCategoryKit/TFY_Categories/TFY_UI (1.7.2):
     - TFY_LayoutCategoryKit/TFY_Tools
-  - TFY_LayoutCategoryKit/TFY_Chain (1.6.4):
-    - TFY_LayoutCategoryKit/TFY_Chain/TFY_CALayer (= 1.6.4)
-    - TFY_LayoutCategoryKit/TFY_Chain/TFY_ChainBase (= 1.6.4)
-    - TFY_LayoutCategoryKit/TFY_Chain/TFY_UIGesture (= 1.6.4)
-    - TFY_LayoutCategoryKit/TFY_Chain/TFY_UIView (= 1.6.4)
-  - TFY_LayoutCategoryKit/TFY_Chain/TFY_CALayer (1.6.4):
-    - TFY_LayoutCategoryKit/TFY_Chain/TFY_ChainBase
-  - TFY_LayoutCategoryKit/TFY_Chain/TFY_ChainBase (1.6.4)
-  - TFY_LayoutCategoryKit/TFY_Chain/TFY_UIGesture (1.6.4):
+  - TFY_LayoutCategoryKit/TFY_Chain (1.7.2):
+    - TFY_LayoutCategoryKit/TFY_Chain/TFY_CALayer (= 1.7.2)
+    - TFY_LayoutCategoryKit/TFY_Chain/TFY_ChainBase (= 1.7.2)
+    - TFY_LayoutCategoryKit/TFY_Chain/TFY_UIGesture (= 1.7.2)
+    - TFY_LayoutCategoryKit/TFY_Chain/TFY_UIView (= 1.7.2)
+  - TFY_LayoutCategoryKit/TFY_Chain/TFY_CALayer (1.7.2):
     - TFY_LayoutCategoryKit/TFY_Categories/TFY_UI
     - TFY_LayoutCategoryKit/TFY_Chain/TFY_ChainBase
-  - TFY_LayoutCategoryKit/TFY_Chain/TFY_UIView (1.6.4):
+  - TFY_LayoutCategoryKit/TFY_Chain/TFY_ChainBase (1.7.2)
+  - TFY_LayoutCategoryKit/TFY_Chain/TFY_UIGesture (1.7.2):
+    - TFY_LayoutCategoryKit/TFY_Categories/TFY_UI
+    - TFY_LayoutCategoryKit/TFY_Chain/TFY_ChainBase
+  - TFY_LayoutCategoryKit/TFY_Chain/TFY_UIView (1.7.2):
     - TFY_LayoutCategoryKit/TFY_Categories/TFY_Foundation
     - TFY_LayoutCategoryKit/TFY_Categories/TFY_UI
     - TFY_LayoutCategoryKit/TFY_Chain/TFY_CALayer
     - TFY_LayoutCategoryKit/TFY_Chain/TFY_ChainBase
     - TFY_LayoutCategoryKit/TFY_Chain/TFY_UIGesture
-  - TFY_LayoutCategoryKit/TFY_Tools (1.6.4)
-  - TFY_TabBarKit (1.1.2):
-    - TFY_TabBarKit/TFY_SystemTabBar (= 1.1.2)
-  - TFY_TabBarKit/TFY_SystemTabBar (1.1.2)
+  - TFY_LayoutCategoryKit/TFY_Tools (1.7.2)
+  - TFY_TabBarKit (1.1.4):
+    - TFY_TabBarKit/TFY_SystemTabBar (= 1.1.4)
+  - TFY_TabBarKit/TFY_SystemTabBar (1.1.4)
 
 DEPENDENCIES:
   - TFY_AutoLayout
@@ -54,10 +55,10 @@ SPEC REPOS:
     - TFY_TabBarKit
 
 SPEC CHECKSUMS:
-  TFY_AutoLayout: 03085c3744020215142df50ee24e9629eb967779
-  TFY_LayoutCategoryKit: 2ef34148ecd504dfcc4de72e6875bed495fe1541
-  TFY_TabBarKit: 03da94084ad16fa462aba0b4591d984b516085c1
+  TFY_AutoLayout: 51019bdcdb78b9a145bd0ed351d23be93379dc0b
+  TFY_LayoutCategoryKit: 8887d90af96b883b49a5b1042e4ce932b550fab1
+  TFY_TabBarKit: d552bbe85e8dfc8dd126706e177dc5dd7f4c973e
 
-PODFILE CHECKSUM: a16b75f281bb0ce755f4b2abb80265d20cf73aef
+PODFILE CHECKSUM: 29a70ad94c60ca2b1ac656dac20fc3330ea0d884
 
 COCOAPODS: 1.10.0

@@ -107,10 +107,11 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
-        
-    [TFY_Configure setupDefaultConfigure];
-    
+            
     [self setupNavigationBarTheme];
+    
+    TFY_Configure.tfy_navItemLeftSpace = 15;
+    TFY_Configure.tfy_navItemRightSpace = 15;
 }
 
 - (void)setupNavigationBarTheme
@@ -119,12 +120,12 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
     if ([TFY_Configure.backgroundImage isKindOfClass:UIImage.class] && TFY_Configure.backgroundImage!=nil) {
         [navBar setBackgroundImage:TFY_Configure.backgroundImage forBarMetrics:UIBarMetricsDefault];
     } else {
-        [navBar setBackgroundImage:[self tfy_createImage:TFY_Configure.backgroundColor] forBarMetrics:UIBarMetricsDefault];
+        [navBar setBackgroundImage:[self tfy_createImage:TFY_Configure.backgroundColor?TFY_Configure.backgroundColor:UIColor.whiteColor] forBarMetrics:UIBarMetricsDefault];
     }
-    [navBar setShadowImage:[self tfy_createImage:TFY_Configure.navShadowColor]];
+    [navBar setShadowImage:[self tfy_createImage:TFY_Configure.navShadowColor?TFY_Configure.navShadowColor:UIColor.clearColor]];
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSFontAttributeName] = TFY_Configure.titleFont;
-    textAttrs[NSForegroundColorAttributeName] = TFY_Configure.titleColor;
+    textAttrs[NSFontAttributeName] = TFY_Configure.titleFont?TFY_Configure.titleFont:[UIFont systemFontOfSize:16 weight:UIFontWeightBold];
+    textAttrs[NSForegroundColorAttributeName] = TFY_Configure.titleColor?TFY_Configure.titleColor:UIColor.blackColor;
     [navBar setTitleTextAttributes:textAttrs];
 }
 
@@ -180,7 +181,7 @@ UIKIT_STATIC_INLINE void TFY_swizzled(Class class, SEL originalSelector, SEL swi
 - (UIImage *)navigationBarBackIconImage {
     CGSize const size = CGSizeMake(15.0, 21.0);
     UIGraphicsBeginImageContextWithOptions(size, NO, UIScreen.mainScreen.scale);
-    UIColor *color = TFY_Configure.backStyle == TFYNavigationBarBackStyleBlack?[UIColor blackColor]:[UIColor whiteColor];
+    UIColor *color = TFY_Configure.backStyle == TFYNavigationBarBackStyleBlack?[UIColor whiteColor]:[UIColor blackColor];
     [color setFill];
     [color setStroke];
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
