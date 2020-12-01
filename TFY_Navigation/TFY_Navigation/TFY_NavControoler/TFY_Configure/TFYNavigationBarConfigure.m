@@ -63,7 +63,7 @@ static TFYNavigationBarConfigure *instance = nil;
 
 - (void)setBackStyle:(TFYNavigationBarBackStyle)backStyle {
     _backStyle = backStyle;
-    if (_backStyle != TFYNavigationBarBackStyleNone) {
+    if (_backStyle != TFYNavigationBarBackStyleNone && self.backImage == nil) {
         NSString *imageName = _backStyle == TFYNavigationBarBackStyleBlack ? @"btn_back_black" : @"btn_back_white";
         self.backImage = [UIImage tfy_imageNamed:imageName];
     }
