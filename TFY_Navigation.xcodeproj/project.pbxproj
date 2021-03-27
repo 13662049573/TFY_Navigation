@@ -15,25 +15,6 @@
 		36242079229649C000AFE2B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36242078229649C000AFE2B2 /* main.m */; };
 		36242083229649C000AFE2B2 /* TFY_NavigationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36242082229649C000AFE2B2 /* TFY_NavigationTests.m */; };
 		3624208E229649C000AFE2B2 /* TFY_NavigationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3624208D229649C000AFE2B2 /* TFY_NavigationUITests.m */; };
-		3683FE0E24F1D69D005CF078 /* CustomTitleCellExampleVC3.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FDE324F1D69D005CF078 /* CustomTitleCellExampleVC3.m */; };
-		3683FE0F24F1D69D005CF078 /* CustomTitleCellExampleVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FDE424F1D69D005CF078 /* CustomTitleCellExampleVC2.m */; };
-		3683FE1024F1D69D005CF078 /* OtherAppExampleListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FDE524F1D69D005CF078 /* OtherAppExampleListVC.m */; };
-		3683FE1124F1D69D005CF078 /* CustomPageTitleCell3.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FDE824F1D69D005CF078 /* CustomPageTitleCell3.m */; };
-		3683FE1224F1D69D005CF078 /* CustomPageTitleCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FDE924F1D69D005CF078 /* CustomPageTitleCell2.m */; };
-		3683FE1324F1D69D005CF078 /* CommonPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FDEE24F1D69D005CF078 /* CommonPageViewController.m */; };
-		3683FE1424F1D69D005CF078 /* CommonTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FDF024F1D69D005CF078 /* CommonTableViewController.m */; };
-		3683FE1524F1D69D005CF078 /* BasicFunctionListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FDF324F1D69D005CF078 /* BasicFunctionListVC.m */; };
-		3683FE1624F1D69D005CF078 /* SpecialUseExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FDF524F1D69D005CF078 /* SpecialUseExampleVC.m */; };
-		3683FE1724F1D69D005CF078 /* SwitchByHandExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FDF724F1D69D005CF078 /* SwitchByHandExampleVC.m */; };
-		3683FE1824F1D69D005CF078 /* MultiLevelExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FDF924F1D69D005CF078 /* MultiLevelExampleVC.m */; };
-		3683FE1924F1D69D005CF078 /* CustomPageTitleCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FDFE24F1D69D005CF078 /* CustomPageTitleCell1.m */; };
-		3683FE1A24F1D69D005CF078 /* CustomTitleCellExampleVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE0024F1D69D005CF078 /* CustomTitleCellExampleVC1.m */; };
-		3683FE1B24F1D69D005CF078 /* ChannelManageExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE0124F1D69D005CF078 /* ChannelManageExampleVC.m */; };
-		3683FE1C24F1D69D005CF078 /* ChildViewConflictExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE0324F1D69D005CF078 /* ChildViewConflictExampleVC.m */; };
-		3683FE1D24F1D69D005CF078 /* XLChannelControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE0624F1D69D005CF078 /* XLChannelControl.m */; };
-		3683FE1E24F1D69D005CF078 /* XLChannelHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE0A24F1D69D005CF078 /* XLChannelHeader.m */; };
-		3683FE1F24F1D69D005CF078 /* XLChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE0B24F1D69D005CF078 /* XLChannelView.m */; };
-		3683FE2024F1D69D005CF078 /* XLChannelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE0D24F1D69D005CF078 /* XLChannelItem.m */; };
 		3683FE2324F1D6D2005CF078 /* NAV_OneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE2224F1D6D2005CF078 /* NAV_OneController.m */; };
 		3683FE2624F1D6E6005CF078 /* NAV_TwoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE2524F1D6E6005CF078 /* NAV_TwoController.m */; };
 		3683FE2924F1D6FA005CF078 /* NAV_ThreeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3683FE2824F1D6FA005CF078 /* NAV_ThreeController.m */; };
@@ -57,12 +38,6 @@
 		36D56FB62545606B0095323D /* TFY_NavigationImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 36D56FB52545606B0095323D /* TFY_NavigationImage.bundle */; };
 		36D5702225458E0B0095323D /* TFY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36D5701F25458E0B0095323D /* TFY_NavigationController.m */; };
 		36F1F5C62556BB21003C1C05 /* NAV_MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F1F5C52556BB21003C1C05 /* NAV_MainViewController.m */; };
-		565AFAB2247B985900FF5323 /* TFY_PageControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 565AFAB1247B985900FF5323 /* TFY_PageControllerConfig.m */; };
-		565AFAB5247B9A0A00FF5323 /* TFY_PageControllerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 565AFAB4247B9A0A00FF5323 /* TFY_PageControllerUtil.m */; };
-		565AFAB8247B9C1800FF5323 /* TFY_PageTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 565AFAB7247B9C1800FF5323 /* TFY_PageTitleCell.m */; };
-		565AFABB247B9D2100FF5323 /* TFY_PageBasicTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 565AFABA247B9D2100FF5323 /* TFY_PageBasicTitleView.m */; };
-		565AFABE247B9E8E00FF5323 /* TFY_PageSegmentedTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 565AFABD247B9E8E00FF5323 /* TFY_PageSegmentedTitleView.m */; };
-		565AFAC1247B9F0E00FF5323 /* TFY_PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565AFAC0247B9F0E00FF5323 /* TFY_PageViewController.m */; };
 		B7CE90D3A6F92F2671888F9F /* Pods_TFY_Navigation_TFY_NavigationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CBB529E143F6294173A601 /* Pods_TFY_Navigation_TFY_NavigationUITests.framework */; };
 		C32B7B60FCF3833C9B6F5722 /* Pods_TFY_NavigationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B113AD07938AF65D3C18E1 /* Pods_TFY_NavigationTests.framework */; };
 /* End PBXBuildFile section */
@@ -105,44 +80,6 @@
 		3624208D229649C000AFE2B2 /* TFY_NavigationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_NavigationUITests.m; sourceTree = "<group>"; };
 		3624208F229649C000AFE2B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3624209C229649EC00AFE2B2 /* TFY_Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_Navigation.h; sourceTree = "<group>"; };
-		3683FDE124F1D69D005CF078 /* CustomTitleCellExampleVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTitleCellExampleVC2.h; sourceTree = "<group>"; };
-		3683FDE224F1D69D005CF078 /* OtherAppExampleListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherAppExampleListVC.h; sourceTree = "<group>"; };
-		3683FDE324F1D69D005CF078 /* CustomTitleCellExampleVC3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTitleCellExampleVC3.m; sourceTree = "<group>"; };
-		3683FDE424F1D69D005CF078 /* CustomTitleCellExampleVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTitleCellExampleVC2.m; sourceTree = "<group>"; };
-		3683FDE524F1D69D005CF078 /* OtherAppExampleListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherAppExampleListVC.m; sourceTree = "<group>"; };
-		3683FDE724F1D69D005CF078 /* CustomPageTitleCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPageTitleCell2.h; sourceTree = "<group>"; };
-		3683FDE824F1D69D005CF078 /* CustomPageTitleCell3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPageTitleCell3.m; sourceTree = "<group>"; };
-		3683FDE924F1D69D005CF078 /* CustomPageTitleCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPageTitleCell2.m; sourceTree = "<group>"; };
-		3683FDEA24F1D69D005CF078 /* CustomPageTitleCell3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPageTitleCell3.h; sourceTree = "<group>"; };
-		3683FDEB24F1D69D005CF078 /* CustomTitleCellExampleVC3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTitleCellExampleVC3.h; sourceTree = "<group>"; };
-		3683FDED24F1D69D005CF078 /* CommonTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTableViewController.h; sourceTree = "<group>"; };
-		3683FDEE24F1D69D005CF078 /* CommonPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonPageViewController.m; sourceTree = "<group>"; };
-		3683FDEF24F1D69D005CF078 /* CommonPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonPageViewController.h; sourceTree = "<group>"; };
-		3683FDF024F1D69D005CF078 /* CommonTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTableViewController.m; sourceTree = "<group>"; };
-		3683FDF224F1D69D005CF078 /* BasicFunctionListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicFunctionListVC.h; sourceTree = "<group>"; };
-		3683FDF324F1D69D005CF078 /* BasicFunctionListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicFunctionListVC.m; sourceTree = "<group>"; };
-		3683FDF524F1D69D005CF078 /* SpecialUseExampleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialUseExampleVC.m; sourceTree = "<group>"; };
-		3683FDF624F1D69D005CF078 /* CustomTitleCellExampleVC1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTitleCellExampleVC1.h; sourceTree = "<group>"; };
-		3683FDF724F1D69D005CF078 /* SwitchByHandExampleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchByHandExampleVC.m; sourceTree = "<group>"; };
-		3683FDF824F1D69D005CF078 /* ChildViewConflictExampleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildViewConflictExampleVC.h; sourceTree = "<group>"; };
-		3683FDF924F1D69D005CF078 /* MultiLevelExampleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiLevelExampleVC.m; sourceTree = "<group>"; };
-		3683FDFA24F1D69D005CF078 /* ChannelManageExampleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelManageExampleVC.h; sourceTree = "<group>"; };
-		3683FDFB24F1D69D005CF078 /* SpecialUseExampleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialUseExampleVC.h; sourceTree = "<group>"; };
-		3683FDFD24F1D69D005CF078 /* CustomPageTitleCell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPageTitleCell1.h; sourceTree = "<group>"; };
-		3683FDFE24F1D69D005CF078 /* CustomPageTitleCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPageTitleCell1.m; sourceTree = "<group>"; };
-		3683FDFF24F1D69D005CF078 /* SwitchByHandExampleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchByHandExampleVC.h; sourceTree = "<group>"; };
-		3683FE0024F1D69D005CF078 /* CustomTitleCellExampleVC1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTitleCellExampleVC1.m; sourceTree = "<group>"; };
-		3683FE0124F1D69D005CF078 /* ChannelManageExampleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelManageExampleVC.m; sourceTree = "<group>"; };
-		3683FE0224F1D69D005CF078 /* MultiLevelExampleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiLevelExampleVC.h; sourceTree = "<group>"; };
-		3683FE0324F1D69D005CF078 /* ChildViewConflictExampleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildViewConflictExampleVC.m; sourceTree = "<group>"; };
-		3683FE0624F1D69D005CF078 /* XLChannelControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelControl.m; sourceTree = "<group>"; };
-		3683FE0724F1D69D005CF078 /* XLChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelView.h; sourceTree = "<group>"; };
-		3683FE0824F1D69D005CF078 /* XLChannelHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelHeader.h; sourceTree = "<group>"; };
-		3683FE0924F1D69D005CF078 /* XLChannelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelItem.h; sourceTree = "<group>"; };
-		3683FE0A24F1D69D005CF078 /* XLChannelHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelHeader.m; sourceTree = "<group>"; };
-		3683FE0B24F1D69D005CF078 /* XLChannelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelView.m; sourceTree = "<group>"; };
-		3683FE0C24F1D69D005CF078 /* XLChannelControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLChannelControl.h; sourceTree = "<group>"; };
-		3683FE0D24F1D69D005CF078 /* XLChannelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLChannelItem.m; sourceTree = "<group>"; };
 		3683FE2124F1D6D2005CF078 /* NAV_OneController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAV_OneController.h; sourceTree = "<group>"; };
 		3683FE2224F1D6D2005CF078 /* NAV_OneController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NAV_OneController.m; sourceTree = "<group>"; };
 		3683FE2424F1D6E6005CF078 /* NAV_TwoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAV_TwoController.h; sourceTree = "<group>"; };
@@ -191,18 +128,6 @@
 		36F1F5C42556BB21003C1C05 /* NAV_MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAV_MainViewController.h; sourceTree = "<group>"; };
 		36F1F5C52556BB21003C1C05 /* NAV_MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NAV_MainViewController.m; sourceTree = "<group>"; };
 		4E005F02273F596C1314D52E /* Pods-TFY_Navigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_Navigation.release.xcconfig"; path = "Target Support Files/Pods-TFY_Navigation/Pods-TFY_Navigation.release.xcconfig"; sourceTree = "<group>"; };
-		565AFAB0247B985900FF5323 /* TFY_PageControllerConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageControllerConfig.h; sourceTree = "<group>"; };
-		565AFAB1247B985900FF5323 /* TFY_PageControllerConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PageControllerConfig.m; sourceTree = "<group>"; };
-		565AFAB3247B9A0A00FF5323 /* TFY_PageControllerUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageControllerUtil.h; sourceTree = "<group>"; };
-		565AFAB4247B9A0A00FF5323 /* TFY_PageControllerUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PageControllerUtil.m; sourceTree = "<group>"; };
-		565AFAB6247B9C1800FF5323 /* TFY_PageTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageTitleCell.h; sourceTree = "<group>"; };
-		565AFAB7247B9C1800FF5323 /* TFY_PageTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PageTitleCell.m; sourceTree = "<group>"; };
-		565AFAB9247B9D2100FF5323 /* TFY_PageBasicTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageBasicTitleView.h; sourceTree = "<group>"; };
-		565AFABA247B9D2100FF5323 /* TFY_PageBasicTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PageBasicTitleView.m; sourceTree = "<group>"; };
-		565AFABC247B9E8E00FF5323 /* TFY_PageSegmentedTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageSegmentedTitleView.h; sourceTree = "<group>"; };
-		565AFABD247B9E8E00FF5323 /* TFY_PageSegmentedTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PageSegmentedTitleView.m; sourceTree = "<group>"; };
-		565AFABF247B9F0E00FF5323 /* TFY_PageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFY_PageViewController.h; sourceTree = "<group>"; };
-		565AFAC0247B9F0E00FF5323 /* TFY_PageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_PageViewController.m; sourceTree = "<group>"; };
 		565AFB05247BA21A00FF5323 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		7943A11C486D44176F366063 /* Pods-TFY_Navigation-TFY_NavigationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_Navigation-TFY_NavigationUITests.debug.xcconfig"; path = "Target Support Files/Pods-TFY_Navigation-TFY_NavigationUITests/Pods-TFY_Navigation-TFY_NavigationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C7CBB529E143F6294173A601 /* Pods_TFY_Navigation_TFY_NavigationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFY_Navigation_TFY_NavigationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,7 +227,6 @@
 				36D56FB52545606B0095323D /* TFY_NavigationImage.bundle */,
 				3624209C229649EC00AFE2B2 /* TFY_Navigation.h */,
 				5667B85C23D6A047006CD91B /* TFY_NavControoler */,
-				565AFAAF247B979300FF5323 /* TFY_PageController */,
 			);
 			path = TFY_Navigation;
 			sourceTree = "<group>";
@@ -328,115 +252,6 @@
 				36F1F5C52556BB21003C1C05 /* NAV_MainViewController.m */,
 			);
 			path = NAV;
-			sourceTree = "<group>";
-		};
-		3683FDDF24F1D69D005CF078 /* PAGE */ = {
-			isa = PBXGroup;
-			children = (
-				3683FDE024F1D69D005CF078 /* OtherAppExample */,
-				3683FDEC24F1D69D005CF078 /* Common */,
-				3683FDF124F1D69D005CF078 /* BasicFunctionExample */,
-				3683FDF424F1D69D005CF078 /* SpecialUseExample */,
-				3683FE0424F1D69D005CF078 /* Vendor */,
-			);
-			path = PAGE;
-			sourceTree = "<group>";
-		};
-		3683FDE024F1D69D005CF078 /* OtherAppExample */ = {
-			isa = PBXGroup;
-			children = (
-				3683FDE124F1D69D005CF078 /* CustomTitleCellExampleVC2.h */,
-				3683FDE224F1D69D005CF078 /* OtherAppExampleListVC.h */,
-				3683FDE324F1D69D005CF078 /* CustomTitleCellExampleVC3.m */,
-				3683FDE424F1D69D005CF078 /* CustomTitleCellExampleVC2.m */,
-				3683FDE524F1D69D005CF078 /* OtherAppExampleListVC.m */,
-				3683FDE624F1D69D005CF078 /* View */,
-				3683FDEB24F1D69D005CF078 /* CustomTitleCellExampleVC3.h */,
-			);
-			path = OtherAppExample;
-			sourceTree = "<group>";
-		};
-		3683FDE624F1D69D005CF078 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3683FDE724F1D69D005CF078 /* CustomPageTitleCell2.h */,
-				3683FDE824F1D69D005CF078 /* CustomPageTitleCell3.m */,
-				3683FDE924F1D69D005CF078 /* CustomPageTitleCell2.m */,
-				3683FDEA24F1D69D005CF078 /* CustomPageTitleCell3.h */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3683FDEC24F1D69D005CF078 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				3683FDED24F1D69D005CF078 /* CommonTableViewController.h */,
-				3683FDEE24F1D69D005CF078 /* CommonPageViewController.m */,
-				3683FDEF24F1D69D005CF078 /* CommonPageViewController.h */,
-				3683FDF024F1D69D005CF078 /* CommonTableViewController.m */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		3683FDF124F1D69D005CF078 /* BasicFunctionExample */ = {
-			isa = PBXGroup;
-			children = (
-				3683FDF224F1D69D005CF078 /* BasicFunctionListVC.h */,
-				3683FDF324F1D69D005CF078 /* BasicFunctionListVC.m */,
-			);
-			path = BasicFunctionExample;
-			sourceTree = "<group>";
-		};
-		3683FDF424F1D69D005CF078 /* SpecialUseExample */ = {
-			isa = PBXGroup;
-			children = (
-				3683FDF524F1D69D005CF078 /* SpecialUseExampleVC.m */,
-				3683FDF624F1D69D005CF078 /* CustomTitleCellExampleVC1.h */,
-				3683FDF724F1D69D005CF078 /* SwitchByHandExampleVC.m */,
-				3683FDF824F1D69D005CF078 /* ChildViewConflictExampleVC.h */,
-				3683FDF924F1D69D005CF078 /* MultiLevelExampleVC.m */,
-				3683FDFA24F1D69D005CF078 /* ChannelManageExampleVC.h */,
-				3683FDFB24F1D69D005CF078 /* SpecialUseExampleVC.h */,
-				3683FDFC24F1D69D005CF078 /* View */,
-				3683FDFF24F1D69D005CF078 /* SwitchByHandExampleVC.h */,
-				3683FE0024F1D69D005CF078 /* CustomTitleCellExampleVC1.m */,
-				3683FE0124F1D69D005CF078 /* ChannelManageExampleVC.m */,
-				3683FE0224F1D69D005CF078 /* MultiLevelExampleVC.h */,
-				3683FE0324F1D69D005CF078 /* ChildViewConflictExampleVC.m */,
-			);
-			path = SpecialUseExample;
-			sourceTree = "<group>";
-		};
-		3683FDFC24F1D69D005CF078 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3683FDFD24F1D69D005CF078 /* CustomPageTitleCell1.h */,
-				3683FDFE24F1D69D005CF078 /* CustomPageTitleCell1.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3683FE0424F1D69D005CF078 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				3683FE0524F1D69D005CF078 /* XLChannelControl */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
-		3683FE0524F1D69D005CF078 /* XLChannelControl */ = {
-			isa = PBXGroup;
-			children = (
-				3683FE0624F1D69D005CF078 /* XLChannelControl.m */,
-				3683FE0724F1D69D005CF078 /* XLChannelView.h */,
-				3683FE0824F1D69D005CF078 /* XLChannelHeader.h */,
-				3683FE0924F1D69D005CF078 /* XLChannelItem.h */,
-				3683FE0A24F1D69D005CF078 /* XLChannelHeader.m */,
-				3683FE0B24F1D69D005CF078 /* XLChannelView.m */,
-				3683FE0C24F1D69D005CF078 /* XLChannelControl.h */,
-				3683FE0D24F1D69D005CF078 /* XLChannelItem.m */,
-			);
-			path = XLChannelControl;
 			sourceTree = "<group>";
 		};
 		368F25E3254BF3D2002A1D38 /* TABBAR */ = {
@@ -497,31 +312,11 @@
 			path = TFY_NavigationKit;
 			sourceTree = "<group>";
 		};
-		565AFAAF247B979300FF5323 /* TFY_PageController */ = {
-			isa = PBXGroup;
-			children = (
-				565AFAB0247B985900FF5323 /* TFY_PageControllerConfig.h */,
-				565AFAB1247B985900FF5323 /* TFY_PageControllerConfig.m */,
-				565AFAB3247B9A0A00FF5323 /* TFY_PageControllerUtil.h */,
-				565AFAB4247B9A0A00FF5323 /* TFY_PageControllerUtil.m */,
-				565AFAB6247B9C1800FF5323 /* TFY_PageTitleCell.h */,
-				565AFAB7247B9C1800FF5323 /* TFY_PageTitleCell.m */,
-				565AFAB9247B9D2100FF5323 /* TFY_PageBasicTitleView.h */,
-				565AFABA247B9D2100FF5323 /* TFY_PageBasicTitleView.m */,
-				565AFABC247B9E8E00FF5323 /* TFY_PageSegmentedTitleView.h */,
-				565AFABD247B9E8E00FF5323 /* TFY_PageSegmentedTitleView.m */,
-				565AFABF247B9F0E00FF5323 /* TFY_PageViewController.h */,
-				565AFAC0247B9F0E00FF5323 /* TFY_PageViewController.m */,
-			);
-			path = TFY_PageController;
-			sourceTree = "<group>";
-		};
 		565AFAC2247BA0E500FF5323 /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				368F25E3254BF3D2002A1D38 /* TABBAR */,
 				3683FDDE24F1D69D005CF078 /* NAV */,
-				3683FDDF24F1D69D005CF078 /* PAGE */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -807,53 +602,28 @@
 			files = (
 				368F25BB254BF00A002A1D38 /* NAV_FourViewController.m in Sources */,
 				36D5702225458E0B0095323D /* TFY_NavigationController.m in Sources */,
-				3683FE1024F1D69D005CF078 /* OtherAppExampleListVC.m in Sources */,
-				3683FE1C24F1D69D005CF078 /* ChildViewConflictExampleVC.m in Sources */,
-				565AFABB247B9D2100FF5323 /* TFY_PageBasicTitleView.m in Sources */,
 				3624206E229649BF00AFE2B2 /* ViewController.m in Sources */,
-				3683FE1A24F1D69D005CF078 /* CustomTitleCellExampleVC1.m in Sources */,
 				368F25E6254BF408002A1D38 /* TFY_TabBarController.m in Sources */,
 				3690449E25513F8C00E413BE /* TFYPopTransitionAnimation.m in Sources */,
 				368F25C7254BF035002A1D38 /* NAV_SixViewController.m in Sources */,
-				3683FE1724F1D69D005CF078 /* SwitchByHandExampleVC.m in Sources */,
-				3683FE1324F1D69D005CF078 /* CommonPageViewController.m in Sources */,
 				3690444B2550FE2800E413BE /* UINavigationItem+TFYCategory.m in Sources */,
 				369044502550FE2800E413BE /* TFYNavigationBar.m in Sources */,
 				36242079229649C000AFE2B2 /* main.m in Sources */,
 				3690444C2550FE2800E413BE /* UIViewController+TFYCategory.m in Sources */,
-				3683FE2024F1D69D005CF078 /* XLChannelItem.m in Sources */,
 				3683FE2324F1D6D2005CF078 /* NAV_OneController.m in Sources */,
 				3683FE2624F1D6E6005CF078 /* NAV_TwoController.m in Sources */,
-				3683FE1E24F1D69D005CF078 /* XLChannelHeader.m in Sources */,
 				3683FE2924F1D6FA005CF078 /* NAV_ThreeController.m in Sources */,
-				565AFAB8247B9C1800FF5323 /* TFY_PageTitleCell.m in Sources */,
-				3683FE1924F1D69D005CF078 /* CustomPageTitleCell1.m in Sources */,
-				565AFABE247B9E8E00FF5323 /* TFY_PageSegmentedTitleView.m in Sources */,
 				3624206B229649BF00AFE2B2 /* AppDelegate.m in Sources */,
 				369044492550FE2800E413BE /* UINavigationController+TFYCategory.m in Sources */,
-				3683FE0F24F1D69D005CF078 /* CustomTitleCellExampleVC2.m in Sources */,
-				3683FE1624F1D69D005CF078 /* SpecialUseExampleVC.m in Sources */,
-				565AFAB5247B9A0A00FF5323 /* TFY_PageControllerUtil.m in Sources */,
-				3683FE1524F1D69D005CF078 /* BasicFunctionListVC.m in Sources */,
 				369044632551067100E413BE /* UIImage+TFYCategory.m in Sources */,
 				3690444D2550FE2800E413BE /* UIBarButtonItem+TFYCategory.m in Sources */,
-				3683FE1B24F1D69D005CF078 /* ChannelManageExampleVC.m in Sources */,
-				3683FE1124F1D69D005CF078 /* CustomPageTitleCell3.m in Sources */,
 				3690449C25513F8C00E413BE /* TFYPushTransitionAnimation.m in Sources */,
-				3683FE1424F1D69D005CF078 /* CommonTableViewController.m in Sources */,
-				3683FE1824F1D69D005CF078 /* MultiLevelExampleVC.m in Sources */,
 				368F25CD254BF050002A1D38 /* NAV_SevenViewController.m in Sources */,
 				3690444F2550FE2800E413BE /* TFYNavigationBarConfigure.m in Sources */,
 				3690449F25513F8C00E413BE /* TFYBaseTransitionAnimation.m in Sources */,
-				3683FE1D24F1D69D005CF078 /* XLChannelControl.m in Sources */,
-				3683FE0E24F1D69D005CF078 /* CustomTitleCellExampleVC3.m in Sources */,
-				3683FE1F24F1D69D005CF078 /* XLChannelView.m in Sources */,
-				565AFAB2247B985900FF5323 /* TFY_PageControllerConfig.m in Sources */,
 				36F1F5C62556BB21003C1C05 /* NAV_MainViewController.m in Sources */,
 				3690449D25513F8C00E413BE /* TFYDelegateHandler.m in Sources */,
 				368F25C1254BF021002A1D38 /* NAV_FiveViewController.m in Sources */,
-				3683FE1224F1D69D005CF078 /* CustomPageTitleCell2.m in Sources */,
-				565AFAC1247B9F0E00FF5323 /* TFY_PageViewController.m in Sources */,
 				36904472255129AF00E413BE /* UIScrollView+TFYCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
