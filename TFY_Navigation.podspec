@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   spec.source_files  = "TFY_Navigation/TFY_Navigation/TFY_Navigation.h"
   
   spec.subspec 'TFY_NavControoler' do |ss|
-    ss.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/**/*.{h.m}"
+    ss.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/**/*.{h,m}"
   end
 
   spec.resources     = "TFY_Navigation/TFY_Navigation/TFY_NavigationImage.bundle"
