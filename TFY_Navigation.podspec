@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
   spec.name         = "TFY_Navigation"
 
-  spec.version      = "2.7.2"
+  spec.version      = "2.7.4"
 
   spec.summary      = "多变颜色导航栏"
 
@@ -21,20 +21,7 @@ Pod::Spec.new do |spec|
   spec.source_files  = "TFY_Navigation/TFY_Navigation/TFY_Navigation.h"
   
   spec.subspec 'TFY_NavControoler' do |ss|
-  
-     ss.subspec 'TFY_Configure' do |s|
-      s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_Configure/**/*.{h,m}"
-     end 
-
-     ss.subspec 'TFY_Category' do |s|
-      s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_Category/**/*.{h,m}"
-      s.dependency "TFY_Navigation/TFY_NavControoler/TFY_Configure"
-     end
-     
-     ss.subspec 'TFY_NavigationKit' do |s|
-      s.dependency "TFY_Navigation/TFY_NavControoler/TFY_Configure"
-      s.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/TFY_NavigationKit/**/*.{h,m}"
-     end 
+    ss.source_files = "TFY_Navigation/TFY_Navigation/TFY_NavControoler/**/*.{h.m}"
   end
 
   spec.resources     = "TFY_Navigation/TFY_Navigation/TFY_NavigationImage.bundle"
