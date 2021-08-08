@@ -8,6 +8,8 @@
 
 #import "UIViewController+RootNavigation.h"
 #import "TFY_NavigationController.h"
+#import <objc/runtime.h>
+
 @implementation UIViewController (RootNavigation)
 @dynamic tfy_disableInteractivePop;
 
