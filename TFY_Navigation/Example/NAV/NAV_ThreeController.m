@@ -19,31 +19,9 @@
     
     self.title = @"返回按钮自定义";
     self.view.backgroundColor = UIColor.blueColor;
-    
-    self.navigationItem.rightBarButtonItem = tfy_barbtnItem().tfy_titleItembtn(CGSizeMake(100, 64), @"变化", [UIColor redColor], [UIFont boldSystemFontOfSize:14], @"me_data_icom", NAV_ButtonImageDirectionLeft, 2, self, @selector(imageClick), UIControlEventTouchUpInside);
-    
+
     [self.view addSubview:self.bianBtn];
     self.bianBtn.tfy_LeftSpace(30).tfy_CenterY(0).tfy_RightSpace(30).tfy_Height(50);
-}
-
-- (void)imageClick {
-    NSInteger index = arc4random_uniform(4);
-    NAV_ButtonImageDirection type = NAV_ButtonImageDirectionLeft;
-    switch (index) {
-        case 0:
-            type = NAV_ButtonImageDirectionTop;
-            break;
-        case 1:
-            type = NAV_ButtonImageDirectionRight;
-            break;
-        case 2:
-            type = NAV_ButtonImageDirectionLeft;
-            break;
-       case 3:
-            type = NAV_ButtonImageDirectionBottom;
-            break;
-    }
-    self.navigationItem.rightBarButtonItem = tfy_barbtnItem().tfy_titleItembtn(CGSizeMake(100, 64), @"变化", [UIColor redColor], [UIFont boldSystemFontOfSize:14], @"me_data_icom", type, 2, self, @selector(imageClick), UIControlEventTouchUpInside);
 }
 
 - (UIButton *)bianBtn {

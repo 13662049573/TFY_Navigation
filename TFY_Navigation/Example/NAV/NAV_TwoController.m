@@ -19,12 +19,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [self RandomColor];
     self.title = @"导航栏透明色";
-    self.navigationItem.rightBarButtonItem = tfy_barbtnItem().tfy_titleItem(@"下一步",20,[UIColor redColor],self,@selector(timeimageClick));
-    
-    [self.navigationController tfy_navigationBarTransparent];
-    self.navigationController.tfy_titleColor = UIColor.redColor;
-    self.navigationController.tfy_titleFont = [UIFont systemFontOfSize:15 weight:UIFontWeightHeavy];
-    
+
     [self.view addSubview:self.bianBtn];
     self.bianBtn.tfy_LeftSpace(30).tfy_CenterY(0).tfy_RightSpace(30).tfy_Height(50);
 }
@@ -45,8 +40,7 @@
 }
 
 - (void)navbiack {
-    self.navigationController.tfy_titleColor = [self RandomColor];
-    self.navigationController.tfy_titleFont = [UIFont systemFontOfSize:arc4random_uniform(50) weight:UIFontWeightBold];
+    
 }
 
 - (UIColor*)RandomColor {

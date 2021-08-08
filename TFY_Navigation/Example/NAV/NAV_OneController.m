@@ -11,7 +11,7 @@
 
 #define randomColor random(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
-@interface NAV_OneController ()<TFYViewControllerPushDelegate>
+@interface NAV_OneController ()
 @property(nonatomic , strong)UIButton *bianBtn;
 @end
 
@@ -25,17 +25,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [self RandomColor];
-    
-    self.navigationController.tfy_barBackgroundColor = UIColor.blueColor;
-    self.navigationController.tfy_titleColor = UIColor.whiteColor;
-    self.navigationController.tfy_titleFont = [UIFont systemFontOfSize:17 weight:UIFontWeightBold];
-    
-    self.navigationItem.rightBarButtonItem = tfy_barbtnItem().tfy_titleItem(@"下一步",20,[UIColor redColor],self,@selector(timeimageClick));
+
     
     [self.view addSubview:self.bianBtn];
     self.bianBtn.tfy_LeftSpace(30).tfy_CenterY(0).tfy_RightSpace(30).tfy_Height(50);
-    
-    self.tfy_pushDelegate = self;
 }
 
 - (void)pushToNextViewController {
@@ -58,7 +51,6 @@
 }
 
 - (void)navbiack {
-    self.navigationController.tfy_barBackgroundColor = [self RandomColor];
     self.view.backgroundColor = [self RandomColor];
 }
 
