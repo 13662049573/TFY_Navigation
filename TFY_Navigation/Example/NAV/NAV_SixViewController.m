@@ -17,7 +17,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self tfy_setNavBarBackgroundAlpha:0];
+    
 }
 
 - (void)viewDidLoad {

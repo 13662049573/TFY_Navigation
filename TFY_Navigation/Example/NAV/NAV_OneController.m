@@ -21,16 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self tfy_setNavBarBackgroundColor:[UIColor colorWithRed:(rand() % 100 * 0.01) green:(rand() % 100 * 0.01) blue:0.86 alpha:1.00]];
-    [self tfy_setNavigationSwitchStyle:NavigationSwitchStyleFakeNavBar];
-    [self tfy_setStatusBarHidden:YES];
-    [self tfy_setNavBarShadowImageHidden:YES];
-    [self tfy_setNavBarBackgroundAlpha:1.0f];
-    [self tfy_setNavBarHidden:NO];
-    [self tfy_setNavBarTintColor:[UIColor blackColor]];
-    [self tfy_setNavBarTitleColor:[UIColor blackColor]];
    
-    [self tfy_setStatusBarStyle:UIStatusBarStyleDefault];
     
     self.view.backgroundColor = [self RandomColor];
 
@@ -72,8 +63,7 @@
     return _bianBtn2;
 }
 - (void)navbiack {
-    [self tfy_setNavBarBackgroundColor:[self RandomColor]];
-    [self tfy_setNavBarShadowImageHidden:YES];
+    
     self.view.backgroundColor = [self RandomColor];
 }
 

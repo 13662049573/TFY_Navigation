@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self tfy_setNavBarBackgroundColor:UIColor.greenColor];
+   
     
     self.view.backgroundColor = [UIColor purpleColor];
 

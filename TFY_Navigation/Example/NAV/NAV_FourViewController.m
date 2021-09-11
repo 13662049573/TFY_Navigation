@@ -24,7 +24,7 @@
     
     self.view.backgroundColor = UIColor.orangeColor;
     
-    [self tfy_setNavBarBackgroundImage:[UIImage imageNamed:@"navbg"]];
+    
 }
 
 @end

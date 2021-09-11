@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self tfy_setNavBarBackgroundColor:UIColor.redColor];
+   
     
     self.view.backgroundColor = UIColor.orangeColor;
     // Do any additional setup after loading the view.
@@ -29,7 +29,7 @@
     [self.view addSubview:button4];
     [button4 addTarget:self action:@selector(goAlphaNav:) forControlEvents:UIControlEventTouchUpInside];
     
-    [self tfy_setNavigationSwitchStyle:NavigationSwitchStyleFakeNavBar];
+    
 }
 
 - (void)goAlphaNav:(UIButton *)btn {
