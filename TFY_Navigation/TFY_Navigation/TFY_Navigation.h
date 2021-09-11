@@ -17,11 +17,13 @@ FOUNDATION_EXPORT const unsigned char TFY_NavigationVersionString[];
 #if TFY_NavigationRelease
 
 #import <TFY_NavControoler/TFY_NavigationController.h>
+#import <TFY_NavControoler/TFYNavigationTools.h>
 
 #else
 
 //导航栏容器头文件
 #import "TFY_NavigationController.h"
+#import "TFYNavigationTools.h"
 
 #endif
 

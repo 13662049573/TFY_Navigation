@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [self RandomColor];
     self.title = @"导航栏透明色";
-
+    
     [self.view addSubview:self.bianBtn];
     self.bianBtn.tfy_LeftSpace(30).tfy_CenterY(0).tfy_RightSpace(30).tfy_Height(50);
 }

@@ -11,6 +11,7 @@
 #import "NAV_FiveViewController.h"
 #import "NAV_SixViewController.h"
 #import "NAV_SevenViewController.h"
+
 @interface NAV_MainViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -21,23 +22,20 @@
 
 - (NSArray *)dataSource {
     if (!_dataSource) {
-        _dataSource = @[@"导航功能测试",
-                        @"UIScrollView使用（手势冲突）",
-                        @"TZImagePickerController使用",
-                        @"系统导航",
-                        @"抖音左右滑动",
-                        @"今日头条",
-                        @"网易云音乐",
-                        @"网易新闻",
-                        @"微信"];
+        _dataSource = @[@"导航功能测试"];
     }
     return _dataSource;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self tfy_setNavBarBackgroundColor:UIColor.greenColor];
+    
     self.view.backgroundColor = [UIColor purpleColor];
 
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.navigationController.navigationBar.translucent = NO;
+    
     [self setupTableView];
 }
 
@@ -69,7 +67,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
-        [self.navigationController pushViewController:NAV_FourViewController.new animated:YES];
+        NAV_FiveViewController *vc =NAV_FiveViewController.new;
+//        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 1) {
         
     } else if (indexPath.row == 2) {

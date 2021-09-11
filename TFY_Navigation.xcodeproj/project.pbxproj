@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21A89EA2374E4C79F7BAC2B7 /* Pods_TFY_Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29018E2143133F7AD73E672B /* Pods_TFY_Navigation.framework */; };
+		360972AA26EC4D160046A447 /* TFYNavigationTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 360972A926EC4D160046A447 /* TFYNavigationTools.m */; };
 		3624206B229649BF00AFE2B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3624206A229649BF00AFE2B2 /* AppDelegate.m */; };
 		3624206E229649BF00AFE2B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3624206D229649BF00AFE2B2 /* ViewController.m */; };
 		36242073229649C000AFE2B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36242072229649C000AFE2B2 /* Assets.xcassets */; };
@@ -24,9 +25,7 @@
 		368F25CD254BF050002A1D38 /* NAV_SevenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368F25CC254BF050002A1D38 /* NAV_SevenViewController.m */; };
 		368F25E6254BF408002A1D38 /* TFY_TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368F25E5254BF408002A1D38 /* TFY_TabBarController.m */; };
 		36F1F5C62556BB21003C1C05 /* NAV_MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F1F5C52556BB21003C1C05 /* NAV_MainViewController.m */; };
-		36F8C5A626BFBF630068C5AC /* UIViewController+RootNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F8C5A026BFBF630068C5AC /* UIViewController+RootNavigation.m */; };
 		36F8C5A726BFBF630068C5AC /* TFY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F8C5A126BFBF630068C5AC /* TFY_NavigationController.m */; };
-		36F8C5A826BFBF630068C5AC /* UINavigationController+Push.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F8C5A426BFBF630068C5AC /* UINavigationController+Push.m */; };
 		36F8C5AA26BFCA6E0068C5AC /* TFY_NavigationImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 36F8C5A926BFCA6E0068C5AC /* TFY_NavigationImage.bundle */; };
 		B7CE90D3A6F92F2671888F9F /* Pods_TFY_Navigation_TFY_NavigationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CBB529E143F6294173A601 /* Pods_TFY_Navigation_TFY_NavigationUITests.framework */; };
 		C32B7B60FCF3833C9B6F5722 /* Pods_TFY_NavigationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B113AD07938AF65D3C18E1 /* Pods_TFY_NavigationTests.framework */; };
@@ -54,6 +53,8 @@
 		07FE2B01F9FD1218E9749EEC /* Pods-TFY_Navigation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_Navigation.debug.xcconfig"; path = "Target Support Files/Pods-TFY_Navigation/Pods-TFY_Navigation.debug.xcconfig"; sourceTree = "<group>"; };
 		0F45F38CE9B03DE74357644F /* Pods-TFY_NavigationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_NavigationTests.release.xcconfig"; path = "Target Support Files/Pods-TFY_NavigationTests/Pods-TFY_NavigationTests.release.xcconfig"; sourceTree = "<group>"; };
 		29018E2143133F7AD73E672B /* Pods_TFY_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFY_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		360972A826EC4D160046A447 /* TFYNavigationTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TFYNavigationTools.h; sourceTree = "<group>"; };
+		360972A926EC4D160046A447 /* TFYNavigationTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFYNavigationTools.m; sourceTree = "<group>"; };
 		36242066229649BF00AFE2B2 /* TFY_Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFY_Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36242069229649BF00AFE2B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3624206A229649BF00AFE2B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -88,13 +89,8 @@
 		368F25E5254BF408002A1D38 /* TFY_TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TFY_TabBarController.m; sourceTree = "<group>"; };
 		36F1F5C42556BB21003C1C05 /* NAV_MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAV_MainViewController.h; sourceTree = "<group>"; };
 		36F1F5C52556BB21003C1C05 /* NAV_MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NAV_MainViewController.m; sourceTree = "<group>"; };
-		36F8C59F26BFBF630068C5AC /* UINavigationController+Push.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Push.h"; sourceTree = "<group>"; };
-		36F8C5A026BFBF630068C5AC /* UIViewController+RootNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RootNavigation.m"; sourceTree = "<group>"; };
 		36F8C5A126BFBF630068C5AC /* TFY_NavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFY_NavigationController.m; sourceTree = "<group>"; };
 		36F8C5A226BFBF630068C5AC /* TFY_NavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFY_NavigationController.h; sourceTree = "<group>"; };
-		36F8C5A326BFBF630068C5AC /* TFYViewControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYViewControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
-		36F8C5A426BFBF630068C5AC /* UINavigationController+Push.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Push.m"; sourceTree = "<group>"; };
-		36F8C5A526BFBF630068C5AC /* UIViewController+RootNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RootNavigation.h"; sourceTree = "<group>"; };
 		36F8C5A926BFCA6E0068C5AC /* TFY_NavigationImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TFY_NavigationImage.bundle; sourceTree = "<group>"; };
 		4E005F02273F596C1314D52E /* Pods-TFY_Navigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_Navigation.release.xcconfig"; path = "Target Support Files/Pods-TFY_Navigation/Pods-TFY_Navigation.release.xcconfig"; sourceTree = "<group>"; };
 		565AFB05247BA21A00FF5323 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -254,11 +250,8 @@
 			children = (
 				36F8C5A226BFBF630068C5AC /* TFY_NavigationController.h */,
 				36F8C5A126BFBF630068C5AC /* TFY_NavigationController.m */,
-				36F8C5A326BFBF630068C5AC /* TFYViewControllerAnimatedTransitioning.h */,
-				36F8C59F26BFBF630068C5AC /* UINavigationController+Push.h */,
-				36F8C5A426BFBF630068C5AC /* UINavigationController+Push.m */,
-				36F8C5A526BFBF630068C5AC /* UIViewController+RootNavigation.h */,
-				36F8C5A026BFBF630068C5AC /* UIViewController+RootNavigation.m */,
+				360972A826EC4D160046A447 /* TFYNavigationTools.h */,
+				360972A926EC4D160046A447 /* TFYNavigationTools.m */,
 			);
 			path = TFY_NavControoler;
 			sourceTree = "<group>";
@@ -527,18 +520,17 @@
 				368F25BB254BF00A002A1D38 /* NAV_FourViewController.m in Sources */,
 				3624206E229649BF00AFE2B2 /* ViewController.m in Sources */,
 				368F25E6254BF408002A1D38 /* TFY_TabBarController.m in Sources */,
+				360972AA26EC4D160046A447 /* TFYNavigationTools.m in Sources */,
 				368F25C7254BF035002A1D38 /* NAV_SixViewController.m in Sources */,
 				36242079229649C000AFE2B2 /* main.m in Sources */,
 				3683FE2324F1D6D2005CF078 /* NAV_OneController.m in Sources */,
 				3683FE2624F1D6E6005CF078 /* NAV_TwoController.m in Sources */,
-				36F8C5A626BFBF630068C5AC /* UIViewController+RootNavigation.m in Sources */,
 				3683FE2924F1D6FA005CF078 /* NAV_ThreeController.m in Sources */,
 				36F8C5A726BFBF630068C5AC /* TFY_NavigationController.m in Sources */,
 				3624206B229649BF00AFE2B2 /* AppDelegate.m in Sources */,
 				368F25CD254BF050002A1D38 /* NAV_SevenViewController.m in Sources */,
 				36F1F5C62556BB21003C1C05 /* NAV_MainViewController.m in Sources */,
 				368F25C1254BF021002A1D38 /* NAV_FiveViewController.m in Sources */,
-				36F8C5A826BFBF630068C5AC /* UINavigationController+Push.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

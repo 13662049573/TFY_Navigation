@@ -14,9 +14,18 @@
 
 @implementation NAV_SixViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self tfy_setNavBarBackgroundAlpha:0];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = UIColor.blueColor;
+    
+    
+    
 }
 
 /*

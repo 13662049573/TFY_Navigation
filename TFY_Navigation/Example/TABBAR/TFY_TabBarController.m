@@ -12,6 +12,7 @@
 #import "NAV_FourViewController.h"
 #import "TFY_NavigationController.h"
 #import "NAV_MainViewController.h"
+#import "NAV_FiveViewController.h"
 @interface TFY_TabBarController ()<TfySY_TabBarDelegate>
 
 @end
@@ -28,9 +29,9 @@
     NSArray <NSDictionary *>*VCArray =
     @[@{@"vc":[ViewController new],@"normalImg":@"home_normal",@"selectImg":@"home_highlight",@"itemTitle":@"首页"},
       @{@"vc":[NAV_OneController new],@"normalImg":@"mycity_normal",@"selectImg":@"mycity_highlight",@"itemTitle":@"同城"},
-      @{@"vc":[UIViewController new],@"normalImg":@"",@"selectImg":@"",@"itemTitle":@"发布"},
+      @{@"vc":[NAV_FourViewController new],@"normalImg":@"",@"selectImg":@"",@"itemTitle":@"发布"},
       @{@"vc":[NAV_MainViewController new],@"normalImg":@"message_normal",@"selectImg":@"message_highlight",@"itemTitle":@"消息"},
-      @{@"vc":[UIViewController new],@"normalImg":@"account_normal",@"selectImg":@"account_highlight",@"itemTitle":@"我的"}];
+      @{@"vc":[NAV_FiveViewController new],@"normalImg":@"account_normal",@"selectImg":@"account_highlight",@"itemTitle":@"我的"}];
     // 1.遍历这个集合
     // 1.1 设置一个保存构造器的数组
     NSMutableArray *tabBarConfs = @[].mutableCopy;
@@ -87,14 +88,11 @@
         [tabBarConfs addObject:model];
     }];
   
-    TfySY_TestTabBar *testTabBar = [TfySY_TestTabBar new];
-    [self setValue:testTabBar forKey:@"tabBar"];
-
     self.ControllerArray = tabBarVCs;
-
     self.tfySY_TabBar = [[TfySY_TabBar alloc] initWithTabBarConfig:tabBarConfs];
     self.tfySY_TabBar.delegate = self;
     self.tfySY_TabBar.backgroundColor = [UIColor whiteColor];
+    // 8.添加覆盖到上边
     [self.tabBar addSubview:self.tfySY_TabBar];
     
 }
@@ -106,14 +104,7 @@ static NSInteger lastIdx = 0;
         [self setSelectedIndex:index];
         lastIdx = index;
     }else{ // 点击了中间的
-        
         [self.tfySY_TabBar setSelectIndex:lastIdx WithAnimation:NO]; // 换回上一个选中状态
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"点击了中间的,不切换视图"
-                                                                          preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:([UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"好的！！！！");
-        }])];
-        [self presentViewController:alertController animated:YES completion:nil];
     }
 }
 

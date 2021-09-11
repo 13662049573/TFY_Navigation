@@ -16,7 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = UIColor.blueColor;
+    
     // Do any additional setup after loading the view.
+    [self tfy_setStatusBarStyle:UIStatusBarStyleDefault];
+    [self tfy_setNavBarHidden:YES];
+    [self tfy_setStatusBarHidden:YES];
 }
 
 /*

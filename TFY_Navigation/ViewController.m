@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = UIColor.whiteColor;
+    self.title = @"基本设置";
+    
+    [self tfy_setStatusBarStyle:UIStatusBarStyleDefault];
+    [self tfy_setNavBarTitleColor:[UIColor redColor]];
+    [self tfy_setNavBarBackgroundColor:[UIColor whiteColor]];
 }
 @end

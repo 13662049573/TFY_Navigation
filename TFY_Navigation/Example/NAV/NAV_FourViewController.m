@@ -23,6 +23,8 @@
     self.title = @"自定义导航";
     
     self.view.backgroundColor = UIColor.orangeColor;
+    
+    [self tfy_setNavBarBackgroundImage:[UIImage imageNamed:@"navbg"]];
 }
 
 @end

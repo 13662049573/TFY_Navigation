@@ -7,7 +7,7 @@
 //
 
 #import "NAV_FiveViewController.h"
-
+#import "NAV_SixViewController.h"
 @interface NAV_FiveViewController ()
 
 @end
@@ -16,17 +16,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self tfy_setNavBarBackgroundColor:UIColor.redColor];
+    
+    self.view.backgroundColor = UIColor.orangeColor;
     // Do any additional setup after loading the view.
+    
+    UIButton *button4 = [[UIButton alloc] initWithFrame:CGRectMake(100, 220 + 64, 150, 30)];
+    [button4 setTitle:@"导航栏透明度" forState:UIControlStateNormal];
+    [button4 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button4 setBackgroundColor:[UIColor blackColor]];
+    [self.view addSubview:button4];
+    [button4 addTarget:self action:@selector(goAlphaNav:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self tfy_setNavigationSwitchStyle:NavigationSwitchStyleFakeNavBar];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)goAlphaNav:(UIButton *)btn {
+    [self.navigationController pushViewController:NAV_SixViewController.new animated:YES];
 }
-*/
 
 @end
