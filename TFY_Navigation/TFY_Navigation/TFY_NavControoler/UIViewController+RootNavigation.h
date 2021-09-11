@@ -17,7 +17,7 @@
 /**
  * 重写这个方法来提供一个自定义的back栏项，默认是一个普通的@c UIBarButtonItem带有标题@b " back "
  */
-- (UIBarButtonItem *_Nullable)tfy_customBackItemWithTarget:(id _Nonnull )target action:(SEL)action;
+- (UIBarButtonItem *_Nullable)tfy_customBackItemWithTarget:(id _Nonnull )target action:(SEL _Nonnull )action;
 
 @end
 
@@ -40,7 +40,6 @@ IB_DESIGNABLE
 - (Class)tfy_navigationBarClass;
 
 @property (nonatomic, readonly) id<UIViewControllerAnimatedTransitioning> tfy_animatedTransitioning;
-
 
 @end
 

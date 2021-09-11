@@ -18,7 +18,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.blueColor;
     
-   
+    self.tfy_backgroundColor = UIColor.redColor;
 }
 
 /*
