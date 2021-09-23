@@ -22,7 +22,7 @@
     [super viewDidLoad];
     
 //    [self.tfy_navigationController.navigationBar setBackgroundImage:[UIImage tfy_createImage:UIColor.redColor] forBarMetrics:UIBarMetricsDefault];
-    self.tfy_backgroundColor = UIColor.redColor;
+    
     
     self.view.backgroundColor = [self RandomColor];
 

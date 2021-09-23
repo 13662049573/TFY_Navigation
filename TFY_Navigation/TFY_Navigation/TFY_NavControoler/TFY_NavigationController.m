@@ -228,6 +228,7 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
         self.contentViewController.view.frame = self.view.bounds;
         [self.view addSubview:self.contentViewController.view];
     }
+    self.containerNavigationController.view.backgroundColor = UIColor.whiteColor;
 }
 
 - (BOOL)becomeFirstResponder
@@ -667,6 +668,7 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     [super setDelegate:self];
