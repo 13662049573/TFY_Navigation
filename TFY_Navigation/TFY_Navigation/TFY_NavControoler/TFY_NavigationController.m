@@ -377,38 +377,33 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
 
 /// 设置导航栏颜色
 -(void)setNavigationBackgroundColor:(UIColor *)color {
+    
     NSDictionary *dic = @{NSForegroundColorAttributeName : [UIColor blackColor],
                               NSFontAttributeName : [UIFont systemFontOfSize:16 weight:UIFontWeightMedium]};
     
     if (@available(iOS 15.0, *)) {
     
         UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
-        // 背景色
-        appearance.backgroundColor = color;
-        // 去掉半透明效果
-        appearance.backgroundEffect = nil;
-        // 标题字体颜色及大小
-        appearance.titleTextAttributes = dic;
-        appearance.backgroundEffect = nil;
-        // 设置导航栏下边界分割线透明
-        appearance.shadowImage = [[UIImage alloc] init];
-        // 去除导航栏阴影（如果不设置clear，导航栏底下会有一条阴影线）
-        appearance.shadowColor = [UIColor clearColor];
-        appearance.backgroundImage = [UIImage tfy_createImage:color];
-        // standardAppearance：常规状态, 标准外观，iOS15之后不设置的时候，导航栏背景透明
-        self.navigationBar.standardAppearance = appearance;
-        // scrollEdgeAppearance：被scrollview向下拉的状态, 滚动时外观，不设置的时候，使用标准外观
-        self.navigationBar.scrollEdgeAppearance = appearance;
+        
+        appearance.backgroundColor = color;// 背景色
+        appearance.backgroundEffect = nil;// 去掉半透明效果
+        appearance.titleTextAttributes = dic;// 标题字体颜色及大小
+        appearance.shadowImage = [[UIImage alloc] init];// 设置导航栏下边界分割线透明
+        appearance.shadowColor = [UIColor clearColor];// 去除导航栏阴影（如果不设置clear，导航栏底下会有一条阴影线）
+        appearance.backgroundImage = [self createImage:color];
+        
+        self.navigationBar.standardAppearance = appearance;// standardAppearance：常规状态, 标准外观，iOS15之后不设置的时候，导航栏背景透明
+        self.navigationBar.scrollEdgeAppearance = appearance;// scrollEdgeAppearance：被scrollview向下拉的状态, 滚动时外观，不设置的时候，使用标准外观
         
     } else {
 
         self.navigationBar.titleTextAttributes = dic;
         [self.navigationBar setShadowImage:[[UIImage alloc] init]];
-        [self.navigationBar setBackgroundImage:[UIImage tfy_createImage:color] forBarMetrics:UIBarMetricsDefault];
+        [self.navigationBar setBackgroundImage:[self createImage:color] forBarMetrics:UIBarMetricsDefault];
     }
 }
 
-- (UIImage *)tfy_createImage:(UIColor *)imageColor {
+- (UIImage *)createImage:(UIColor *)imageColor {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -616,6 +611,7 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
         }
     }
 }
+
 
 - (UIImage *)navigationBarBackIconImage {
     CGSize const size = CGSizeMake(15.0, 21.0);
