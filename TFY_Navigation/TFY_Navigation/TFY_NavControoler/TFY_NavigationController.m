@@ -384,7 +384,7 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
     
         UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
         // 背景色
-        appearance.backgroundColor = [UIColor blueColor];
+        appearance.backgroundColor = color;
         // 去掉半透明效果
         appearance.backgroundEffect = nil;
         // 标题字体颜色及大小
