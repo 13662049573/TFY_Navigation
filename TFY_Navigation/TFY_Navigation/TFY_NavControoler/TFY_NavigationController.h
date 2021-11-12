@@ -16,6 +16,7 @@
 @end
 
 @interface TFYContainerNavigationController : UINavigationController
+-(void)setNavigationBackgroundColor:(UIColor *)color;
 @end
 
 NS_ASSUME_NONNULL_BEGIN

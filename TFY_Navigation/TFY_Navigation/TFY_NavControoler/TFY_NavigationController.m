@@ -371,18 +371,41 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
         self.navigationBar.backIndicatorImage               = self.navigationController.navigationBar.backIndicatorImage;
         self.navigationBar.backIndicatorTransitionMaskImage = self.navigationController.navigationBar.backIndicatorTransitionMaskImage;
     }
-    [self setupNavigationBarTheme];
+    
+    [self setNavigationBackgroundColor:UIColor.whiteColor];
 }
 
-- (void)setupNavigationBarTheme
-{
-    UINavigationBar *navBar = [UINavigationBar appearance];
-    [navBar setBackgroundImage:[self tfy_createImage:UIColor.whiteColor] forBarMetrics:UIBarMetricsDefault];
-    [navBar setShadowImage:[UIImage imageNamed:@"TFY_NavigationImage.bundle/nav_line"]];
-    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:16 weight:UIFontWeightBold];
-    textAttrs[NSForegroundColorAttributeName] = UIColor.blackColor;
-    [navBar setTitleTextAttributes:textAttrs];
+/// 设置导航栏颜色
+-(void)setNavigationBackgroundColor:(UIColor *)color {
+    NSDictionary *dic = @{NSForegroundColorAttributeName : [UIColor blackColor],
+                              NSFontAttributeName : [UIFont systemFontOfSize:16 weight:UIFontWeightMedium]};
+    
+    if (@available(iOS 15.0, *)) {
+    
+        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+        // 背景色
+        appearance.backgroundColor = [UIColor blueColor];
+        // 去掉半透明效果
+        appearance.backgroundEffect = nil;
+        // 标题字体颜色及大小
+        appearance.titleTextAttributes = dic;
+        appearance.backgroundEffect = nil;
+        // 设置导航栏下边界分割线透明
+        appearance.shadowImage = [[UIImage alloc] init];
+        // 去除导航栏阴影（如果不设置clear，导航栏底下会有一条阴影线）
+        appearance.shadowColor = [UIColor clearColor];
+        appearance.backgroundImage = [UIImage tfy_createImage:color];
+        // standardAppearance：常规状态, 标准外观，iOS15之后不设置的时候，导航栏背景透明
+        self.navigationBar.standardAppearance = appearance;
+        // scrollEdgeAppearance：被scrollview向下拉的状态, 滚动时外观，不设置的时候，使用标准外观
+        self.navigationBar.scrollEdgeAppearance = appearance;
+        
+    } else {
+
+        self.navigationBar.titleTextAttributes = dic;
+        [self.navigationBar setShadowImage:[[UIImage alloc] init]];
+        [self.navigationBar setBackgroundImage:[UIImage tfy_createImage:color] forBarMetrics:UIBarMetricsDefault];
+    }
 }
 
 - (UIImage *)tfy_createImage:(UIColor *)imageColor {
