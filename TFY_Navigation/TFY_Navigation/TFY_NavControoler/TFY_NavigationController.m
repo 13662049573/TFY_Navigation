@@ -372,7 +372,18 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
         self.navigationBar.backIndicatorTransitionMaskImage = self.navigationController.navigationBar.backIndicatorTransitionMaskImage;
     }
     
-    [self setNavigationBackgroundColor:UIColor.whiteColor];
+    [self setupNavigationBarTheme];
+}
+
+- (void)setupNavigationBarTheme
+{
+    UINavigationBar *navBar = [UINavigationBar appearance];
+    [navBar setBackgroundImage:[self createImage:UIColor.whiteColor] forBarMetrics:UIBarMetricsDefault];
+    [navBar setShadowImage:[UIImage imageNamed:@"TFY_NavigationImage.bundle/nav_line"]];
+    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:16 weight:UIFontWeightMedium];
+    textAttrs[NSForegroundColorAttributeName] = UIColor.blackColor;
+    [navBar setTitleTextAttributes:textAttrs];
 }
 
 /// 设置导航栏颜色
