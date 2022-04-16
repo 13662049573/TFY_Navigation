@@ -733,6 +733,18 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
     }
 }
 
+- (NSArray<__kindof UIViewController *> *)tfy_viewControllers {
+    return self.viewControllers;
+}
+
+- (UIViewController *)tfy_topViewController {
+    return self.topViewController;
+}
+
+- (UIViewController *)tfy_visibleViewController {
+    return self.visibleViewController;
+}
+
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated
 {
     return TFYSafeUnwrapViewController([super popViewControllerAnimated:animated]);
