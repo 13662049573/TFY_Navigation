@@ -733,18 +733,6 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
     }
 }
 
-- (NSArray<__kindof UIViewController *> *)tfy_viewControllers {
-    return self.viewControllers;
-}
-
-- (UIViewController *)tfy_topViewController {
-    return self.topViewController;
-}
-
-- (UIViewController *)tfy_visibleViewController {
-    return self.visibleViewController;
-}
-
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated
 {
     return TFYSafeUnwrapViewController([super popViewControllerAnimated:animated]);
@@ -828,17 +816,17 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
 
 #pragma mark - Public Methods
 
-- (UIViewController *)rt_topViewController
+- (UIViewController *)tfy_topViewController
 {
     return TFYSafeUnwrapViewController([super topViewController]);
 }
 
-- (UIViewController *)rt_visibleViewController
+- (UIViewController *)tfy_visibleViewController
 {
     return TFYSafeUnwrapViewController([super visibleViewController]);
 }
 
-- (NSArray <__kindof UIViewController *> *)rt_viewControllers
+- (NSArray <__kindof UIViewController *> *)tfy_viewControllers
 {
     return [[super viewControllers] tfy_map:^id(id obj, __unused NSUInteger index) {
         return TFYSafeUnwrapViewController(obj);
