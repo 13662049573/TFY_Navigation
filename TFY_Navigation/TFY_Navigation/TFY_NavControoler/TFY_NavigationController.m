@@ -715,8 +715,9 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
         }
         return;
     }
-    if (self.viewControllers.count >= 1) {
+    if(self.viewControllers.count != 0){
         viewController.hidesBottomBarWhenPushed = YES;
+        self.tabBarController.tabBar.hidden = YES;
     }
     if (self.viewControllers.count > 0) {
         UIViewController *currentLast = TFYSafeUnwrapViewController(self.viewControllers.lastObject);
@@ -740,6 +741,12 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
 
 - (NSArray<__kindof UIViewController *> *)popToRootViewControllerAnimated:(BOOL)animated
 {
+    if (@available(iOS 14.0, *)) {
+        for (UIViewController *vc in self.viewControllers) {
+            vc.hidesBottomBarWhenPushed = NO;
+            self.tabBarController.tabBar.hidden = NO;
+        }
+    }
     return [[super popToRootViewControllerAnimated:animated] tfy_map:^id(__kindof UIViewController *obj, NSUInteger index) {
         return TFYSafeUnwrapViewController(obj);
     }];
