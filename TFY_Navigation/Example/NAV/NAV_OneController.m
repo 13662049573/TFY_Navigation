@@ -9,6 +9,7 @@
 #import "NAV_OneController.h"
 #import "NAV_TwoController.h"
 #import "NAV_SevenViewController.h"
+
 #define randomColor random(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
 
 @interface NAV_OneController ()
@@ -20,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
 //    [self.tfy_navigationController.navigationBar setBackgroundImage:[UIImage tfy_createImage:UIColor.redColor] forBarMetrics:UIBarMetricsDefault];
     

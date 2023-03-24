@@ -16,8 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"基本设置";
     
-   
+    self.tfy_isHiddenNavBar = YES;
+    self.tfy_navBackgroundColor = UIColor.redColor;
+
 }
+
 @end

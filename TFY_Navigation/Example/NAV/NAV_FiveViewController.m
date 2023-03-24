@@ -17,10 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   
-    
-    self.view.backgroundColor = UIColor.orangeColor;
-    // Do any additional setup after loading the view.
+    self.tfy_navBackgroundColor = UIColor.orangeColor;
     
     UIButton *button4 = [[UIButton alloc] initWithFrame:CGRectMake(100, 220 + 64, 150, 30)];
     [button4 setTitle:@"导航栏透明度" forState:UIControlStateNormal];
@@ -28,8 +25,6 @@
     [button4 setBackgroundColor:[UIColor blackColor]];
     [self.view addSubview:button4];
     [button4 addTarget:self action:@selector(goAlphaNav:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
 }
 
 - (void)goAlphaNav:(UIButton *)btn {

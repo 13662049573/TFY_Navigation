@@ -29,13 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    
-    self.view.backgroundColor = [UIColor purpleColor];
 
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.navigationController.navigationBar.translucent = NO;
-    
     [self setupTableView];
 }
 
@@ -68,7 +62,6 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
         NAV_FiveViewController *vc =NAV_FiveViewController.new;
-//        vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     } else if (indexPath.row == 1) {
         
