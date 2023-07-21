@@ -972,7 +972,7 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
     }
     UIViewController *fromVc = [context viewControllerForKey:UITransitionContextFromViewControllerKey];
     if ([self.uiNaviDelegate respondsToSelector:@selector(navigationControllerDidSideSlideReturn:fromViewController:)]) {
-        [self.uiNaviDelegate navigationControllerDidSideSlideReturn:self fromViewController:fromVc];
+        [self.uiNaviDelegate navigationControllerDidSideSlideReturn:self fromViewController:(TFYContainerController *)fromVc];
     }
 }
 
@@ -994,11 +994,17 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
     }
 
     [TFY_NavigationController attemptRotationToDeviceOrientation];
-
+    
     if ([self.tfy_delegate respondsToSelector:@selector(navigationController:didShowViewController:animated:)]) {
         [self.tfy_delegate navigationController:navigationController
                          didShowViewController:viewController
                                       animated:animated];
+    }
+    
+    if (navigationController.viewControllers.count == 1){
+        self.currentShowVC = Nil;
+    } else{
+        self.currentShowVC = viewController;
     }
     
     if (self.animationBlock) {
@@ -1019,7 +1025,6 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
 
 - (UIInterfaceOrientationMask)navigationControllerSupportedInterfaceOrientations:(UINavigationController *)navigationController
 {
-    
     if ([self.tfy_delegate respondsToSelector:@selector(navigationControllerSupportedInterfaceOrientations:)]) {
         return [self.tfy_delegate navigationControllerSupportedInterfaceOrientations:navigationController];
     }
@@ -1065,8 +1070,6 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
     }
     return operation == UINavigationControllerOperationPush ? [toVC tfy_animatedTransitioning] : [fromVC tfy_animatedTransitioning];
 }
-
-
 
 #pragma mark - UIGestureRecognizerDelegate
 

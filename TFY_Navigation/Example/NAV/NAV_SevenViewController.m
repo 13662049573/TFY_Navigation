@@ -8,7 +8,7 @@
 
 #import "NAV_SevenViewController.h"
 
-@interface NAV_SevenViewController ()
+@interface NAV_SevenViewController ()<TFYNavigationControllerDelegate>
 
 @end
 
@@ -18,17 +18,21 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.blueColor;
     
-   
+    TFY_NavigationController *nav = (TFY_NavigationController *)self.navigationController;
+    nav.uiNaviDelegate = self;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+/// 点击返回按钮调用
+- (void)navigationControllerDidClickLeftButton:(TFY_NavigationController *)controller {
+    if (controller.currentShowVC == self) {
+        NSLog(@"ssssssssssssss");
+    }
 }
-*/
-
+/// 侧滑划出控制器调用
+- (void)navigationControllerDidSideSlideReturn:(TFY_NavigationController *)controller
+                            fromViewController:(TFYContainerController *)fromViewController {
+    if ([fromViewController.contentViewController isEqual:self]) {
+        NSLog(@"ooooooooooooooooooooooo");
+    }
+}
 @end
