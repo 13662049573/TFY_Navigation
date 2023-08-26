@@ -21,7 +21,6 @@
     self.title = @"导航栏透明色";
     
     [self.view addSubview:self.bianBtn];
-    self.bianBtn.tfy_LeftSpace(30).tfy_CenterY(0).tfy_RightSpace(30).tfy_Height(50);
 }
 
 - (void)timeimageClick {
@@ -31,6 +30,7 @@
 - (UIButton *)bianBtn {
     if (!_bianBtn) {
         _bianBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _bianBtn.frame = CGRectMake(20, 100, 200, 40);
         [_bianBtn setTitle:@"变色导航栏字体颜色" forState:UIControlStateNormal];
         [_bianBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         _bianBtn.backgroundColor = [self RandomColor];

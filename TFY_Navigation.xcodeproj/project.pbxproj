@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,8 +28,6 @@
 		36F1F5C62556BB21003C1C05 /* NAV_MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F1F5C52556BB21003C1C05 /* NAV_MainViewController.m */; };
 		36F8C5A726BFBF630068C5AC /* TFY_NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F8C5A126BFBF630068C5AC /* TFY_NavigationController.m */; };
 		36F8C5AA26BFCA6E0068C5AC /* TFY_NavigationImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 36F8C5A926BFCA6E0068C5AC /* TFY_NavigationImage.bundle */; };
-		B7CE90D3A6F92F2671888F9F /* Pods_TFY_Navigation_TFY_NavigationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CBB529E143F6294173A601 /* Pods_TFY_Navigation_TFY_NavigationUITests.framework */; };
-		C32B7B60FCF3833C9B6F5722 /* Pods_TFY_NavigationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B113AD07938AF65D3C18E1 /* Pods_TFY_NavigationTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03B113AD07938AF65D3C18E1 /* Pods_TFY_NavigationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFY_NavigationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FE2B01F9FD1218E9749EEC /* Pods-TFY_Navigation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_Navigation.debug.xcconfig"; path = "Target Support Files/Pods-TFY_Navigation/Pods-TFY_Navigation.debug.xcconfig"; sourceTree = "<group>"; };
-		0F45F38CE9B03DE74357644F /* Pods-TFY_NavigationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_NavigationTests.release.xcconfig"; path = "Target Support Files/Pods-TFY_NavigationTests/Pods-TFY_NavigationTests.release.xcconfig"; sourceTree = "<group>"; };
 		29018E2143133F7AD73E672B /* Pods_TFY_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFY_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		360972AB26ECAE180046A447 /* TFYViewControllerAnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFYViewControllerAnimatedTransitioning.h; sourceTree = "<group>"; };
 		360972AC26ECAE180046A447 /* UINavigationController+Push.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Push.h"; sourceTree = "<group>"; };
@@ -98,10 +94,6 @@
 		36F8C5A926BFCA6E0068C5AC /* TFY_NavigationImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TFY_NavigationImage.bundle; sourceTree = "<group>"; };
 		4E005F02273F596C1314D52E /* Pods-TFY_Navigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_Navigation.release.xcconfig"; path = "Target Support Files/Pods-TFY_Navigation/Pods-TFY_Navigation.release.xcconfig"; sourceTree = "<group>"; };
 		565AFB05247BA21A00FF5323 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		7943A11C486D44176F366063 /* Pods-TFY_Navigation-TFY_NavigationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_Navigation-TFY_NavigationUITests.debug.xcconfig"; path = "Target Support Files/Pods-TFY_Navigation-TFY_NavigationUITests/Pods-TFY_Navigation-TFY_NavigationUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		C7CBB529E143F6294173A601 /* Pods_TFY_Navigation_TFY_NavigationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TFY_Navigation_TFY_NavigationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF7E3ABDAA0CCA961CB7B078 /* Pods-TFY_NavigationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_NavigationTests.debug.xcconfig"; path = "Target Support Files/Pods-TFY_NavigationTests/Pods-TFY_NavigationTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F6A4F1CEFA7E33F0D0E2F43B /* Pods-TFY_Navigation-TFY_NavigationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TFY_Navigation-TFY_NavigationUITests.release.xcconfig"; path = "Target Support Files/Pods-TFY_Navigation-TFY_NavigationUITests/Pods-TFY_Navigation-TFY_NavigationUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C32B7B60FCF3833C9B6F5722 /* Pods_TFY_NavigationTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7CE90D3A6F92F2671888F9F /* Pods_TFY_Navigation_TFY_NavigationUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +258,6 @@
 			children = (
 				07FE2B01F9FD1218E9749EEC /* Pods-TFY_Navigation.debug.xcconfig */,
 				4E005F02273F596C1314D52E /* Pods-TFY_Navigation.release.xcconfig */,
-				7943A11C486D44176F366063 /* Pods-TFY_Navigation-TFY_NavigationUITests.debug.xcconfig */,
-				F6A4F1CEFA7E33F0D0E2F43B /* Pods-TFY_Navigation-TFY_NavigationUITests.release.xcconfig */,
-				CF7E3ABDAA0CCA961CB7B078 /* Pods-TFY_NavigationTests.debug.xcconfig */,
-				0F45F38CE9B03DE74357644F /* Pods-TFY_NavigationTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -280,8 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				29018E2143133F7AD73E672B /* Pods_TFY_Navigation.framework */,
-				C7CBB529E143F6294173A601 /* Pods_TFY_Navigation_TFY_NavigationUITests.framework */,
-				03B113AD07938AF65D3C18E1 /* Pods_TFY_NavigationTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -312,7 +296,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36242095229649C000AFE2B2 /* Build configuration list for PBXNativeTarget "TFY_NavigationTests" */;
 			buildPhases = (
-				215610C9F68045410AC691F1 /* [CP] Check Pods Manifest.lock */,
 				3624207A229649C000AFE2B2 /* Sources */,
 				3624207B229649C000AFE2B2 /* Frameworks */,
 				3624207C229649C000AFE2B2 /* Resources */,
@@ -331,11 +314,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36242098229649C000AFE2B2 /* Build configuration list for PBXNativeTarget "TFY_NavigationUITests" */;
 			buildPhases = (
-				07EC671C74B18C54018D19C0 /* [CP] Check Pods Manifest.lock */,
 				36242085229649C000AFE2B2 /* Sources */,
 				36242086229649C000AFE2B2 /* Frameworks */,
 				36242087229649C000AFE2B2 /* Resources */,
-				CD204E1833C4FA78778215E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -353,7 +334,8 @@
 		3624205E229649BF00AFE2B2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "浙江日报集团";
 				TargetAttributes = {
 					36242065229649BF00AFE2B2 = {
@@ -417,61 +399,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07EC671C74B18C54018D19C0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TFY_Navigation-TFY_NavigationUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		215610C9F68045410AC691F1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TFY_NavigationTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B341347AA785F16F3FAAE2A6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TFY_Navigation/Pods-TFY_Navigation-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TFY_Navigation/Pods-TFY_Navigation-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -498,23 +434,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CD204E1833C4FA78778215E0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TFY_Navigation-TFY_NavigationUITests/Pods-TFY_Navigation-TFY_NavigationUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TFY_Navigation-TFY_NavigationUITests/Pods-TFY_Navigation-TFY_NavigationUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TFY_Navigation-TFY_NavigationUITests/Pods-TFY_Navigation-TFY_NavigationUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -589,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -623,6 +543,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -637,7 +558,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -649,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -683,6 +605,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -691,7 +614,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -743,7 +666,6 @@
 		};
 		36242096229649C000AFE2B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF7E3ABDAA0CCA961CB7B078 /* Pods-TFY_NavigationTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -765,7 +687,6 @@
 		};
 		36242097229649C000AFE2B2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F45F38CE9B03DE74357644F /* Pods-TFY_NavigationTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -787,7 +708,6 @@
 		};
 		36242099229649C000AFE2B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7943A11C486D44176F366063 /* Pods-TFY_Navigation-TFY_NavigationUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SEXG86U92J;
@@ -807,7 +727,6 @@
 		};
 		3624209A229649C000AFE2B2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6A4F1CEFA7E33F0D0E2F43B /* Pods-TFY_Navigation-TFY_NavigationUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SEXG86U92J;

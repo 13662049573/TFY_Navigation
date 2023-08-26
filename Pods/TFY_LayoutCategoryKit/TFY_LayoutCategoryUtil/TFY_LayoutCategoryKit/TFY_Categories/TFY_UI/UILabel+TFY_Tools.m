@@ -681,6 +681,7 @@ const void *kAssociatedTfy_contentInsets;
     [attributes addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0, text_str.length)];//字体调整
 
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.alignment = self.textAlignment;
     
     paragraphStyle.lineSpacing = lineSpacing;  // 行间距
     //首行文本缩进
@@ -727,6 +728,7 @@ const void *kAssociatedTfy_contentInsets;
 {
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:textLineSpace];
+    [paragraphStyle setAlignment:self.textAlignment];
     [self tfy_changeParagraphStyleWithTextParagraphStyle:paragraphStyle];
 }
 #pragma mark - 段落样式
@@ -749,14 +751,18 @@ const void *kAssociatedTfy_contentInsets;
 
 - (void)tfy_changeColorWithTextColor:(UIColor *)textColor changeTexts:(NSArray <NSString *>*)texts
 {
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    for (NSString *text in texts) {
-        NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
-        if (textRange.location != NSNotFound) {
-            [attributedString addAttribute:NSForegroundColorAttributeName value:textColor range:textRange];
+    for(NSString *markContent in texts) {
+        NSMutableAttributedString *textAttrString = [self.attributedText mutableCopy];
+        //查找关键字并进行标注变色
+        NSRange range = [self.text rangeOfString: markContent options: NSCaseInsensitiveSearch | NSRegularExpressionSearch];
+        while (range.location != NSNotFound) {
+            [textAttrString addAttribute:NSForegroundColorAttributeName value:textColor range:range];
+            range = [self.text rangeOfString: markContent
+                                                options: NSCaseInsensitiveSearch | NSRegularExpressionSearch
+                                                  range: NSMakeRange(range.location + range.length, self.text.length - (range.location + range.length))];
         }
+        self.attributedText = textAttrString;
     }
-    self.attributedText = attributedString;
 }
 
 #pragma mark - 改变字段背景颜色
@@ -767,7 +773,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeBgColorWithBgTextColor:(UIColor *)bgTextColor changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSBackgroundColorAttributeName value:bgTextColor range:textRange];
     }
@@ -782,7 +788,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeLigatureWithTextLigature:(NSNumber *)textLigature changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSLigatureAttributeName value:textLigature range:textRange];
     }
@@ -797,7 +803,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeKernWithTextKern:(NSNumber *)textKern changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSKernAttributeName value:textKern range:textRange];
     }
@@ -812,7 +818,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeStrikethroughStyleWithTextStrikethroughStyle:(NSNumber *)textStrikethroughStyle changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSStrikethroughStyleAttributeName value:textStrikethroughStyle range:textRange];
     }
@@ -827,7 +833,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeStrikethroughColorWithTextStrikethroughColor:(UIColor *)textStrikethroughColor changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSStrikethroughColorAttributeName value:textStrikethroughColor range:textRange];
     }
@@ -842,7 +848,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeUnderlineStyleWithTextStrikethroughStyle:(NSNumber *)textUnderlineStyle changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSUnderlineStyleAttributeName value:textUnderlineStyle range:textRange];
     }
@@ -857,7 +863,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeUnderlineColorWithTextStrikethroughColor:(UIColor *)textUnderlineColor changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSUnderlineColorAttributeName value:textUnderlineColor range:textRange];
     }
@@ -872,7 +878,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeStrokeColorWithTextStrikethroughColor:(UIColor *)textStrokeColor changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSStrokeColorAttributeName value:textStrokeColor range:textRange];
     }
@@ -887,7 +893,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeStrokeWidthWithTextStrikethroughWidth:(NSNumber *)textStrokeWidth changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSStrokeWidthAttributeName value:textStrokeWidth range:textRange];
     }
@@ -902,7 +908,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeShadowWithTextShadow:(NSShadow *)textShadow changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSShadowAttributeName value:textShadow range:textRange];
     }
@@ -917,7 +923,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeTextEffectWithTextEffect:(NSString *)textEffect changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSTextEffectAttributeName value:textEffect range:textRange];
     }
@@ -932,7 +938,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeAttachmentWithTextAttachment:(NSTextAttachment *)textAttachment changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSAttachmentAttributeName value:textAttachment range:textRange];
     }
@@ -947,7 +953,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeLinkWithTextLink:(NSString *)textLink changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSLinkAttributeName value:textLink range:textRange];
     }
@@ -962,7 +968,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeBaselineOffsetWithTextBaselineOffset:(NSNumber *)textBaselineOffset changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSBaselineOffsetAttributeName value:textBaselineOffset range:textRange];
     }
@@ -977,7 +983,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeObliquenessWithTextObliqueness:(NSNumber *)textObliqueness changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSObliquenessAttributeName value:textObliqueness range:textRange];
     }
@@ -992,7 +998,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeExpansionsWithTextExpansion:(NSNumber *)textExpansion changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSExpansionAttributeName value:textExpansion range:textRange];
     }
@@ -1003,7 +1009,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeWritingDirectionWithTextExpansion:(NSArray *)textWritingDirection changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSWritingDirectionAttributeName value:textWritingDirection range:textRange];
     }
@@ -1014,7 +1020,7 @@ const void *kAssociatedTfy_contentInsets;
 - (void)tfy_changeVerticalGlyphFormWithTextVerticalGlyphForm:(NSNumber *)textVerticalGlyphForm changeText:(NSString *)text
 {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    NSRange textRange = [self.text rangeOfString:text options:NSBackwardsSearch];
+    NSRange textRange = [self.text rangeOfString:text options:NSCaseInsensitiveSearch | NSRegularExpressionSearch];
     if (textRange.location != NSNotFound) {
         [attributedString addAttribute:NSVerticalGlyphFormAttributeName value:textVerticalGlyphForm range:textRange];
     }
@@ -1028,4 +1034,42 @@ const void *kAssociatedTfy_contentInsets;
     [attributedString addAttribute:(id)kCTKernAttributeName value:textCTKern range:NSMakeRange(0, self.text.length-1)];
     self.attributedText = attributedString;
 }
+
+/**
+ 为UILabel首部设置图片标签
+ text 文本
+ images 标签数组
+ span 标签间距
+ */
+-(void)tfy_changeText:(NSString *)text frontImages:(NSArray<UIImage *> *)images imageSpan:(CGFloat)span
+{
+    NSMutableAttributedString *textAttrStr = [[NSMutableAttributedString alloc] init];
+    
+    for (UIImage *img in images) {//遍历添加标签
+        
+        NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+        attach.image = img;
+        //计算图片大小，与文字同高，按比例设置宽度
+        CGFloat imgH = self.font.pointSize;
+        CGFloat imgW = (img.size.width / img.size.height) * imgH;
+        //计算文字padding-top ，使图片垂直居中
+        CGFloat textPaddingTop = (self.font.lineHeight - self.font.pointSize) / 2;
+        attach.bounds = CGRectMake(0, -textPaddingTop , imgW, imgH);
+        
+        NSAttributedString *imgStr = [NSAttributedString attributedStringWithAttachment:attach];
+        [textAttrStr appendAttributedString:imgStr];
+        //标签后添加空格
+        [textAttrStr appendAttributedString:[[NSAttributedString alloc] initWithString:@" "]];
+    }
+    
+    //设置显示文本
+    [textAttrStr appendAttributedString:[[NSAttributedString alloc]initWithString:text]];
+    //设置间距
+    if (span != 0) {
+        [textAttrStr addAttribute:NSKernAttributeName value:@(span) range:NSMakeRange(0, images.count * 2/*由于图片也会占用一个单位长度,所以带上空格数量，需要 *2 */)];
+    }
+    
+    self.attributedText = textAttrStr;
+}
+
 @end

@@ -8,8 +8,6 @@
 
 #import "TfySY_TabBarBadge.h"
 
-NSString *const bage = @"99+";
-
 @implementation TfySY_TabBarBadge
 
 #pragma mark - 构造
@@ -46,6 +44,7 @@ NSString *const bage = @"99+";
     self.textColor = [UIColor whiteColor];
     self.font = [UIFont boldSystemFontOfSize:10];
     self.textAlignment = NSTextAlignmentCenter;
+    self.adjustsFontSizeToFitWidth = YES;
     self.clipsToBounds = YES;
     self.automaticHidden = NO;
     self.badgeHeight = 15;
@@ -58,12 +57,11 @@ NSString *const bage = @"99+";
         widths = self.badgeWidth;
     }
     if (_badgeText.integerValue) { // 是数字 或者不为0
-        self.hidden = NO; // 不管咋地先取消隐藏
-        if (_badgeText.integerValue > 99) {
-            self.text = bage;
-        }
-    }else{ //
+        self.hidden = NO;
+    } else{ //
         if (!_badgeText.length) { // 长度为0的空串
+            widths = 10;
+            self.badgeHeight = 10;
             self.hidden = self.automaticHidden;
         }
     }
@@ -72,6 +70,5 @@ NSString *const bage = @"99+";
     frame.size.height = self.badgeHeight;
     self.frame = frame;
 }
-
 
 @end

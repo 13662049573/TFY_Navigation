@@ -28,5 +28,9 @@
 #import "NSMutableAttributedString+TFY_Tools.h"
 #import "NSMutableParagraphStyle+TFY_Chain.h"
 #import "UIBezierPath+TFY_Tools.h"
+#import "CLLocationManager+TFY_Tools.h"
+#import "NSString+Extend.h"
+#import "NSDecimalNumber+TFY_Tools.h"
+#import "NSNumber+Arithmetic.h"
 
 #endif /* TFY_FoundationHeader_h */

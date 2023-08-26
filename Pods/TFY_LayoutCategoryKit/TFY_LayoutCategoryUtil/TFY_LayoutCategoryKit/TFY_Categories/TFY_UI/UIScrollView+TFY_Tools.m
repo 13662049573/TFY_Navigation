@@ -966,7 +966,7 @@ Class tfy_baseClassToSwizzleForTarget(id target)
 {
     self.frame = self.superview.bounds;
     
-    void(^fadeInBlock)(void) = ^{self->_contentView.alpha = 1.0;};
+    void(^fadeInBlock)(void) = ^{self.contentView.alpha = 1.0;};
     
     if (self.fadeInOnDisplay) {
         [UIView animateWithDuration:0.25
@@ -1115,8 +1115,7 @@ Class tfy_baseClassToSwizzleForTarget(id target)
 
 - (void)didTapButton:(id)sender
 {
-    SEL selector = NSSelectorFromString(@"dzn_didTapDataButton:");
-    
+    SEL selector = NSSelectorFromString(@"tfy_didTapDataButton:");
     if ([self.superview respondsToSelector:selector]) {
         [self.superview performSelector:selector withObject:sender afterDelay:0.0f];
     }

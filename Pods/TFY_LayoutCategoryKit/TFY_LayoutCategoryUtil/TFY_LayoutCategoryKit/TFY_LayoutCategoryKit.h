@@ -4,13 +4,8 @@
 //
 //  Created by 田风有 on 2020/9/10.
 //  Copyright © 2020 田风有. All rights reserved.
-//  最新版本号：2.0.8
-/**
- # 资源Bundle名称
-  s.resource_bundles = {
-    'xxxxxxBundle' => ['xxxxxxxxxx/Assets/ *.xcassets']
-  }
- */
+//  最新版本号：2.7.7
+
 /**
   使用说明：
   只要是类别的方法，所有方法前面，都会加 tfy_   如：[self.window tfy_showOnScene:scene];
@@ -39,5 +34,7 @@ FOUNDATION_EXPORT const unsigned char TFY_LayoutCategoryKitVersionString[];
 #import "TFY_ChainHeader.h"
 /**额外工具*/
 #import "TFY_ToolsHeader.h"
+/**截图工具**/
+#import "TFY_SnapshotScroll.h"
 
 #endif

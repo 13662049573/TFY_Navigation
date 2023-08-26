@@ -243,6 +243,68 @@ static NSTimeInterval _CGImageSourceGetGIFFrameDelayAtIndex(CGImageSourceRef sou
     return image;
 }
 
+//矫正image 位置
++ (UIImage *)tfy_fixOrientation:(UIImage *)image {
+    if (image.imageOrientation == UIImageOrientationUp)
+        return image;
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    switch (image.imageOrientation) {
+        case UIImageOrientationDown:
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, image.size.width, image.size.height);
+            transform = CGAffineTransformRotate(transform,M_PI);
+            break;
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+            transform = CGAffineTransformTranslate(transform, image.size.width,0);
+            transform = CGAffineTransformRotate(transform,M_PI_2);
+            break;
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform,0, image.size.height);
+            transform = CGAffineTransformRotate(transform, -M_PI_2);
+            break;
+        default:
+            break;
+    }
+    switch (image.imageOrientation) {
+        case UIImageOrientationUpMirrored:
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, image.size.width,0);
+            transform = CGAffineTransformScale(transform, -1,1);
+            break;
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, image.size.height,0);
+            transform = CGAffineTransformScale(transform, -1,1);
+            break;
+        default:
+            break;
+    }
+    CGContextRef ctx = CGBitmapContextCreate(NULL, image.size.width, image.size.height,
+                                             CGImageGetBitsPerComponent(image.CGImage),0,
+                                             CGImageGetColorSpace(image.CGImage),
+                                             CGImageGetBitmapInfo(image.CGImage));
+    CGContextConcatCTM(ctx, transform);
+    switch (image.imageOrientation) {
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            // Grr...
+            CGContextDrawImage(ctx,CGRectMake(0,0,image.size.height,image.size.width), image.CGImage);
+            break;
+        default:
+            CGContextDrawImage(ctx,CGRectMake(0,0,image.size.width,image.size.height), image.CGImage);
+            break;
+    }
+    CGImageRef cgimg = CGBitmapContextCreateImage(ctx);
+    UIImage *img = [UIImage imageWithCGImage:cgimg];
+    CGContextRelease(ctx);
+    CGImageRelease(cgimg);
+    return img;
+}
+
 + (UIImage *)tfy_imageSize:(CGSize)size withDrawContext:(void (^)(CGContextRef _Nonnull))drawContext{
     if (size.width == 0 || size.height == 0) return nil;
     UIGraphicsBeginImageContextWithOptions(size, NO, 0);
@@ -264,6 +326,58 @@ static NSTimeInterval _CGImageSourceGetGIFFrameDelayAtIndex(CGImageSourceRef sou
             alpha == kCGImageAlphaPremultipliedFirst ||
             alpha == kCGImageAlphaPremultipliedLast);
 }
+
+- (CGSize)tfy_sizeWithMaxRelativeSize:(CGSize)size isMax:(BOOL) isMax{
+    CGSize imageSize = self.size;
+    CGSize resultSize = CGSizeZero;
+    if (size.width == 0&&size.height != 0) {
+        resultSize.height = size.height;
+        resultSize.width = imageSize.width/imageSize.height * resultSize.height;
+        return resultSize;
+    }else if(size.width != 0&&size.height == 0){
+        resultSize.width = size.width;
+        resultSize.height = resultSize.width * imageSize.height/imageSize.width;
+        return resultSize;
+    }else if(size.width == 0&&size.height == 0){
+        return self.size;
+    }
+    if ((imageSize.width/imageSize.height >= size.width/size.height&&isMax)||(imageSize.width/imageSize.height < size.width/size.height&&!isMax)){
+        resultSize.height = size.height;
+        resultSize.width = imageSize.width/imageSize.height * resultSize.height;
+        return resultSize;
+    }else{
+        resultSize.width = size.width;
+        resultSize.height = resultSize.width * imageSize.height/imageSize.width;
+        return resultSize;
+    }
+    return resultSize;
+}
+
+- (CGSize)tfy_sizeWithMaxRelativeSize:(CGSize)size {
+    CGSize resize = [self tfy_sizeWithMaxRelativeSize:size isMax:YES];
+    return resize;
+}
+
+- (CGSize)tfy_sizeWithMinRelativeSize:(CGSize)size{
+    CGSize resize = [self tfy_sizeWithMaxRelativeSize:size isMax:NO];
+    return resize;
+}
+
+- (BOOL)tfy_isPngImage {
+    CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(self.CGImage);
+    BOOL isPng = !(alphaInfo==kCGImageAlphaNone||alphaInfo==kCGImageAlphaNoneSkipLast||alphaInfo==kCGImageAlphaNoneSkipFirst);
+    return isPng;
+}
+
+- (NSUInteger)tfy_lengthOfRawData{
+    CGDataProviderRef providerRef = CGImageGetDataProvider(self.CGImage);
+    CFDataRef dataRef = CGDataProviderCopyData(providerRef);
+    CFIndex len = CFDataGetLength(dataRef);
+    CFRelease(dataRef);
+    return (NSUInteger)len;
+}
+
+
 
 - (void)tfy_drawInRect:(CGRect)rect withContentMode:(UIViewContentMode)contentModel clipsToBounds:(BOOL)clips{
     CGRect drawRect = TFY_CGRectFitWithContentMode(rect, rect.size, contentModel);
@@ -1924,26 +2038,34 @@ void TFY_ProviderReleaseData(void * info, const void * data, size_t size) {
  * masterfootImage  下边视图的图片，生成的图片的宽度为footerImageView的宽度，拼接在midView的下面
  */
 + (UIImage *)tfy_addSlaveHeaderImage:(UIImage *)slaveheaderImage toMasterMidImage:(UIImage *)mastermidImage toMasterFootImage:(UIImage *)masterfootImage{
-    CGSize size;
-    size.width = slaveheaderImage.size.width;
-    size.height = slaveheaderImage.size.height + mastermidImage.size.height + masterfootImage.size.height;
     
-    UIGraphicsBeginImageContextWithOptions(size, YES, 0.0);
+    CGFloat width = mastermidImage.size.width;
+    CGFloat height = slaveheaderImage.size.height + mastermidImage.size.height + masterfootImage.size.height;
     
-    //Draw slaveheaderImage
-    [slaveheaderImage drawInRect:CGRectMake(0, 0, slaveheaderImage.size.width, slaveheaderImage.size.height)];
+    CGSize offScreenSize = CGSizeMake(width, height);
     
-    //Draw mastermidImage
-    [mastermidImage drawInRect:CGRectMake(0, mastermidImage.size.height, mastermidImage.size.width, mastermidImage.size.height)];
+    UIGraphicsBeginImageContextWithOptions(offScreenSize, YES, [UIScreen mainScreen].scale);
+    //给画布添加颜色
+    [[UIColor whiteColor] setFill];
+    CGRect bounds = CGRectMake(0, 0, width, height);
+    UIRectFill(bounds);
+    //拼接第一份头部图片
+    CGRect rectT = CGRectMake(0, 0, width, slaveheaderImage.size.height);
+    [slaveheaderImage drawInRect:rectT];
     
-    //Draw masterfootImage
-    [masterfootImage drawInRect:CGRectMake(0, slaveheaderImage.size.height+masterfootImage.size.height, masterfootImage.size.width, masterfootImage.size.height)];
-    
-    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    //这里是主图片曲线图
+    CGRect rect = CGRectMake(0, rectT.origin.y+slaveheaderImage.size.height,width, mastermidImage.size.height);
+    [mastermidImage drawInRect:rect];
+   
+    //拼接下部分图片，这里按照自己图片需求更改位置
+    CGRect rectB = CGRectMake(0,rect.origin.y + mastermidImage.size.height, width, masterfootImage.size.height);
+    [masterfootImage drawInRect:rectB];
+    //合成图片
+    UIImage* imagez = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
     
-    return resultImage;
+    return imagez;
 }
 
 /**
@@ -1990,7 +2112,7 @@ void TFY_ProviderReleaseData(void * info, const void * data, size_t size) {
 
 
 //leftImage:左侧图片 rightImage:右侧图片 margin:两者间隔
-- (UIImage *)tfy_combineWithLeftImg:(UIImage*)leftImage rightImg:(UIImage*)rightImage withMargin:(NSInteger)margin{
+- (UIImage *)tfy_combineWithLeftImg:(UIImage*)leftImage rightImg:(UIImage*)rightImage withMargin:(NSInteger)margin {
     if (rightImage == nil) {
         return leftImage;
     }
@@ -1999,7 +2121,7 @@ void TFY_ProviderReleaseData(void * info, const void * data, size_t size) {
     CGSize offScreenSize = CGSizeMake(width, height);
     
     // UIGraphicsBeginImageContext(offScreenSize);用这个重绘图片会模糊
-    UIGraphicsBeginImageContextWithOptions(offScreenSize, NO, [UIScreen mainScreen].scale);
+    UIGraphicsBeginImageContextWithOptions(offScreenSize, YES, [UIScreen mainScreen].scale);
     
     CGRect rectL = CGRectMake(0, 0, leftImage.size.width, height);
     [leftImage drawInRect:rectL];
@@ -2097,6 +2219,117 @@ void TFY_ProviderReleaseData(void * info, const void * data, size_t size) {
     CGImageRelease(subImageRef);
     return smallImage;
     
+}
+
++ (UIImage *)tfy_imagePath:(NSString *)path
+{
+    UIImage *image = [UIImage tfy_imageWithImageLight:path dark:[NSString stringWithFormat:@"%@_dark",path]];
+    return image;
+}
+
++ (void)tfy_fixResizableImage{
+    if (@available(iOS 13.0, *)) {
+        Class klass = UIImage.class;
+        SEL selector = @selector(resizableImageWithCapInsets:resizingMode:);
+        Method method = class_getInstanceMethod(klass, selector);
+        if (method == NULL) {
+            return;
+        }
+        
+        IMP originalImp = class_getMethodImplementation(klass, selector);
+        if (!originalImp) {
+            return;
+        }
+        
+        IMP dynamicColorCompatibleImp = imp_implementationWithBlock(^UIImage *(UIImage *_self, UIEdgeInsets insets, UIImageResizingMode resizingMode) {
+                UITraitCollection *lightTrait = [self lightTrait];
+                UITraitCollection *darkTrait = [self darkTrait];
+
+                UIImage *resizable = ((UIImage * (*)(UIImage *, SEL, UIEdgeInsets, UIImageResizingMode))
+                                          originalImp)(_self, selector, insets, resizingMode);
+                UIImage *resizableInLight = [_self.imageAsset imageWithTraitCollection:lightTrait];
+                UIImage *resizableInDark = [_self.imageAsset imageWithTraitCollection:darkTrait];
+            
+                if (resizableInLight) {
+                    [resizable.imageAsset registerImage:((UIImage * (*)(UIImage *, SEL, UIEdgeInsets, UIImageResizingMode))
+                                                             originalImp)(resizableInLight, selector, insets, resizingMode)
+                                    withTraitCollection:lightTrait];
+                }
+                if (resizableInDark) {
+                    [resizable.imageAsset registerImage:((UIImage * (*)(UIImage *, SEL, UIEdgeInsets, UIImageResizingMode))
+                                                             originalImp)(resizableInDark, selector, insets, resizingMode)
+                                    withTraitCollection:darkTrait];
+                }
+                return resizable;
+            });
+
+        class_replaceMethod(klass, selector, dynamicColorCompatibleImp, method_getTypeEncoding(method));
+    }
+}
+
++ (UITraitCollection *)lightTrait API_AVAILABLE(ios(13.0)) {
+    static UITraitCollection *trait = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        trait = [UITraitCollection traitCollectionWithTraitsFromCollections:@[
+            [UITraitCollection traitCollectionWithDisplayScale:UIScreen.mainScreen.scale],
+            [UITraitCollection traitCollectionWithUserInterfaceStyle:UIUserInterfaceStyleLight]
+        ]];
+    });
+
+    return trait;
+}
+
++ (UITraitCollection *)darkTrait API_AVAILABLE(ios(13.0)) {
+    static UITraitCollection *trait = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        trait = [UITraitCollection traitCollectionWithTraitsFromCollections:@[
+            [UITraitCollection traitCollectionWithDisplayScale:UIScreen.mainScreen.scale],
+            [UITraitCollection traitCollectionWithUserInterfaceStyle:UIUserInterfaceStyleDark]
+        ]];
+    });
+
+    return trait;
+}
+
++ (UIImage *)tfy_imageWithImageLight:(NSString *)lightImagePath dark:(NSString *)darkImagePath {
+    UIImage *lightImage = [UIImage imageNamed:lightImagePath];
+    if (!lightImage) {
+        return nil;
+    }
+    if (@available(iOS 13.0, *)) {
+        UIImage *darkImage= [UIImage imageNamed:darkImagePath];
+        UITraitCollection *const scaleTraitCollection = [UITraitCollection currentTraitCollection];
+        UITraitCollection *const darkUnscaledTraitCollection = [UITraitCollection traitCollectionWithUserInterfaceStyle:UIUserInterfaceStyleDark];
+        UITraitCollection *const darkScaledTraitCollection = [UITraitCollection traitCollectionWithTraitsFromCollections:@[scaleTraitCollection, darkUnscaledTraitCollection]];
+        UIImage *image = [lightImage imageWithConfiguration:[lightImage.configuration configurationWithTraitCollection:[UITraitCollection traitCollectionWithUserInterfaceStyle:UIUserInterfaceStyleLight]]];
+        darkImage = [darkImage imageWithConfiguration:[darkImage.configuration configurationWithTraitCollection:[UITraitCollection traitCollectionWithUserInterfaceStyle:UIUserInterfaceStyleDark]]];
+        [image.imageAsset registerImage:darkImage withTraitCollection:darkScaledTraitCollection];
+        return image;
+    } else {
+        return lightImage;
+    }
+    return nil;
+}
+
++ (UIImage *)tfy_imageWithImageLightImg:(UIImage *)lightImage dark:(UIImage *)darkImage
+{
+    if (!lightImage) {
+        return nil;
+    }
+    if (@available(iOS 13.0, *)) {
+        UITraitCollection *const scaleTraitCollection = [UITraitCollection currentTraitCollection];
+        UITraitCollection *const darkUnscaledTraitCollection = [UITraitCollection traitCollectionWithUserInterfaceStyle:UIUserInterfaceStyleDark];
+        UITraitCollection *const darkScaledTraitCollection = [UITraitCollection traitCollectionWithTraitsFromCollections:@[scaleTraitCollection, darkUnscaledTraitCollection]];
+        UIImage *image = [lightImage imageWithConfiguration:[lightImage.configuration configurationWithTraitCollection:[UITraitCollection traitCollectionWithUserInterfaceStyle:UIUserInterfaceStyleLight]]];
+        darkImage = [darkImage imageWithConfiguration:[darkImage.configuration configurationWithTraitCollection:[UITraitCollection traitCollectionWithUserInterfaceStyle:UIUserInterfaceStyleDark]]];
+        [image.imageAsset registerImage:darkImage withTraitCollection:darkScaledTraitCollection];
+        return image;
+    } else {
+        return lightImage;
+    }
+    return nil;
 }
 
 @end

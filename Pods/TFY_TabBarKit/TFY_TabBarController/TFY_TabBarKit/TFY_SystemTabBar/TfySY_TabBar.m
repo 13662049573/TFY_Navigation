@@ -54,8 +54,6 @@
     [self layoutTabBarSubViews];
 }
 
-
-
 #pragma mark - 配置实例
 - (void)configuration{
     [self hiddenUITabBarButton]; // 8.4补丁
@@ -87,6 +85,7 @@ static TfySY_TabBarItem *lastItem;
 }
 // 切换页面/状态
 - (void)switch_tabBarItemIndex:(NSInteger )index WithAnimation:(BOOL )animation{
+    self.selectIndex = index;
     // 1.切换tabbar的状态
     [self.items enumerateObjectsUsingBlock:^(TfySY_TabBarItem * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
         item.isSelect = index == idx; // 当前点击的调整选中，其他否定
@@ -94,18 +93,15 @@ static TfySY_TabBarItem *lastItem;
     // 动画逻辑
     WeakSelf; // 2.通过回调点击事件让代理去执行切换选项卡的任务
     TfySY_TabBarItem *item = self.items[index];
-    if (item.itemModel.isRepeatClick) { // 允许重复点击触发动画
-        if (animation) [item startStrringConfigAnimation]; // 开始执行设置的动画效果
+    if (animation) [item startStrringConfigAnimation]; // 开始执行设置的动画效果
+    if (![lastItem isEqual: item]) { // 不是上次点击的
+        lastItem = item;
         if (self.delegate && [self.delegate respondsToSelector:@selector(TfySY_TabBar:selectIndex:)]) {
             [self.delegate TfySY_TabBar:weakSelf selectIndex:index];
         }
-    }else{
-        if (![lastItem isEqual: item]) { // 不是上次点击的
-            lastItem = item;
-            if (animation) [item startStrringConfigAnimation]; // 开始执行设置的动画效果
-            if (self.delegate && [self.delegate respondsToSelector:@selector(TfySY_TabBar:selectIndex:)]) {
-                [self.delegate TfySY_TabBar:weakSelf selectIndex:index];
-            }
+    } else {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(TfySY_TabBarDoubleClick:selectIndex:)]) {
+            [self.delegate TfySY_TabBarDoubleClick:weakSelf selectIndex:index];
         }
     }
     [self hiddenUITabBarButton];
@@ -247,10 +243,7 @@ static TfySY_TabBarItem *lastItem;
 - (TfySY_TabBarItem *)currentSelectItem{
     return [self.tabBarItems objectAtIndex:self.selectIndex];
 }
-- (void)setSelectIndex:(NSInteger)selectIndex{
-    _selectIndex = selectIndex; // 设置执行Set后实时切换页面
-    [self switch_tabBarItemIndex:_selectIndex WithAnimation:NO];
-}
+
 - (void)setSelectIndex:(NSInteger)selectIndex WithAnimation:(BOOL )animation{
     [self switch_tabBarItemIndex:_selectIndex WithAnimation:animation];
 }

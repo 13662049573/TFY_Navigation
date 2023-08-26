@@ -75,8 +75,10 @@ typedef void(^CustomInteractionEffectBlock) (TfySY_TabBarItem * _Nonnull item);
 #pragma mark - 图片控制类
 /**选中后的图片名称*/
 @property(nonatomic, copy)NSString * _Nonnull selectImageName;
+@property(nonatomic, strong)UIImage * _Nonnull selectImage;
 /**正常的图片名称*/
 @property(nonatomic, copy)NSString * _Nonnull normalImageName;
+@property(nonatomic, strong)UIImage * _Nonnull normalImage;
 /**默认的 图片tintColor*/
 @property(nonatomic, strong)UIColor * _Nonnull normalTintColor;
 /**选中的 图片tintColor*/
@@ -127,8 +129,6 @@ typedef void(^CustomInteractionEffectBlock) (TfySY_TabBarItem * _Nonnull item);
 #pragma mark - item交互控制类
 /**点击触发后的交互效果*/
 @property(nonatomic, assign)TfySY_TabBarInteractionEffectStyle interactionEffectStyle;
-/**是否允许重复点击触发动画 默认NO*/
-@property(nonatomic, assign)BOOL isRepeatClick;
 /**当交互效果选选择自定义时，会回调以下Block*/
 @property(nonatomic, copy)CustomInteractionEffectBlock _Nonnull customInteractionEffectBlock;
 /**多个自定义时候使用区分的Tag*/

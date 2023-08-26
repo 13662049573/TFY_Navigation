@@ -21,12 +21,13 @@
     self.view.backgroundColor = UIColor.blueColor;
 
     [self.view addSubview:self.bianBtn];
-    self.bianBtn.tfy_LeftSpace(30).tfy_CenterY(0).tfy_RightSpace(30).tfy_Height(50);
+
 }
 
 - (UIButton *)bianBtn {
     if (!_bianBtn) {
         _bianBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _bianBtn.frame = CGRectMake(20, 100, 200, 40);
         [_bianBtn setTitle:@"回到指定控制器" forState:UIControlStateNormal];
         [_bianBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         _bianBtn.backgroundColor = UIColor.orangeColor;

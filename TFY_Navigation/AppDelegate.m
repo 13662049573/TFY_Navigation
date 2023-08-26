@@ -21,6 +21,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor  whiteColor];
 
+    TFYRotateDefault.shared.defaultSupportedInterfaceOrientations = UIInterfaceOrientationMaskAll;
+    
     self.window.rootViewController = TFY_TabBarController.new;
     
     [self.window makeKeyAndVisible];

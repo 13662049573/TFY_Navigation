@@ -10,11 +10,11 @@
 #import "TFY_NavigationController.h"
 #import <objc/runtime.h>
 
-CG_INLINE BOOL Nav_iPhoneX() {
+CG_INLINE BOOL Nav_iPhoneX(void) {
     return ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? ((NSInteger)(([[UIScreen mainScreen] currentMode].size.height/[[UIScreen mainScreen] currentMode].size.width)*100) == 216) : NO);
 }
 /**导航栏高度*/
-CG_INLINE CGFloat Nav_kNavBarHeight() {
+CG_INLINE CGFloat Nav_kNavBarHeight(void) {
     return (Nav_iPhoneX() ? 88.0 : 64.0);
 }
 

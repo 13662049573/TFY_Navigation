@@ -30,10 +30,10 @@
 
     
     [self.view addSubview:self.bianBtn];
-    self.bianBtn.tfy_LeftSpace(30).tfy_CenterY(-50).tfy_RightSpace(30).tfy_Height(50);
+    
     
     [self.view addSubview:self.bianBtn2];
-    self.bianBtn2.tfy_LeftSpace(30).tfy_CenterY(50).tfy_RightSpace(30).tfy_Height(50);
+   
 }
 
 - (void)pushToNextViewController {
@@ -47,6 +47,7 @@
 - (UIButton *)bianBtn {
     if (!_bianBtn) {
         _bianBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _bianBtn.frame = CGRectMake(20, 100, 200, 40);
         [_bianBtn setTitle:@"变色导航栏颜色" forState:UIControlStateNormal];
         [_bianBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         _bianBtn.backgroundColor = [self RandomColor];
@@ -59,6 +60,7 @@
     if (!_bianBtn2) {
         _bianBtn2 = [UIButton buttonWithType:UIButtonTypeCustom];
         [_bianBtn2 setTitle:@"下一个界面" forState:UIControlStateNormal];
+        _bianBtn2.frame = CGRectMake(20, 150, 200, 40);
         [_bianBtn2 setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
         _bianBtn2.backgroundColor = [self RandomColor];
         [_bianBtn2 addTarget:self action:@selector(navbiack2) forControlEvents:UIControlEventTouchUpInside];
