@@ -24,8 +24,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.blueColor;
     
-    
-    
+    self.tfy_navBackgroundColor = TFY_ColorHexString(@"FAC68D");
+
 }
 
 /*

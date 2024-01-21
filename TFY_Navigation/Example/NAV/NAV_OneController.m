@@ -68,8 +68,7 @@
     return _bianBtn2;
 }
 - (void)navbiack {
-    
-    self.view.backgroundColor = [self RandomColor];
+    self.tfy_navBackgroundColor = [self RandomColor];
 }
 
 - (void)navbiack2 {

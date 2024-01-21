@@ -84,6 +84,7 @@
         vc.view.backgroundColor =  TfySY_TabBarRGBA(248, 248, 248, 1);
         vc.title = [obj objectForKey:@"itemTitle"];
         TFY_NavigationController *nav = [[TFY_NavigationController alloc] initWithRootViewController:vc];
+        nav.tfy_enableInteractivePush = YES;
         [tabBarVCs addObject:nav];
         [tabBarConfs addObject:model];
     }];
