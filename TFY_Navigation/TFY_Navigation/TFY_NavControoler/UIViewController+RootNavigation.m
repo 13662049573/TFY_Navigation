@@ -10,10 +10,10 @@
 #import "TFY_NavigationController.h"
 #import <objc/runtime.h>
 
-#define HasTFYThemeKit (__has_include(<TFYThemeKit/TFYThemeKit.h>))
-
-#if HasTFYThemeKit
-#import <TFYThemeKit/TFYThemeKit.h>
+#if __has_include(<TFYThemeKit.h>)
+#import <TFYThemeKit.h>
+#elif __has_include("TFYThemeKit.h")
+#import "TFYThemeKit.h"
 #endif
 
 CG_INLINE BOOL Nav_iPhoneX(void) {
@@ -116,7 +116,7 @@ CG_INLINE CGFloat Nav_kNavBarHeight(void) {
 
 /// 设置导航栏颜色
 -(void)setNavigationBackgroundColor:(UIColor *)color {
-#if HasTFYThemeKit
+#if __has_include(<TFYThemeKit.h>) || __has_include("TFYThemeKit.h")
 #else
     NSDictionary *dic = @{NSForegroundColorAttributeName : [UIColor blackColor],
                               NSFontAttributeName : [UIFont systemFontOfSize:16 weight:UIFontWeightMedium]};
