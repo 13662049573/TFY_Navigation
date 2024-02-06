@@ -153,6 +153,7 @@
 #import "TFY_GCDQueue.h"
 #import "TFY_GCDSemaphore.h"
 #import "TFY_GCDTimer.h"
+#import "TFY_ModelSqlite.h"
 #import "TFY_OpenShare+Alipay.h"
 #import "TFY_OpenShare+QQ.h"
 #import "TFY_OpenShare+Weibo.h"

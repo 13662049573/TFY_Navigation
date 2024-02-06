@@ -49,6 +49,9 @@ IB_DESIGNABLE
 /// 导航栏透明后 可以设置对应导航栏颜色，也就是控制器颜色。
 @property(nonatomic , strong)UIColor *tfy_navBackgroundColor;
 
+/// 设置导航栏颜色
+-(void)setNavigationBackgroundColor:(UIColor *)color;
+
 @end
 
 NS_ASSUME_NONNULL_END

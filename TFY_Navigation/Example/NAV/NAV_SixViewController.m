@@ -17,15 +17,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.blueColor;
     
-    self.tfy_navBackgroundColor = TFY_ColorHexString(@"FAC68D");
-
+    
+    self.tfy_navBackgroundColor = TFY_ColorHexString(@"75DFC3");
 }
 
 /*

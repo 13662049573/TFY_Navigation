@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tfy_navBackgroundColor = UIColor.orangeColor;
+    self.tfy_navBackgroundColor = UIColor.redColor;
     
     UIButton *button4 = [[UIButton alloc] initWithFrame:CGRectMake(100, 220 + 64, 150, 30)];
     [button4 setTitle:@"导航栏透明度" forState:UIControlStateNormal];

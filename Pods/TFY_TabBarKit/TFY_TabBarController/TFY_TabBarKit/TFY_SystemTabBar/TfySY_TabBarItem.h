@@ -29,6 +29,8 @@ typedef NS_ENUM(NSInteger, TfySY_TabBarConfigAlignmentStyle) {
     
     TfySY_TabBarConfigAlignmentStyleBottomLeft,     /**下左对齐*/
     TfySY_TabBarConfigAlignmentStyleBottomRight,    /**下右对齐*/
+    
+    TfySY_TabBarConfigAlignmentStyleMedianReduction,    /**向中间缩减*/
 };
 
 /**item内部组件布局模式*/
@@ -105,6 +107,8 @@ typedef void(^CustomInteractionEffectBlock) (TfySY_TabBarItem * _Nonnull item);
 @property(nonatomic, assign)CGSize itemSize;
 /**角标内容*/
 @property(nonatomic, strong)NSString * _Nonnull badge;
+/**自定义角标位置*/
+@property(nonatomic , assign)CGPoint badgePoint;
 /**角标方位*/
 @property(nonatomic, assign)TfySY_TabBarItemBadgeStyle itemBadgeStyle;
 /**为零是否自动隐藏 默认不隐藏*/
@@ -125,7 +129,8 @@ typedef void(^CustomInteractionEffectBlock) (TfySY_TabBarItem * _Nonnull item);
 @property(nonatomic, assign)UIEdgeInsets componentMargin;
 /**图片文字的间距 默认 2*/
 @property(nonatomic, assign)CGFloat pictureWordsMargin;
-
+/**整体向中间缩减距离 默认 60*/
+@property(nonatomic, assign)CGFloat medianReduction;
 #pragma mark - item交互控制类
 /**点击触发后的交互效果*/
 @property(nonatomic, assign)TfySY_TabBarInteractionEffectStyle interactionEffectStyle;
@@ -166,7 +171,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong)NSString *badge;
 /**item的所在索引*/
 @property(nonatomic, assign)NSInteger itemIndex;
-
+/**整体向中间缩减距离 默认 60*/
+@property(nonatomic, assign)CGFloat medianReduction;
 /**选中状态*/
 @property (nonatomic, assign) BOOL isSelect;
 
@@ -175,13 +181,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UILabel *titleLabel;
 /**角标Label*/
 @property(nonatomic, strong)TfySY_TabBarBadge *badgeLabel;
-
+/**自定义角标位置*/
+@property(nonatomic , assign)CGPoint badgePoint;
 /**模型构造器*/
 @property(nonatomic, strong)TfySY_TabBarConfigModel *itemModel;
 /**重新开始布局*/
 - (void)itemDidLayoutControl;
 /**开始执行设置的动画*/
 - (void)startStrringConfigAnimation;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,6 +10,12 @@
 #import "TFY_NavigationController.h"
 #import <objc/runtime.h>
 
+#define HasTFYThemeKit (__has_include(<TFYThemeKit/TFYThemeKit.h>))
+
+#if HasTFYThemeKit
+#import <TFYThemeKit/TFYThemeKit.h>
+#endif
+
 CG_INLINE BOOL Nav_iPhoneX(void) {
     return ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? ((NSInteger)(([[UIScreen mainScreen] currentMode].size.height/[[UIScreen mainScreen] currentMode].size.width)*100) == 216) : NO);
 }
@@ -22,10 +28,6 @@ CG_INLINE CGFloat Nav_kNavBarHeight(void) {
 + (UIColor *)colorWithHexString:(NSString *)color;
 //从十六进制字符串获取颜色，
 + (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
-@end
-
-@interface UIImage (navColor)
--(UIImage *)imageNavWithColor:(UIColor *)color;
 @end
 
 @implementation UIViewController (RootNavigation)
@@ -70,9 +72,7 @@ CG_INLINE CGFloat Nav_kNavBarHeight(void) {
 }
 
 - (void)hiddenNavigationBar {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-    forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    [self setNavigationBackgroundColor:UIColor.clearColor];
 }
 
 - (void)setTfy_alphaFloat:(CGFloat)tfy_alphaFloat {
@@ -86,19 +86,14 @@ CG_INLINE CGFloat Nav_kNavBarHeight(void) {
     return number.floatValue;
 }
 - (void)contentOffset:(CGFloat)offectY {
-    
     CGFloat alphaIndex = (CGFloat)(offectY/Nav_kNavBarHeight());
     NSString *colorStr = self.tfy_alphaColor.length > 0?self.tfy_alphaColor:@"ffffff";
-    
-    UIImage *image = [[[UIImage imageNamed:@"TFY_NavigationImage.bundle/nav_line"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] imageNavWithColor:[UIColor colorWithHexString:colorStr alpha:alphaIndex]];
-    
-    [self.navigationController.navigationBar setBackgroundImage:image
-    forBarMetrics:UIBarMetricsDefault];
+    [self setNavigationBackgroundColor:[UIColor colorWithHexString:colorStr alpha:alphaIndex]];
 }
 
 - (void)setTfy_navBackgroundColor:(UIColor *)tfy_navBackgroundColor {
     objc_setAssociatedObject(self, @selector(tfy_navBackgroundColor), tfy_navBackgroundColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    self.navigationController.view.backgroundColor = tfy_navBackgroundColor;
+    [self setNavigationBackgroundColor:tfy_navBackgroundColor];
 }
 
 - (UIColor *)tfy_navBackgroundColor {
@@ -119,42 +114,43 @@ CG_INLINE CGFloat Nav_kNavBarHeight(void) {
     return nil;
 }
 
--(UIImage *)tfy_imageWithColor:(UIColor *)color {
+/// 设置导航栏颜色
+-(void)setNavigationBackgroundColor:(UIColor *)color {
+#if HasTFYThemeKit
+#else
+    NSDictionary *dic = @{NSForegroundColorAttributeName : [UIColor blackColor],
+                              NSFontAttributeName : [UIFont systemFontOfSize:16 weight:UIFontWeightMedium]};
     
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+        appearance.backgroundColor = color;// 背景色
+        appearance.backgroundEffect = nil;// 去掉半透明效果
+        appearance.titleTextAttributes = dic;// 标题字体颜色及大小
+        appearance.shadowImage = [[UIImage alloc] init];// 设置导航栏下边界分割线透明
+        appearance.shadowColor = [UIColor clearColor];// 去除导航栏阴影（如果不设置clear，导航栏底下会有一条阴影线）
+        appearance.backgroundImage = [self createImage:color];
+        appearance.backgroundColor = color;
+        self.navigationController.navigationBar.standardAppearance = appearance;// standardAppearance：常规状态, 标准外观，iOS15之后不设置的时候，导航栏背景透明
+        if (@available(iOS 15.0, *)) {
+            self.navigationController.navigationBar.scrollEdgeAppearance = appearance;// scrollEdgeAppearance：被scrollview向下拉的状态, 滚动时外观，不设置的时候，使用标准外观
+        }
+    } else {
+        self.navigationController.navigationBar.titleTextAttributes = dic;
+        [self.navigationController.navigationBar setShadowImage:UIImage.new];
+        [self.navigationController.navigationBar setBackgroundImage:[self createImage:color] forBarMetrics:UIBarMetricsDefault];
+    }
+#endif
+}
+
+- (UIImage *)createImage:(UIColor *)imageColor {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextSetFillColorWithColor(context, [imageColor CGColor]);
     CGContextFillRect(context, rect);
-    
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
     return image;
-}
-
-@end
-
-@implementation UIImage (navColor)
-
--(UIImage *)imageNavWithColor:(UIColor *)color {
-    // 获取画布
-     UIGraphicsBeginImageContextWithOptions(self.size, NO, self.scale);
-     CGContextRef context = UIGraphicsGetCurrentContext();
-     //移动图片
-     CGContextTranslateCTM(context, 0, self.size.height);
-     CGContextScaleCTM(context, 1.0, -1.0);
-     //模式配置
-     CGContextSetBlendMode(context, kCGBlendModeNormal);
-     CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
-     CGContextClipToMask(context, rect, self.CGImage);
-     [color setFill];
-     CGContextFillRect(context, rect);
-     //创建获取图片
-     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-     UIGraphicsEndImageContext();
-     return newImage;
 }
 
 @end
