@@ -386,7 +386,6 @@ __attribute((overloadable)) static inline UIViewController *TFYSafeWrapViewContr
         [self setNavigationBackground];
 #else
         [self setNavigationBackgroundColor:UIColor.clearColor];
-        
 #endif
     }
 }
