@@ -72,6 +72,7 @@ CG_INLINE CGFloat Nav_kNavBarHeight(void) {
 }
 
 - (void)hiddenNavigationBar {
+    self.navigationController.navigationBar.translucent = YES;
     [self setNavigationBackgroundColor:UIColor.clearColor];
 }
 
